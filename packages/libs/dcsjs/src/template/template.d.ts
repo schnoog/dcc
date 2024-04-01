@@ -1,4 +1,4 @@
 declare module "*.template" {
-  const value: string;
-  export default value;
+	const value: string;
+	export default value;
 }

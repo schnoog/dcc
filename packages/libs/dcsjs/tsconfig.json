@@ -1,4 +1,4 @@
 {
-  "extends": "@kilcekru/ts-basics/tsconfig-node-app.json",
-  "include": ["src/**/*"]
+	"extends": "@kilcekru/ts-basics/tsconfig-node-app.json",
+	"include": ["src/**/*"]
 }

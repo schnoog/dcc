@@ -1,13 +1,13 @@
 import * as Data from "../data";
 import {
-  addDatalinks,
-  addPropAircraft,
-  addRadio,
-  getStartWaypointTasks,
-  mapTaskActionsNumber,
-  Minutes,
-  msTimeToDcsTime,
-  routePointTask,
+	addDatalinks,
+	addPropAircraft,
+	addRadio,
+	getStartWaypointTasks,
+	mapTaskActionsNumber,
+	Minutes,
+	msTimeToDcsTime,
+	routePointTask,
 } from "../utils";
 import { Airdrome } from "./Airdrome";
 import { GroupProps } from "./Group";
@@ -15,26 +15,26 @@ import type { Mission } from "./Mission";
 import { UnitGroup } from "./UnitGroup";
 
 export interface FlightGroupUnit {
-  name: string;
-  unitId: number;
-  type: Data.AircraftType;
-  callsign: Data.Callsign;
-  onboardNumber: number;
-  isClient: boolean;
-  pylons: Data.Pylon[];
+	name: string;
+	unitId: number;
+	type: Data.AircraftType;
+	callsign: Data.Callsign;
+	onboardNumber: number;
+	isClient: boolean;
+	pylons: Data.Pylon[];
 }
 
 type TimeTableWaypoint = Data.InputTypes.Waypoint & {
-  startTime: number;
+	startTime: number;
 };
 
 type StartType = "cold" | "air" | "hot";
 
 type StartPosition = Data.Position & {
-  alt: number;
-  alt_type: Data.AltitudeType;
-  parking?: string;
-  parking_id?: string;
+	alt: number;
+	alt_type: Data.AltitudeType;
+	parking?: string;
+	parking_id?: string;
 };
 
 /* interface FlightGroupProps extends GroupProps {
@@ -49,513 +49,462 @@ type StartPosition = Data.Position & {
 } */
 
 type FlightGroupProps = GroupProps &
-  Data.InputTypes.FlightGroup & {
-    units: FlightGroupUnit[];
-    isHelicopter: boolean;
-    coalition: Data.Coalition;
-  };
+	Data.InputTypes.FlightGroup & {
+		units: FlightGroupUnit[];
+		isHelicopter: boolean;
+		coalition: Data.Coalition;
+	};
 
 function startPositionToWaypoint(startPosition: StartPosition) {
-  return {
-    x: startPosition.x,
-    y: startPosition.y,
-    alt: startPosition.alt,
-    alt_type: startPosition.alt_type,
-  };
+	return {
+		x: startPosition.x,
+		y: startPosition.y,
+		alt: startPosition.alt,
+		alt_type: startPosition.alt_type,
+	};
 }
 export class FlightGroup extends UnitGroup {
-  readonly units: FlightGroupUnit[];
-  readonly task: Data.Task;
-  readonly frequency: number;
-  readonly isHelicopter: boolean;
-  readonly hasClients: boolean;
-  readonly startTime: number;
-  readonly waypoints: Data.InputTypes.Waypoint[];
-  readonly cruiseSpeed: number;
-  readonly homeBaseName: string;
-  readonly homeBaseType: Data.HomeBaseType;
-  readonly coalition: Data.Coalition;
+	readonly units: FlightGroupUnit[];
+	readonly task: Data.Task;
+	readonly frequency: number;
+	readonly isHelicopter: boolean;
+	readonly hasClients: boolean;
+	readonly startTime: number;
+	readonly waypoints: Data.InputTypes.Waypoint[];
+	readonly cruiseSpeed: number;
+	readonly homeBaseName: string;
+	readonly homeBaseType: Data.HomeBaseType;
+	readonly coalition: Data.Coalition;
 
-  get #takeOffWaypoint(): Data.InputTypes.Waypoint {
-    const [takeOffWaypoint] = this.waypoints;
+	get #takeOffWaypoint(): Data.InputTypes.Waypoint {
+		const [takeOffWaypoint] = this.waypoints;
 
-    if (takeOffWaypoint?.type !== "TakeOff") {
-      throw new Error("First waypoint must be TakeOff");
-    }
+		if (takeOffWaypoint?.type !== "TakeOff") {
+			throw new Error("First waypoint must be TakeOff");
+		}
 
-    return takeOffWaypoint;
-  }
+		return takeOffWaypoint;
+	}
 
-  constructor(args: FlightGroupProps) {
-    super(args);
-    this.units = args.units;
-    this.task = args.task;
-    this.frequency = args.frequency;
-    this.isHelicopter = args.isHelicopter;
-    this.startTime = args.startTime;
-    this.waypoints = args.waypoints;
-    this.cruiseSpeed = args.cruiseSpeed;
-    this.coalition = args.coalition;
-    this.homeBaseName = args.homeBaseName;
-    this.homeBaseType = args.homeBaseType;
-    this.hasClients = args.hasClients;
-  }
+	constructor(args: FlightGroupProps) {
+		super(args);
+		this.units = args.units;
+		this.task = args.task;
+		this.frequency = args.frequency;
+		this.isHelicopter = args.isHelicopter;
+		this.startTime = args.startTime;
+		this.waypoints = args.waypoints;
+		this.cruiseSpeed = args.cruiseSpeed;
+		this.coalition = args.coalition;
+		this.homeBaseName = args.homeBaseName;
+		this.homeBaseType = args.homeBaseType;
+		this.hasClients = args.hasClients;
+	}
 
-  #calcStartType(mission: Mission): StartType {
-    if (
-      mission.time >=
-      this.#takeOffWaypoint.arrivalTime + (this.#takeOffWaypoint.duration ?? 0)
-    ) {
-      return "air";
-    } else if (mission.time > this.startTime || mission.hotStart) {
-      return "hot";
-    } else {
-      return "cold";
-    }
-  }
+	#calcStartType(mission: Mission): StartType {
+		if (mission.time >= this.#takeOffWaypoint.arrivalTime + (this.#takeOffWaypoint.duration ?? 0)) {
+			return "air";
+		} else if (mission.time > this.startTime || mission.hotStart) {
+			return "hot";
+		} else {
+			return "cold";
+		}
+	}
 
-  #calcAltParams(onGround: boolean) {
-    let alt = 6096;
-    let alt_type: Data.AltitudeType = "BARO";
+	#calcAltParams(onGround: boolean) {
+		let alt = 6096;
+		let alt_type: Data.AltitudeType = "BARO";
 
-    if (onGround) {
-      alt = 0;
-      alt_type = "RADIO";
-    } else {
-      if (this.isHelicopter) {
-        alt = 100;
-        alt_type = "RADIO";
-      }
-    }
+		if (onGround) {
+			alt = 0;
+			alt_type = "RADIO";
+		} else {
+			if (this.isHelicopter) {
+				alt = 100;
+				alt_type = "RADIO";
+			}
+		}
 
-    return {
-      alt,
-      alt_type,
-    };
-  }
+		return {
+			alt,
+			alt_type,
+		};
+	}
 
-  #getAirdrome(mission: Mission): Airdrome {
-    const airdrome = mission.airdromes[this.coalition]?.get(this.homeBaseName);
+	#getAirdrome(mission: Mission): Airdrome {
+		const airdrome = mission.airdromes[this.coalition]?.get(this.homeBaseName);
 
-    if (airdrome == null) {
-      // eslint-disable-next-line no-console
-      console.log(mission.airdromes, {
-        coalition: this.coalition,
-        name: this.name,
-      });
-      throw new Error(`Airdrome ${this.homeBaseName} not found`);
-    }
+		if (airdrome == null) {
+			// eslint-disable-next-line no-console
+			console.log(mission.airdromes, {
+				coalition: this.coalition,
+				name: this.name,
+			});
+			throw new Error(`Airdrome ${this.homeBaseName} not found`);
+		}
 
-    return airdrome;
-  }
+		return airdrome;
+	}
 
-  #calcPositionAndParking(mission: Mission, index: number): StartPosition {
-    if (this.#calcStartType(mission) === "air") {
-      return {
-        x: this.position.x + index * 100,
-        y: this.position.y + index * 100,
-        ...this.#calcAltParams(false),
-      };
-    }
+	#calcPositionAndParking(mission: Mission, index: number): StartPosition {
+		if (this.#calcStartType(mission) === "air") {
+			return {
+				x: this.position.x + index * 100,
+				y: this.position.y + index * 100,
+				...this.#calcAltParams(false),
+			};
+		}
 
-    const stand = this.#getAirdrome(mission).reserveStand(
-      this.isHelicopter,
-      this.startTime,
-      this.#takeOffWaypoint.arrivalTime
-    );
+		const stand = this.#getAirdrome(mission).reserveStand(
+			this.isHelicopter,
+			this.startTime,
+			this.#takeOffWaypoint.arrivalTime,
+		);
 
-    return {
-      parking_id: stand.id,
-      parking: stand.crossroad_index.toString(),
-      x: stand.x,
-      y: stand.y,
-      ...this.#calcAltParams(true),
-    };
-  }
+		return {
+			parking_id: stand.id,
+			parking: stand.crossroad_index.toString(),
+			x: stand.x,
+			y: stand.y,
+			...this.#calcAltParams(true),
+		};
+	}
 
-  #generateFirstWaypoint(
-    waypoint: Data.InputTypes.Waypoint,
-    mission: Mission,
-    startPosition: StartPosition
-  ): Data.GeneratedTypes.RoutePoint[] {
-    const startType = this.#calcStartType(mission);
-    const airdrome = this.#getAirdrome(mission);
+	#generateFirstWaypoint(
+		waypoint: Data.InputTypes.Waypoint,
+		mission: Mission,
+		startPosition: StartPosition,
+	): Data.GeneratedTypes.RoutePoint[] {
+		const startType = this.#calcStartType(mission);
+		const airdrome = this.#getAirdrome(mission);
 
-    switch (startType) {
-      case "air": {
-        if (
-          waypoint.type === "Task" &&
-          waypoint.name === "Race-Track Start" &&
-          waypoint.duration != null
-        ) {
-          const altParams = this.#calcAltParams(false);
-          const remainingDuration =
-            waypoint.arrivalTime + waypoint.duration - mission.time;
+		switch (startType) {
+			case "air": {
+				if (waypoint.type === "Task" && waypoint.name === "Race-Track Start" && waypoint.duration != null) {
+					const altParams = this.#calcAltParams(false);
+					const remainingDuration = waypoint.arrivalTime + waypoint.duration - mission.time;
 
-          return [
-            {
-              ...startPositionToWaypoint(startPosition),
-              action: "Turning Point",
-              ETA: 0,
-              ETA_locked: true,
-              name: "Start",
-              speed: this.cruiseSpeed,
-              speed_locked: true,
-              type: "Turning Point",
-              task: routePointTask(
-                getStartWaypointTasks(
-                  this,
-                  false // TODO
-                )
-              ),
-            },
-            {
-              ...waypoint.position,
-              ...altParams,
-              action: "Turning Point",
-              ETA: 0,
-              ETA_locked: false,
-              name: waypoint.name,
-              speed: this.cruiseSpeed,
-              speed_locked: true,
-              type: "Turning Point",
-              task: routePointTask([
-                Data.TaskAction.RaceTrack(
-                  altParams.alt,
-                  this.cruiseSpeed,
-                  msTimeToDcsTime(remainingDuration)
-                ),
-              ]),
-            },
-          ];
-        }
+					return [
+						{
+							...startPositionToWaypoint(startPosition),
+							action: "Turning Point",
+							ETA: 0,
+							ETA_locked: true,
+							name: "Start",
+							speed: this.cruiseSpeed,
+							speed_locked: true,
+							type: "Turning Point",
+							task: routePointTask(
+								getStartWaypointTasks(
+									this,
+									false, // TODO
+								),
+							),
+						},
+						{
+							...waypoint.position,
+							...altParams,
+							action: "Turning Point",
+							ETA: 0,
+							ETA_locked: false,
+							name: waypoint.name,
+							speed: this.cruiseSpeed,
+							speed_locked: true,
+							type: "Turning Point",
+							task: routePointTask([
+								Data.TaskAction.RaceTrack(altParams.alt, this.cruiseSpeed, msTimeToDcsTime(remainingDuration)),
+							]),
+						},
+					];
+				}
 
-        if (waypoint.type === "Landing") {
-          return [
-            {
-              ...startPositionToWaypoint(startPosition),
-              action: "Turning Point",
-              ETA: 0,
-              ETA_locked: true,
-              name: "Start",
-              speed: this.cruiseSpeed,
-              speed_locked: true,
-              type: "Turning Point",
-              task: routePointTask(
-                getStartWaypointTasks(
-                  this,
-                  false // TODO
-                )
-              ),
-            },
-            {
-              ...waypoint.position,
-              ...this.#calcAltParams(true),
-              action: "Turning Point",
-              ETA: 0,
-              ETA_locked: false,
-              name: waypoint.name,
-              speed: this.cruiseSpeed,
-              speed_locked: true,
-              type: "Land",
-            },
-          ];
-        }
+				if (waypoint.type === "Landing") {
+					return [
+						{
+							...startPositionToWaypoint(startPosition),
+							action: "Turning Point",
+							ETA: 0,
+							ETA_locked: true,
+							name: "Start",
+							speed: this.cruiseSpeed,
+							speed_locked: true,
+							type: "Turning Point",
+							task: routePointTask(
+								getStartWaypointTasks(
+									this,
+									false, // TODO
+								),
+							),
+						},
+						{
+							...waypoint.position,
+							...this.#calcAltParams(true),
+							action: "Turning Point",
+							ETA: 0,
+							ETA_locked: false,
+							name: waypoint.name,
+							speed: this.cruiseSpeed,
+							speed_locked: true,
+							type: "Land",
+						},
+					];
+				}
 
-        return [
-          {
-            ...startPositionToWaypoint(startPosition),
-            action: "Turning Point",
-            ETA: 0,
-            ETA_locked: true,
-            name: waypoint.name,
-            speed: this.cruiseSpeed,
-            speed_locked: true,
-            type: "Turning Point",
-            task: {
-              id: "ComboTask",
-              params: {
-                tasks: mapTaskActionsNumber(
-                  getStartWaypointTasks(
-                    this,
-                    false // TODO
-                  )
-                ),
-              },
-            },
-          },
-        ];
-      }
-      case "hot": {
-        return [
-          {
-            ...startPositionToWaypoint(startPosition),
-            action: "From Parking Area Hot",
-            ETA:
-              this.#startTime(mission) === 0
-                ? 0
-                : msTimeToDcsTime(waypoint.arrivalTime),
-            ETA_locked: true,
-            name: waypoint.name,
-            speed: this.cruiseSpeed,
-            speed_locked: true,
-            type: "TakeOffParkingHot",
-            airdromeId: airdrome.airdromeDefinition.id,
-            task: {
-              id: "ComboTask",
-              params: {
-                tasks: mapTaskActionsNumber(
-                  getStartWaypointTasks(
-                    this,
-                    false // TODO
-                  )
-                ),
-              },
-            },
-          },
-        ];
-      }
-      default: {
-        return [
-          {
-            ...startPositionToWaypoint(startPosition),
-            action: "From Parking Area",
-            ETA:
-              this.#startTime(mission) === 0
-                ? 0
-                : msTimeToDcsTime(waypoint.arrivalTime),
-            ETA_locked: true,
-            name: waypoint.name,
-            speed: this.cruiseSpeed,
-            speed_locked: true,
-            type: "TakeOffParking",
-            airdromeId: airdrome.airdromeDefinition.id,
-            task: {
-              id: "ComboTask",
-              params: {
-                tasks: mapTaskActionsNumber(
-                  getStartWaypointTasks(
-                    this,
-                    false // TODO
-                  )
-                ),
-              },
-            },
-          },
-        ];
-      }
-    }
-  }
+				return [
+					{
+						...startPositionToWaypoint(startPosition),
+						action: "Turning Point",
+						ETA: 0,
+						ETA_locked: true,
+						name: waypoint.name,
+						speed: this.cruiseSpeed,
+						speed_locked: true,
+						type: "Turning Point",
+						task: {
+							id: "ComboTask",
+							params: {
+								tasks: mapTaskActionsNumber(
+									getStartWaypointTasks(
+										this,
+										false, // TODO
+									),
+								),
+							},
+						},
+					},
+				];
+			}
+			case "hot": {
+				return [
+					{
+						...startPositionToWaypoint(startPosition),
+						action: "From Parking Area Hot",
+						ETA: this.#startTime(mission) === 0 ? 0 : msTimeToDcsTime(waypoint.arrivalTime),
+						ETA_locked: true,
+						name: waypoint.name,
+						speed: this.cruiseSpeed,
+						speed_locked: true,
+						type: "TakeOffParkingHot",
+						airdromeId: airdrome.airdromeDefinition.id,
+						task: {
+							id: "ComboTask",
+							params: {
+								tasks: mapTaskActionsNumber(
+									getStartWaypointTasks(
+										this,
+										false, // TODO
+									),
+								),
+							},
+						},
+					},
+				];
+			}
+			default: {
+				return [
+					{
+						...startPositionToWaypoint(startPosition),
+						action: "From Parking Area",
+						ETA: this.#startTime(mission) === 0 ? 0 : msTimeToDcsTime(waypoint.arrivalTime),
+						ETA_locked: true,
+						name: waypoint.name,
+						speed: this.cruiseSpeed,
+						speed_locked: true,
+						type: "TakeOffParking",
+						airdromeId: airdrome.airdromeDefinition.id,
+						task: {
+							id: "ComboTask",
+							params: {
+								tasks: mapTaskActionsNumber(
+									getStartWaypointTasks(
+										this,
+										false, // TODO
+									),
+								),
+							},
+						},
+					},
+				];
+			}
+		}
+	}
 
-  #generateWaypoint(
-    waypoint: Data.InputTypes.Waypoint
-  ): Data.GeneratedTypes.RoutePoint {
-    return {
-      ...waypoint.position,
-      action: "Turning Point",
-      ETA: msTimeToDcsTime(waypoint.arrivalTime),
-      ETA_locked: false,
-      name: waypoint.name,
-      speed: this.cruiseSpeed,
-      speed_locked: true,
-      type: "Turning Point",
-      ...this.#calcAltParams(waypoint.onGround),
-    };
-  }
+	#generateWaypoint(waypoint: Data.InputTypes.Waypoint): Data.GeneratedTypes.RoutePoint {
+		return {
+			...waypoint.position,
+			action: "Turning Point",
+			ETA: msTimeToDcsTime(waypoint.arrivalTime),
+			ETA_locked: false,
+			name: waypoint.name,
+			speed: this.cruiseSpeed,
+			speed_locked: true,
+			type: "Turning Point",
+			...this.#calcAltParams(waypoint.onGround),
+		};
+	}
 
-  #timeTableWaypoints() {
-    const waypoints: TimeTableWaypoint[] = [];
-    let waypointStartTime = this.startTime;
+	#timeTableWaypoints() {
+		const waypoints: TimeTableWaypoint[] = [];
+		let waypointStartTime = this.startTime;
 
-    for (const wp of this.waypoints) {
-      waypoints.push({
-        ...wp,
-        startTime: waypointStartTime,
-      });
+		for (const wp of this.waypoints) {
+			waypoints.push({
+				...wp,
+				startTime: waypointStartTime,
+			});
 
-      waypointStartTime = wp.arrivalTime + 1;
-    }
+			waypointStartTime = wp.arrivalTime + 1;
+		}
 
-    return waypoints;
-  }
+		return waypoints;
+	}
 
-  #relevantWaypoints(mission: Mission) {
-    const waypoints: Data.InputTypes.Waypoint[] = [];
-    let raceTrackEnd: number | undefined = undefined;
+	#relevantWaypoints(mission: Mission) {
+		const waypoints: Data.InputTypes.Waypoint[] = [];
+		let raceTrackEnd: number | undefined = undefined;
 
-    for (const wp of this.#timeTableWaypoints()) {
-      if (wp.name === "Race-Track Start" && wp.duration != null) {
-        raceTrackEnd = wp.arrivalTime + wp.duration;
-      }
+		for (const wp of this.#timeTableWaypoints()) {
+			if (wp.name === "Race-Track Start" && wp.duration != null) {
+				raceTrackEnd = wp.arrivalTime + wp.duration;
+			}
 
-      if (wp.arrivalTime > mission.time) {
-        waypoints.push(wp);
-      }
+			if (wp.arrivalTime > mission.time) {
+				waypoints.push(wp);
+			}
 
-      if (wp.type === "RaceTrack End") {
-        if (raceTrackEnd != null && raceTrackEnd > mission.time) {
-          waypoints.push(wp);
-        }
+			if (wp.type === "RaceTrack End") {
+				if (raceTrackEnd != null && raceTrackEnd > mission.time) {
+					waypoints.push(wp);
+				}
 
-        raceTrackEnd = undefined;
-        continue;
-      }
+				raceTrackEnd = undefined;
+				continue;
+			}
 
-      if (wp.duration == null) {
-        continue;
-      }
+			if (wp.duration == null) {
+				continue;
+			}
 
-      if (wp.arrivalTime + wp.duration > mission.time) {
-        waypoints.push(wp);
-      }
-    }
+			if (wp.arrivalTime + wp.duration > mission.time) {
+				waypoints.push(wp);
+			}
+		}
 
-    return waypoints;
-  }
+		return waypoints;
+	}
 
-  #startTime(mission: Mission) {
-    const adjustedStartTime = this.startTime - Minutes(2);
+	#startTime(mission: Mission) {
+		const adjustedStartTime = this.startTime - Minutes(2);
 
-    if (adjustedStartTime < mission.time) {
-      return 0; // msTimeToDcsTime(mission.time);
-    }
+		if (adjustedStartTime < mission.time) {
+			return 0; // msTimeToDcsTime(mission.time);
+		}
 
-    return msTimeToDcsTime(this.startTime);
-  }
+		return msTimeToDcsTime(this.startTime);
+	}
 
-  #toGeneratedWaypoints(
-    mission: Mission,
-    startPosition: StartPosition
-  ): Data.GeneratedTypes.RoutePoint[] {
-    const [firstWaypoint, ...restWaypoints] = this.#relevantWaypoints(mission);
+	#toGeneratedWaypoints(mission: Mission, startPosition: StartPosition): Data.GeneratedTypes.RoutePoint[] {
+		const [firstWaypoint, ...restWaypoints] = this.#relevantWaypoints(mission);
 
-    if (firstWaypoint == null) {
-      // eslint-disable-next-line no-console
-      console.error(
-        "No valid waypoint found",
-        this.name,
-        this.#relevantWaypoints(mission)
-      );
-      throw new Error("No valid waypoint found");
-    }
+		if (firstWaypoint == null) {
+			// eslint-disable-next-line no-console
+			console.error("No valid waypoint found", this.name, this.#relevantWaypoints(mission));
+			throw new Error("No valid waypoint found");
+		}
 
-    const routePoint = this.#generateFirstWaypoint(
-      firstWaypoint,
-      mission,
-      startPosition
-    );
+		const routePoint = this.#generateFirstWaypoint(firstWaypoint, mission, startPosition);
 
-    for (const wp of restWaypoints) {
-      routePoint.push(this.#generateWaypoint(wp));
-    }
+		for (const wp of restWaypoints) {
+			routePoint.push(this.#generateWaypoint(wp));
+		}
 
-    return routePoint;
-  }
+		return routePoint;
+	}
 
-  #datalinksTeamMembers(
-    unitType: Data.AircraftType,
-    groupSize: number,
-    mission: Mission
-  ) {
-    const aircraftDefinition = Data.aircraftDefinitions[unitType];
+	#datalinksTeamMembers(unitType: Data.AircraftType, groupSize: number, mission: Mission) {
+		const aircraftDefinition = Data.aircraftDefinitions[unitType];
 
-    if (aircraftDefinition.datalinks == null) {
-      return [];
-    }
+		if (aircraftDefinition.datalinks == null) {
+			return [];
+		}
 
-    const teamMembers: object[] = [];
+		const teamMembers: object[] = [];
 
-    for (let i = 0; i < groupSize; i++) {
-      if (unitType === "F-16C_50") {
-        teamMembers.push({
-          missionUnitId: mission.nextDatalinkUnitId,
-          TDOA: true,
-        });
-      }
-    }
+		for (let i = 0; i < groupSize; i++) {
+			if (unitType === "F-16C_50") {
+				teamMembers.push({
+					missionUnitId: mission.nextDatalinkUnitId,
+					TDOA: true,
+				});
+			}
+		}
 
-    return teamMembers;
-  }
+		return teamMembers;
+	}
 
-  public override toGenerated(
-    mission: Mission
-  ): Data.GeneratedTypes.FlightGroup {
-    const units: Data.GeneratedTypes.FlightGroupUnit[] = [];
+	public override toGenerated(mission: Mission): Data.GeneratedTypes.FlightGroup {
+		const units: Data.GeneratedTypes.FlightGroupUnit[] = [];
 
-    const firstUnitPositionAndParking = this.#calcPositionAndParking(
-      mission,
-      0
-    );
+		const firstUnitPositionAndParking = this.#calcPositionAndParking(mission, 0);
 
-    let groupIndex = 0;
+		let groupIndex = 0;
 
-    const firstUnit = this.units[0];
+		const firstUnit = this.units[0];
 
-    if (firstUnit == null) {
-      throw new Error("No unit found");
-    }
+		if (firstUnit == null) {
+			throw new Error("No unit found");
+		}
 
-    const teamMembers = this.#datalinksTeamMembers(
-      firstUnit.type,
-      this.units.length,
-      mission
-    );
+		const teamMembers = this.#datalinksTeamMembers(firstUnit.type, this.units.length, mission);
 
-    for (const unit of this.units) {
-      const aircraftDefinition = Data.aircraftDefinitions[unit.type];
+		for (const unit of this.units) {
+			const aircraftDefinition = Data.aircraftDefinitions[unit.type];
 
-      const generatedUnit: Data.GeneratedTypes.FlightGroupUnit = {
-        callsign: unit.callsign,
-        livery_id: "default",
-        name: unit.name,
-        onboard_num: String(unit.onboardNumber),
-        payload: {
-          chaff: aircraftDefinition.chaff,
-          flare: aircraftDefinition.flare,
-          fuel: aircraftDefinition.max_fuel,
-          gun: aircraftDefinition.gun ?? 100,
-          ammo_type: aircraftDefinition.ammo_type,
-          pylons: unit.pylons,
-        },
-        psi: 0,
-        skill: unit.isClient ? "Client" : mission.aiSkill,
-        speed: 0,
-        type: unit.type,
-        AddPropAircraft: structuredClone(
-          addPropAircraft(unit, groupIndex, mission)
-        ),
-        Radio: addRadio(unit),
-        datalinks: addDatalinks(unit.type, groupIndex, teamMembers),
-        unitId: unit.unitId,
-        ...(groupIndex === 0
-          ? firstUnitPositionAndParking
-          : this.#calcPositionAndParking(mission, groupIndex)),
-      };
+			const generatedUnit: Data.GeneratedTypes.FlightGroupUnit = {
+				callsign: unit.callsign,
+				livery_id: "default",
+				name: unit.name,
+				onboard_num: String(unit.onboardNumber),
+				payload: {
+					chaff: aircraftDefinition.chaff,
+					flare: aircraftDefinition.flare,
+					fuel: aircraftDefinition.max_fuel,
+					gun: aircraftDefinition.gun ?? 100,
+					ammo_type: aircraftDefinition.ammo_type,
+					pylons: unit.pylons,
+				},
+				psi: 0,
+				skill: unit.isClient ? "Client" : mission.aiSkill,
+				speed: 0,
+				type: unit.type,
+				AddPropAircraft: structuredClone(addPropAircraft(unit, groupIndex, mission)),
+				Radio: addRadio(unit),
+				datalinks: addDatalinks(unit.type, groupIndex, teamMembers),
+				unitId: unit.unitId,
+				...(groupIndex === 0 ? firstUnitPositionAndParking : this.#calcPositionAndParking(mission, groupIndex)),
+			};
 
-      units.push(generatedUnit);
-      groupIndex++;
-    }
+			units.push(generatedUnit);
+			groupIndex++;
+		}
 
-    return {
-      ...super.toGenerated(mission),
-      start_time: this.#startTime(mission),
-      modulation: 0,
-      tasks: {},
-      radioSet: false,
-      task: this.task,
-      units,
-      communication: true,
-      frequency: this.frequency,
-      hiddenOnMFD: this.hasClients ? undefined : false,
-      hiddenOnPlanner: this.hasClients ? undefined : false,
-      lateActivation: this.hasClients ? undefined : false,
-      uncontrolled: false,
-      route: {
-        points: this.#toGeneratedWaypoints(
-          mission,
-          firstUnitPositionAndParking
-        ),
-      },
-    };
-  }
+		return {
+			...super.toGenerated(mission),
+			start_time: this.#startTime(mission),
+			modulation: 0,
+			tasks: {},
+			radioSet: false,
+			task: this.task,
+			units,
+			communication: true,
+			frequency: this.frequency,
+			hiddenOnMFD: this.hasClients ? undefined : false,
+			hiddenOnPlanner: this.hasClients ? undefined : false,
+			lateActivation: this.hasClients ? undefined : false,
+			uncontrolled: false,
+			route: {
+				points: this.#toGeneratedWaypoints(mission, firstUnitPositionAndParking),
+			},
+		};
+	}
 }

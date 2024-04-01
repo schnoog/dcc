@@ -1,1100 +1,1100 @@
 [
-  {
-    "chaff": 90,
-    "display_name": "Tornado GR4",
-    "flare": 45,
-    "max_fuel": "4663",
-    "max_height": "18000",
-    "max_speed": "2340",
-    "name": "Tornado GR4"
-  },
-  {
-    "chaff": 90,
-    "display_name": "Tornado IDS",
-    "flare": 45,
-    "max_fuel": "4663",
-    "max_height": "18000",
-    "max_speed": "2340",
-    "name": "Tornado IDS"
-  },
-  {
-    "chaff": 30,
-    "display_name": "F/A-18A",
-    "flare": 15,
-    "max_fuel": "6531",
-    "max_height": "18200",
-    "max_speed": "1920",
-    "name": "F/A-18A"
-  },
-  {
-    "chaff": 30,
-    "display_name": "F/A-18C",
-    "flare": 15,
-    "max_fuel": "4900",
-    "max_height": "18200",
-    "max_speed": "1920",
-    "name": "F/A-18C"
-  },
-  {
-    "chaff": 30,
-    "display_name": "F-14A",
-    "flare": 15,
-    "max_fuel": "7348",
-    "max_height": "17000",
-    "max_speed": "2490",
-    "name": "F-14A"
-  },
-  {
-    "chaff": 48,
-    "display_name": "Tu-22M3",
-    "flare": 48,
-    "max_fuel": "50000",
-    "max_height": "13300",
-    "max_speed": "2300",
-    "name": "Tu-22M3"
-  },
-  {
-    "chaff": 60,
-    "display_name": "F-4E",
-    "flare": 30,
-    "max_fuel": "4864",
-    "max_height": "19000",
-    "max_speed": "2370",
-    "name": "F-4E"
-  },
-  {
-    "chaff": 1125,
-    "display_name": "B-52H",
-    "flare": 192,
-    "max_fuel": "141135",
-    "max_height": "17000",
-    "max_speed": "1000",
-    "name": "B-52H"
-  },
-  {
-    "chaff": 60,
-    "display_name": "MiG-27K",
-    "flare": 60,
-    "max_fuel": "4500",
-    "max_height": "15600",
-    "max_speed": "1810",
-    "name": "MiG-27K"
-  },
-  {
-    "chaff": 96,
-    "display_name": "Su-27",
-    "flare": 96,
-    "max_fuel": "9400",
-    "max_height": "18500",
-    "max_speed": "2500",
-    "name": "Su-27"
-  },
-  {
-    "chaff": 60,
-    "display_name": "MiG-23MLD",
-    "flare": 60,
-    "max_fuel": "3800",
-    "max_height": "18600",
-    "max_speed": "2500",
-    "name": "MiG-23MLD"
-  },
-  {
-    "chaff": 128,
-    "display_name": "Su-25",
-    "flare": 128,
-    "max_fuel": "2835",
-    "max_height": "7000",
-    "max_speed": "980",
-    "name": "Su-25"
-  },
-  {
-    "chaff": 128,
-    "display_name": "Su-25TM",
-    "flare": 128,
-    "max_fuel": "3790",
-    "max_height": "12000",
-    "max_speed": "950",
-    "name": "Su-25TM"
-  },
-  {
-    "chaff": 128,
-    "display_name": "Su-25T",
-    "flare": 128,
-    "max_fuel": "3790",
-    "max_height": "7000",
-    "max_speed": "950",
-    "name": "Su-25T"
-  },
-  {
-    "chaff": 48,
-    "display_name": "Su-33",
-    "flare": 48,
-    "max_fuel": "9500",
-    "max_height": "17000",
-    "max_speed": "2300",
-    "name": "Su-33"
-  },
-  {
-    "chaff": 64,
-    "display_name": "MiG-25PD",
-    "flare": 64,
-    "max_fuel": "15245",
-    "max_height": "20000",
-    "max_speed": "3000",
-    "name": "MiG-25PD"
-  },
-  {
-    "chaff": 0,
-    "display_name": "MiG-25RBT",
-    "flare": 0,
-    "max_fuel": "15245",
-    "max_height": "20000",
-    "max_speed": "3000",
-    "name": "MiG-25RBT"
-  },
-  {
-    "chaff": 96,
-    "display_name": "Su-30",
-    "flare": 96,
-    "max_fuel": "9400",
-    "max_height": "17300",
-    "max_speed": "2200",
-    "name": "Su-30"
-  },
-  {
-    "chaff": 64,
-    "display_name": "Su-17M4",
-    "flare": 64,
-    "max_fuel": "3770",
-    "max_height": "14000",
-    "max_speed": "1860",
-    "name": "Su-17M4"
-  },
-  {
-    "chaff": 0,
-    "display_name": "MiG-31",
-    "flare": 0,
-    "max_fuel": "15500",
-    "max_height": "20000",
-    "max_speed": "3000",
-    "name": "MiG-31"
-  },
-  {
-    "chaff": 48,
-    "display_name": "Tu-95MS",
-    "flare": 48,
-    "max_fuel": "87000",
-    "max_height": "12000",
-    "max_speed": "830",
-    "name": "Tu-95MS"
-  },
-  {
-    "chaff": 96,
-    "display_name": "Su-24M",
-    "flare": 96,
-    "max_fuel": "11700",
-    "max_height": "16500",
-    "max_speed": "1700",
-    "name": "Su-24M"
-  },
-  {
-    "chaff": 96,
-    "display_name": "Su-24MR",
-    "flare": 96,
-    "max_fuel": "11700",
-    "max_height": "16500",
-    "max_speed": "1700",
-    "name": "Su-24MR"
-  },
-  {
-    "chaff": 72,
-    "display_name": "Tu-160",
-    "flare": 72,
-    "max_fuel": "157000",
-    "max_height": "15600",
-    "max_speed": "2200",
-    "name": "Tu-160"
-  },
-  {
-    "chaff": 0,
-    "display_name": "F-117A",
-    "flare": 0,
-    "max_fuel": "8255",
-    "max_height": "13700",
-    "max_speed": "1000",
-    "name": "F-117A"
-  },
-  {
-    "chaff": 60,
-    "display_name": "B-1B",
-    "flare": 30,
-    "max_fuel": "88450",
-    "max_height": "18000",
-    "max_speed": "1530",
-    "name": "B-1B"
-  },
-  {
-    "chaff": 30,
-    "display_name": "S-3B",
-    "flare": 30,
-    "max_fuel": "5500",
-    "max_height": "10700",
-    "max_speed": "840",
-    "name": "S-3B"
-  },
-  {
-    "chaff": 30,
-    "display_name": "S-3B Tanker",
-    "flare": 30,
-    "max_fuel": "7813",
-    "max_height": "10700",
-    "max_speed": "840",
-    "name": "S-3B Tanker"
-  },
-  {
-    "chaff": 112,
-    "display_name": "Mirage 2000-5",
-    "flare": 16,
-    "max_fuel": "3160",
-    "max_height": "19000",
-    "max_speed": "2340",
-    "name": "Mirage 2000-5"
-  },
-  {
-    "chaff": 120,
-    "display_name": "F-15C",
-    "flare": 60,
-    "max_fuel": "6103",
-    "max_height": "19700",
-    "max_speed": "2650",
-    "name": "F-15C"
-  },
-  {
-    "chaff": 120,
-    "display_name": "F-15E",
-    "flare": 60,
-    "max_fuel": "10246",
-    "max_height": "19700",
-    "max_speed": "2650",
-    "name": "F-15E"
-  },
-  {
-    "chaff": 30,
-    "display_name": "MiG-29A",
-    "flare": 30,
-    "max_fuel": "3376",
-    "max_height": "18000",
-    "max_speed": "2450",
-    "name": "MiG-29A"
-  },
-  {
-    "chaff": 30,
-    "display_name": "MiG-29G",
-    "flare": 30,
-    "max_fuel": "3376",
-    "max_height": "18000",
-    "max_speed": "2450",
-    "name": "MiG-29G"
-  },
-  {
-    "chaff": 30,
-    "display_name": "MiG-29S",
-    "flare": 30,
-    "max_fuel": "3493",
-    "max_height": "18000",
-    "max_speed": "2450",
-    "name": "MiG-29S"
-  },
-  {
-    "chaff": 48,
-    "display_name": "Tu-142",
-    "flare": 48,
-    "max_fuel": "87000",
-    "max_height": "13500",
-    "max_speed": "860",
-    "name": "Tu-142"
-  },
-  {
-    "chaff": 120,
-    "display_name": "C-130",
-    "flare": 60,
-    "max_fuel": "20830",
-    "max_height": "10000",
-    "max_speed": "610",
-    "name": "C-130"
-  },
-  {
-    "chaff": 384,
-    "display_name": "An-26B",
-    "flare": 384,
-    "max_fuel": "5500",
-    "max_height": "7500",
-    "max_speed": "540",
-    "name": "An-26B"
-  },
-  {
-    "chaff": 192,
-    "display_name": "An-30M",
-    "flare": 192,
-    "max_fuel": "8300",
-    "max_height": "8300",
-    "max_speed": "540",
-    "name": "An-30M"
-  },
-  {
-    "chaff": 120,
-    "display_name": "C-17A",
-    "flare": 60,
-    "max_fuel": "132405",
-    "max_height": "13700",
-    "max_speed": "850",
-    "name": "C-17A"
-  },
-  {
-    "chaff": 192,
-    "display_name": "A-50",
-    "flare": 192,
-    "max_fuel": "70000",
-    "max_height": "12000",
-    "max_speed": "850",
-    "name": "A-50"
-  },
-  {
-    "chaff": 120,
-    "display_name": "E-3A",
-    "flare": 60,
-    "max_fuel": "65000",
-    "max_height": "13100",
-    "max_speed": "860",
-    "name": "E-3A"
-  },
-  {
-    "chaff": 96,
-    "display_name": "IL-78M Tanker",
-    "flare": 96,
-    "max_fuel": "90000",
-    "max_height": "12000",
-    "max_speed": "850",
-    "name": "IL-78M"
-  },
-  {
-    "chaff": 120,
-    "display_name": "E-2D",
-    "flare": 60,
-    "max_fuel": "5624",
-    "max_height": "9400",
-    "max_speed": "610",
-    "name": "E-2C"
-  },
-  {
-    "chaff": 96,
-    "display_name": "IL-76MD",
-    "flare": 96,
-    "max_fuel": "80000",
-    "max_height": "12000",
-    "max_speed": "850",
-    "name": "IL-76MD"
-  },
-  {
-    "chaff": 90,
-    "display_name": "F-16C bl.50",
-    "flare": 45,
-    "max_fuel": "3104",
-    "max_height": "17200",
-    "max_speed": "2150",
-    "name": "F-16C bl.50"
-  },
-  {
-    "chaff": 90,
-    "display_name": "F-16C bl.52d",
-    "flare": 45,
-    "max_fuel": "3104",
-    "max_height": "19000",
-    "max_speed": "2150",
-    "name": "F-16C bl.52d"
-  },
-  {
-    "chaff": 60,
-    "display_name": "F-16A",
-    "flare": 30,
-    "max_fuel": "3104",
-    "max_height": "19000",
-    "max_speed": "2150",
-    "name": "F-16A"
-  },
-  {
-    "chaff": 60,
-    "display_name": "F-16A MLU",
-    "flare": 30,
-    "max_fuel": "3104",
-    "max_height": "19000",
-    "max_speed": "2150",
-    "name": "F-16A MLU"
-  },
-  {
-    "chaff": 0,
-    "display_name": "MQ-1A Predator",
-    "flare": 0,
-    "max_fuel": "200",
-    "max_height": "8600",
-    "max_speed": "220",
-    "name": "RQ-1A Predator"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Yak-40",
-    "flare": 0,
-    "max_fuel": "3080",
-    "max_height": "7500",
-    "max_speed": "570",
-    "name": "Yak-40"
-  },
-  {
-    "chaff": 0,
-    "display_name": "KC-135",
-    "flare": 0,
-    "max_fuel": 90700,
-    "max_height": 12000,
-    "max_speed": 980,
-    "name": "KC-135"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Fw 190 D-9",
-    "flare": 0,
-    "max_fuel": 388,
-    "max_height": 13000,
-    "max_speed": 828,
-    "name": "FW-190D9"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Fw 190 A-8",
-    "flare": 0,
-    "max_fuel": 409,
-    "max_height": 11000,
-    "max_speed": 900,
-    "name": "FW-190A8"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Bf 109 K-4",
-    "flare": 0,
-    "max_fuel": 296,
-    "max_height": 13000,
-    "max_speed": 828,
-    "name": "Bf-109K-4"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Spitfire LF Mk. IX",
-    "flare": 0,
-    "max_fuel": 247,
-    "max_height": 13000,
-    "max_speed": 828,
-    "name": "SpitfireLFMkIX"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Spitfire LF Mk. IX CW",
-    "flare": 0,
-    "max_fuel": 247,
-    "max_height": 13000,
-    "max_speed": 828,
-    "name": "SpitfireLFMkIXCW"
-  },
-  {
-    "chaff": 0,
-    "display_name": "P-51D-25-NA",
-    "flare": 0,
-    "max_fuel": 732,
-    "max_height": 13000,
-    "max_speed": 763.2,
-    "name": "P-51D"
-  },
-  {
-    "chaff": 0,
-    "display_name": "P-51D-30-NA",
-    "flare": 0,
-    "max_fuel": 732,
-    "max_height": 13000,
-    "max_speed": 763.2,
-    "name": "P-51D-30-NA"
-  },
-  {
-    "chaff": 0,
-    "display_name": "P-47D-30",
-    "flare": 0,
-    "max_fuel": 1007,
-    "max_height": 13500,
-    "max_speed": 828,
-    "name": "P-47D-30"
-  },
-  {
-    "chaff": 0,
-    "display_name": "P-47D-30 (Early)",
-    "flare": 0,
-    "max_fuel": 1007,
-    "max_height": 13500,
-    "max_speed": 828,
-    "name": "P-47D-30bl1"
-  },
-  {
-    "chaff": 0,
-    "display_name": "P-47D-40",
-    "flare": 0,
-    "max_fuel": 1007,
-    "max_height": 13500,
-    "max_speed": 828,
-    "name": "P-47D-40"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Mosquito FB Mk. VI",
-    "flare": 0,
-    "max_fuel": 1483.1,
-    "max_height": 11500,
-    "max_speed": 648,
-    "name": "MosquitoFBMkVI"
-  },
-  {
-    "chaff": 0,
-    "display_name": "A-20G",
-    "flare": 0,
-    "max_fuel": 1500,
-    "max_height": 10000,
-    "max_speed": 619.2,
-    "name": "A-20G"
-  },
-  {
-    "chaff": 240,
-    "display_name": "A-10A",
-    "flare": 120,
-    "max_fuel": 5029,
-    "max_height": 10000,
-    "max_speed": 720,
-    "name": "A-10A"
-  },
-  {
-    "chaff": 240,
-    "display_name": "A-10C",
-    "flare": 120,
-    "max_fuel": 5029,
-    "max_height": 10000,
-    "max_speed": 720,
-    "name": "A-10C"
-  },
-  {
-    "chaff": 240,
-    "display_name": "A-10C II",
-    "flare": 240,
-    "max_fuel": 5029,
-    "max_height": 10000,
-    "max_speed": 720,
-    "name": "A-10C_2"
-  },
-  {
-    "chaff": 210,
-    "display_name": "AJS37",
-    "flare": 72,
-    "max_fuel": 4476,
-    "max_height": 21000,
-    "max_speed": 2203.2,
-    "name": "AJS37"
-  },
-  {
-    "chaff": 60,
-    "display_name": "AV-8B N/A",
-    "flare": 120,
-    "max_fuel": 3519.423,
-    "max_height": 13716,
-    "max_speed": 990,
-    "name": "AV8BNA"
-  },
-  {
-    "chaff": 120,
-    "display_name": "KC-130",
-    "flare": 60,
-    "max_fuel": 30000,
-    "max_height": 9315,
-    "max_speed": 621,
-    "name": "KC130"
-  },
-  {
-    "chaff": 120,
-    "display_name": "KC-135MPRS Tanker",
-    "flare": 60,
-    "max_fuel": 90700,
-    "max_height": 12000,
-    "max_speed": 1009.008,
-    "name": "KC135MPRS"
-  },
-  {
-    "chaff": 0,
-    "display_name": "C-101EB",
-    "flare": 0,
-    "max_fuel": 1796,
-    "max_height": 12500,
-    "max_speed": 925.2,
-    "name": "C-101EB"
-  },
-  {
-    "chaff": 0,
-    "display_name": "C-101CC",
-    "flare": 0,
-    "max_fuel": 1796,
-    "max_height": 11000,
-    "max_speed": 925.2,
-    "name": "C-101CC"
-  },
-  {
-    "chaff": 96,
-    "display_name": "J-11A",
-    "flare": 96,
-    "max_fuel": 9400,
-    "max_height": 18500,
-    "max_speed": 2499.984,
-    "name": "J-11A"
-  },
-  {
-    "chaff": 36,
-    "display_name": "JF-17",
-    "flare": 32,
-    "max_fuel": 2325,
-    "max_height": 16920,
-    "max_speed": 2520,
-    "name": "JF-17"
-  },
-  {
-    "chaff": 0,
-    "display_name": "KJ-2000",
-    "flare": 0,
-    "max_fuel": 70000,
-    "max_height": 12247,
-    "max_speed": 849.996,
-    "name": "KJ-2000"
-  },
-  {
-    "chaff": 0,
-    "display_name": "WingLoong-I",
-    "flare": 0,
-    "max_fuel": 400,
-    "max_height": 7500,
-    "max_speed": 280,
-    "name": "WingLoong-I"
-  },
-  {
-    "chaff": 120,
-    "display_name": "H-6J",
-    "flare": 120,
-    "max_fuel": 25000,
-    "max_height": 13100,
-    "max_speed": 1044,
-    "name": "H-6J"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Christen Eagle II",
-    "flare": 0,
-    "max_fuel": 71,
-    "max_height": 6000,
-    "max_speed": 306,
-    "name": "Christen Eagle II"
-  },
-  {
-    "chaff": 60,
-    "display_name": "F-16CM bl.50",
-    "flare": 60,
-    "max_fuel": 3249,
-    "max_height": 15240,
-    "max_speed": 2120.04,
-    "name": "F-16C_50"
-  },
-  {
-    "chaff": 0,
-    "display_name": "F-5E",
-    "flare": 0,
-    "max_fuel": 1996,
-    "max_height": 16154,
-    "max_speed": 1742.4,
-    "name": "F-5E"
-  },
-  {
-    "chaff": 30,
-    "display_name": "F-5E-3",
-    "flare": 15,
-    "max_fuel": 2046,
-    "max_height": 16154,
-    "max_speed": 1742.4,
-    "name": "F-5E-3"
-  },
-  {
-    "chaff": 0,
-    "display_name": "F-86F",
-    "flare": 0,
-    "max_fuel": 1282,
-    "max_height": 15100,
-    "max_speed": 964.8,
-    "name": "F-86F Sabre"
-  },
-  {
-    "chaff": 140,
-    "display_name": "F-14B",
-    "flare": 60,
-    "max_fuel": 7348,
-    "max_height": 17000,
-    "max_speed": 2520,
-    "name": "F-14B"
-  },
-  {
-    "chaff": 140,
-    "display_name": "F-14A-135-GR",
-    "flare": 60,
-    "max_fuel": 7348,
-    "max_height": 17000,
-    "max_speed": 2520,
-    "name": "F-14A-135-GR"
-  },
-  {
-    "chaff": 60,
-    "display_name": "F/A-18C Lot 20",
-    "flare": 60,
-    "max_fuel": 4900,
-    "max_height": 18200,
-    "max_speed": 1950.12,
-    "name": "FA-18C_hornet"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Hawk",
-    "flare": 0,
-    "max_fuel": 1272,
-    "max_height": 14630,
-    "max_speed": 2880,
-    "name": "Hawk"
-  },
-  {
-    "chaff": 0,
-    "display_name": "I-16",
-    "flare": 0,
-    "max_fuel": 191,
-    "max_height": 9700,
-    "max_speed": 464.4,
-    "name": "I-16"
-  },
-  {
-    "chaff": 0,
-    "display_name": "L-39C",
-    "flare": 0,
-    "max_fuel": 980,
-    "max_height": 11000,
-    "max_speed": 763.2,
-    "name": "L-39C"
-  },
-  {
-    "chaff": 0,
-    "display_name": "L-39ZA",
-    "flare": 0,
-    "max_fuel": 980,
-    "max_height": 11000,
-    "max_speed": 763.2,
-    "name": "L-39ZA"
-  },
-  {
-    "chaff": 234,
-    "display_name": "M-2000C",
-    "flare": 64,
-    "max_fuel": 3165,
-    "max_height": 17526,
-    "max_speed": 2376,
-    "name": "M-2000C"
-  },
-  {
-    "chaff": 0,
-    "display_name": "MB-339A",
-    "flare": 0,
-    "max_fuel": 626,
-    "max_height": 11000,
-    "max_speed": 763.2,
-    "name": "MB-339A"
-  },
-  {
-    "chaff": 0,
-    "display_name": "MB-339A/PAN",
-    "flare": 0,
-    "max_fuel": 626,
-    "max_height": 11000,
-    "max_speed": 763.2,
-    "name": "MB-339APAN"
-  },
-  {
-    "chaff": 0,
-    "display_name": "MQ-9 Reaper",
-    "flare": 0,
-    "max_fuel": 1300,
-    "max_height": 15000,
-    "max_speed": 400,
-    "name": "MQ-9 Reaper"
-  },
-  {
-    "chaff": 0,
-    "display_name": "MiG-15bis",
-    "flare": 0,
-    "max_fuel": 1172,
-    "max_height": 15100,
-    "max_speed": 992,
-    "name": "MiG-15bis"
-  },
-  {
-    "chaff": 0,
-    "display_name": "MiG-19P",
-    "flare": 0,
-    "max_fuel": 1800,
-    "max_height": 17500,
-    "max_speed": 992,
-    "name": "MiG-19P"
-  },
-  {
-    "chaff": 18,
-    "display_name": "MiG-21Bis",
-    "flare": 40,
-    "max_fuel": 2280,
-    "max_height": 20000,
-    "max_speed": 2509.2,
-    "name": "MiG-21Bis"
-  },
-  {
-    "chaff": 64,
-    "display_name": "Su-34",
-    "flare": 64,
-    "max_fuel": 9800,
-    "max_height": 15000,
-    "max_speed": 1900.008,
-    "name": "Su-34"
-  },
-  {
-    "chaff": 0,
-    "display_name": "TF-51D",
-    "flare": 0,
-    "max_fuel": 501,
-    "max_height": 13000,
-    "max_speed": 763.2,
-    "name": "TF-51D"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Mi-24V",
-    "flare": 192,
-    "flare ": 0,
-    "max_fuel": "1704",
-    "max_height": "4500",
-    "max_speed": "320",
-    "name": "Mi-24V"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Mi-8MTV2",
-    "flare": 128,
-    "flare ": 0,
-    "max_fuel": "1929",
-    "max_height": "5000",
-    "max_speed": "250",
-    "name": "Mi-8MT"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Mi-26",
-    "flare": 192,
-    "flare ": 0,
-    "max_fuel": "9600",
-    "max_height": "6500",
-    "max_speed": "300",
-    "name": "Mi-26"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Ka-27",
-    "flare ": 0,
-    "max_fuel": "2616",
-    "max_height": "5000",
-    "max_speed": "290",
-    "name": "Ka-27"
-  },
-  {
-    "chaff": 30,
-    "display_name": "UH-60A",
-    "flare": 30,
-    "flare ": 0,
-    "max_fuel": "1100",
-    "max_height": "5800",
-    "max_speed": "300",
-    "name": "UH-60A"
-  },
-  {
-    "chaff": 60,
-    "display_name": "CH-53E",
-    "flare": 60,
-    "flare ": 0,
-    "max_fuel": "2880",
-    "max_height": "6200",
-    "max_speed": "310",
-    "name": "CH-53E"
-  },
-  {
-    "chaff": 120,
-    "display_name": "CH-47D",
-    "flare": 120,
-    "flare ": 0,
-    "max_fuel": "3600",
-    "max_height": "6750",
-    "max_speed": "300",
-    "name": "CH-47D"
-  },
-  {
-    "chaff": 30,
-    "display_name": "SH-3W",
-    "flare": 30,
-    "flare ": 0,
-    "max_fuel": "2132",
-    "max_height": "4500",
-    "max_speed": "270",
-    "name": "SH-3W"
-  },
-  {
-    "chaff": 30,
-    "display_name": "AH-64A",
-    "flare": 30,
-    "flare ": 0,
-    "max_fuel": "1157",
-    "max_height": "6400",
-    "max_speed": "300",
-    "name": "AH-64A"
-  },
-  {
-    "chaff": 30,
-    "display_name": "AH-64D",
-    "flare": 30,
-    "flare ": 0,
-    "max_fuel": "1157",
-    "max_height": "4500",
-    "max_speed": "280",
-    "name": "AH-64D"
-  },
-  {
-    "chaff": 30,
-    "display_name": "AH-1W",
-    "flare": 30,
-    "flare ": 0,
-    "max_fuel": "1250.0",
-    "max_height": "5500",
-    "max_speed": "290",
-    "name": "AH-1W"
-  },
-  {
-    "chaff": 30,
-    "display_name": "SH-60B",
-    "flare": 30,
-    "flare ": 0,
-    "max_fuel": "1100",
-    "max_height": "5800",
-    "max_speed": "240",
-    "name": "SH-60B"
-  },
-  {
-    "chaff": 0,
-    "display_name": "UH-1H",
-    "flare": 60,
-    "flare ": 0,
-    "max_fuel": "631",
-    "max_height": "5000",
-    "max_speed": "200",
-    "name": "UH-1H"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Mi-28N",
-    "flare": 128,
-    "flare ": 0,
-    "max_fuel": "1500",
-    "max_height": "5300",
-    "max_speed": "305",
-    "name": "Mi-28N"
-  },
-  {
-    "chaff": 30,
-    "display_name": "OH-58D",
-    "flare": 30,
-    "flare ": 0,
-    "max_fuel": "454",
-    "max_height": "6300",
-    "max_speed": "220",
-    "name": "OH-58D"
-  },
-  {
-    "chaff": 30,
-    "display_name": "AH-64D BLK.II",
-    "flare": 60,
-    "flare ": 0,
-    "max_fuel": 1438,
-    "max_speed": 365,
-    "name": "AH-64D_BLK_II"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Ka-50",
-    "flare": 128,
-    "flare ": 0,
-    "max_fuel": 1450,
-    "max_speed": 350,
-    "name": "Ka-50"
-  },
-  {
-    "chaff": 0,
-    "display_name": "Mi-24P",
-    "flare": 192,
-    "flare ": 0,
-    "max_fuel": 1701,
-    "max_speed": 330,
-    "name": "Mi-24P"
-  },
-  {
-    "chaff": 0,
-    "display_name": "SA342M",
-    "flare": 32,
-    "flare ": 0,
-    "max_fuel": 416.33,
-    "max_height": 6000,
-    "max_speed": 240,
-    "name": "SA342M"
-  },
-  {
-    "chaff": 0,
-    "display_name": "SA342L",
-    "flare": 32,
-    "flare ": 0,
-    "max_fuel": 416.33,
-    "max_height": 6000,
-    "max_speed": 240,
-    "name": "SA342L"
-  },
-  {
-    "chaff": 0,
-    "display_name": "SA342Mistral",
-    "flare": 32,
-    "flare ": 0,
-    "max_fuel": 416.33,
-    "max_height": 6000,
-    "max_speed": 240,
-    "name": "SA342Mistral"
-  },
-  {
-    "chaff": 0,
-    "display_name": "SA342Minigun",
-    "flare": 32,
-    "flare ": 0,
-    "max_fuel": 416.33,
-    "max_height": 6000,
-    "max_speed": 240,
-    "name": "SA342Minigun"
-  }
+	{
+		"chaff": 90,
+		"display_name": "Tornado GR4",
+		"flare": 45,
+		"max_fuel": "4663",
+		"max_height": "18000",
+		"max_speed": "2340",
+		"name": "Tornado GR4"
+	},
+	{
+		"chaff": 90,
+		"display_name": "Tornado IDS",
+		"flare": 45,
+		"max_fuel": "4663",
+		"max_height": "18000",
+		"max_speed": "2340",
+		"name": "Tornado IDS"
+	},
+	{
+		"chaff": 30,
+		"display_name": "F/A-18A",
+		"flare": 15,
+		"max_fuel": "6531",
+		"max_height": "18200",
+		"max_speed": "1920",
+		"name": "F/A-18A"
+	},
+	{
+		"chaff": 30,
+		"display_name": "F/A-18C",
+		"flare": 15,
+		"max_fuel": "4900",
+		"max_height": "18200",
+		"max_speed": "1920",
+		"name": "F/A-18C"
+	},
+	{
+		"chaff": 30,
+		"display_name": "F-14A",
+		"flare": 15,
+		"max_fuel": "7348",
+		"max_height": "17000",
+		"max_speed": "2490",
+		"name": "F-14A"
+	},
+	{
+		"chaff": 48,
+		"display_name": "Tu-22M3",
+		"flare": 48,
+		"max_fuel": "50000",
+		"max_height": "13300",
+		"max_speed": "2300",
+		"name": "Tu-22M3"
+	},
+	{
+		"chaff": 60,
+		"display_name": "F-4E",
+		"flare": 30,
+		"max_fuel": "4864",
+		"max_height": "19000",
+		"max_speed": "2370",
+		"name": "F-4E"
+	},
+	{
+		"chaff": 1125,
+		"display_name": "B-52H",
+		"flare": 192,
+		"max_fuel": "141135",
+		"max_height": "17000",
+		"max_speed": "1000",
+		"name": "B-52H"
+	},
+	{
+		"chaff": 60,
+		"display_name": "MiG-27K",
+		"flare": 60,
+		"max_fuel": "4500",
+		"max_height": "15600",
+		"max_speed": "1810",
+		"name": "MiG-27K"
+	},
+	{
+		"chaff": 96,
+		"display_name": "Su-27",
+		"flare": 96,
+		"max_fuel": "9400",
+		"max_height": "18500",
+		"max_speed": "2500",
+		"name": "Su-27"
+	},
+	{
+		"chaff": 60,
+		"display_name": "MiG-23MLD",
+		"flare": 60,
+		"max_fuel": "3800",
+		"max_height": "18600",
+		"max_speed": "2500",
+		"name": "MiG-23MLD"
+	},
+	{
+		"chaff": 128,
+		"display_name": "Su-25",
+		"flare": 128,
+		"max_fuel": "2835",
+		"max_height": "7000",
+		"max_speed": "980",
+		"name": "Su-25"
+	},
+	{
+		"chaff": 128,
+		"display_name": "Su-25TM",
+		"flare": 128,
+		"max_fuel": "3790",
+		"max_height": "12000",
+		"max_speed": "950",
+		"name": "Su-25TM"
+	},
+	{
+		"chaff": 128,
+		"display_name": "Su-25T",
+		"flare": 128,
+		"max_fuel": "3790",
+		"max_height": "7000",
+		"max_speed": "950",
+		"name": "Su-25T"
+	},
+	{
+		"chaff": 48,
+		"display_name": "Su-33",
+		"flare": 48,
+		"max_fuel": "9500",
+		"max_height": "17000",
+		"max_speed": "2300",
+		"name": "Su-33"
+	},
+	{
+		"chaff": 64,
+		"display_name": "MiG-25PD",
+		"flare": 64,
+		"max_fuel": "15245",
+		"max_height": "20000",
+		"max_speed": "3000",
+		"name": "MiG-25PD"
+	},
+	{
+		"chaff": 0,
+		"display_name": "MiG-25RBT",
+		"flare": 0,
+		"max_fuel": "15245",
+		"max_height": "20000",
+		"max_speed": "3000",
+		"name": "MiG-25RBT"
+	},
+	{
+		"chaff": 96,
+		"display_name": "Su-30",
+		"flare": 96,
+		"max_fuel": "9400",
+		"max_height": "17300",
+		"max_speed": "2200",
+		"name": "Su-30"
+	},
+	{
+		"chaff": 64,
+		"display_name": "Su-17M4",
+		"flare": 64,
+		"max_fuel": "3770",
+		"max_height": "14000",
+		"max_speed": "1860",
+		"name": "Su-17M4"
+	},
+	{
+		"chaff": 0,
+		"display_name": "MiG-31",
+		"flare": 0,
+		"max_fuel": "15500",
+		"max_height": "20000",
+		"max_speed": "3000",
+		"name": "MiG-31"
+	},
+	{
+		"chaff": 48,
+		"display_name": "Tu-95MS",
+		"flare": 48,
+		"max_fuel": "87000",
+		"max_height": "12000",
+		"max_speed": "830",
+		"name": "Tu-95MS"
+	},
+	{
+		"chaff": 96,
+		"display_name": "Su-24M",
+		"flare": 96,
+		"max_fuel": "11700",
+		"max_height": "16500",
+		"max_speed": "1700",
+		"name": "Su-24M"
+	},
+	{
+		"chaff": 96,
+		"display_name": "Su-24MR",
+		"flare": 96,
+		"max_fuel": "11700",
+		"max_height": "16500",
+		"max_speed": "1700",
+		"name": "Su-24MR"
+	},
+	{
+		"chaff": 72,
+		"display_name": "Tu-160",
+		"flare": 72,
+		"max_fuel": "157000",
+		"max_height": "15600",
+		"max_speed": "2200",
+		"name": "Tu-160"
+	},
+	{
+		"chaff": 0,
+		"display_name": "F-117A",
+		"flare": 0,
+		"max_fuel": "8255",
+		"max_height": "13700",
+		"max_speed": "1000",
+		"name": "F-117A"
+	},
+	{
+		"chaff": 60,
+		"display_name": "B-1B",
+		"flare": 30,
+		"max_fuel": "88450",
+		"max_height": "18000",
+		"max_speed": "1530",
+		"name": "B-1B"
+	},
+	{
+		"chaff": 30,
+		"display_name": "S-3B",
+		"flare": 30,
+		"max_fuel": "5500",
+		"max_height": "10700",
+		"max_speed": "840",
+		"name": "S-3B"
+	},
+	{
+		"chaff": 30,
+		"display_name": "S-3B Tanker",
+		"flare": 30,
+		"max_fuel": "7813",
+		"max_height": "10700",
+		"max_speed": "840",
+		"name": "S-3B Tanker"
+	},
+	{
+		"chaff": 112,
+		"display_name": "Mirage 2000-5",
+		"flare": 16,
+		"max_fuel": "3160",
+		"max_height": "19000",
+		"max_speed": "2340",
+		"name": "Mirage 2000-5"
+	},
+	{
+		"chaff": 120,
+		"display_name": "F-15C",
+		"flare": 60,
+		"max_fuel": "6103",
+		"max_height": "19700",
+		"max_speed": "2650",
+		"name": "F-15C"
+	},
+	{
+		"chaff": 120,
+		"display_name": "F-15E",
+		"flare": 60,
+		"max_fuel": "10246",
+		"max_height": "19700",
+		"max_speed": "2650",
+		"name": "F-15E"
+	},
+	{
+		"chaff": 30,
+		"display_name": "MiG-29A",
+		"flare": 30,
+		"max_fuel": "3376",
+		"max_height": "18000",
+		"max_speed": "2450",
+		"name": "MiG-29A"
+	},
+	{
+		"chaff": 30,
+		"display_name": "MiG-29G",
+		"flare": 30,
+		"max_fuel": "3376",
+		"max_height": "18000",
+		"max_speed": "2450",
+		"name": "MiG-29G"
+	},
+	{
+		"chaff": 30,
+		"display_name": "MiG-29S",
+		"flare": 30,
+		"max_fuel": "3493",
+		"max_height": "18000",
+		"max_speed": "2450",
+		"name": "MiG-29S"
+	},
+	{
+		"chaff": 48,
+		"display_name": "Tu-142",
+		"flare": 48,
+		"max_fuel": "87000",
+		"max_height": "13500",
+		"max_speed": "860",
+		"name": "Tu-142"
+	},
+	{
+		"chaff": 120,
+		"display_name": "C-130",
+		"flare": 60,
+		"max_fuel": "20830",
+		"max_height": "10000",
+		"max_speed": "610",
+		"name": "C-130"
+	},
+	{
+		"chaff": 384,
+		"display_name": "An-26B",
+		"flare": 384,
+		"max_fuel": "5500",
+		"max_height": "7500",
+		"max_speed": "540",
+		"name": "An-26B"
+	},
+	{
+		"chaff": 192,
+		"display_name": "An-30M",
+		"flare": 192,
+		"max_fuel": "8300",
+		"max_height": "8300",
+		"max_speed": "540",
+		"name": "An-30M"
+	},
+	{
+		"chaff": 120,
+		"display_name": "C-17A",
+		"flare": 60,
+		"max_fuel": "132405",
+		"max_height": "13700",
+		"max_speed": "850",
+		"name": "C-17A"
+	},
+	{
+		"chaff": 192,
+		"display_name": "A-50",
+		"flare": 192,
+		"max_fuel": "70000",
+		"max_height": "12000",
+		"max_speed": "850",
+		"name": "A-50"
+	},
+	{
+		"chaff": 120,
+		"display_name": "E-3A",
+		"flare": 60,
+		"max_fuel": "65000",
+		"max_height": "13100",
+		"max_speed": "860",
+		"name": "E-3A"
+	},
+	{
+		"chaff": 96,
+		"display_name": "IL-78M Tanker",
+		"flare": 96,
+		"max_fuel": "90000",
+		"max_height": "12000",
+		"max_speed": "850",
+		"name": "IL-78M"
+	},
+	{
+		"chaff": 120,
+		"display_name": "E-2D",
+		"flare": 60,
+		"max_fuel": "5624",
+		"max_height": "9400",
+		"max_speed": "610",
+		"name": "E-2C"
+	},
+	{
+		"chaff": 96,
+		"display_name": "IL-76MD",
+		"flare": 96,
+		"max_fuel": "80000",
+		"max_height": "12000",
+		"max_speed": "850",
+		"name": "IL-76MD"
+	},
+	{
+		"chaff": 90,
+		"display_name": "F-16C bl.50",
+		"flare": 45,
+		"max_fuel": "3104",
+		"max_height": "17200",
+		"max_speed": "2150",
+		"name": "F-16C bl.50"
+	},
+	{
+		"chaff": 90,
+		"display_name": "F-16C bl.52d",
+		"flare": 45,
+		"max_fuel": "3104",
+		"max_height": "19000",
+		"max_speed": "2150",
+		"name": "F-16C bl.52d"
+	},
+	{
+		"chaff": 60,
+		"display_name": "F-16A",
+		"flare": 30,
+		"max_fuel": "3104",
+		"max_height": "19000",
+		"max_speed": "2150",
+		"name": "F-16A"
+	},
+	{
+		"chaff": 60,
+		"display_name": "F-16A MLU",
+		"flare": 30,
+		"max_fuel": "3104",
+		"max_height": "19000",
+		"max_speed": "2150",
+		"name": "F-16A MLU"
+	},
+	{
+		"chaff": 0,
+		"display_name": "MQ-1A Predator",
+		"flare": 0,
+		"max_fuel": "200",
+		"max_height": "8600",
+		"max_speed": "220",
+		"name": "RQ-1A Predator"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Yak-40",
+		"flare": 0,
+		"max_fuel": "3080",
+		"max_height": "7500",
+		"max_speed": "570",
+		"name": "Yak-40"
+	},
+	{
+		"chaff": 0,
+		"display_name": "KC-135",
+		"flare": 0,
+		"max_fuel": 90700,
+		"max_height": 12000,
+		"max_speed": 980,
+		"name": "KC-135"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Fw 190 D-9",
+		"flare": 0,
+		"max_fuel": 388,
+		"max_height": 13000,
+		"max_speed": 828,
+		"name": "FW-190D9"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Fw 190 A-8",
+		"flare": 0,
+		"max_fuel": 409,
+		"max_height": 11000,
+		"max_speed": 900,
+		"name": "FW-190A8"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Bf 109 K-4",
+		"flare": 0,
+		"max_fuel": 296,
+		"max_height": 13000,
+		"max_speed": 828,
+		"name": "Bf-109K-4"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Spitfire LF Mk. IX",
+		"flare": 0,
+		"max_fuel": 247,
+		"max_height": 13000,
+		"max_speed": 828,
+		"name": "SpitfireLFMkIX"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Spitfire LF Mk. IX CW",
+		"flare": 0,
+		"max_fuel": 247,
+		"max_height": 13000,
+		"max_speed": 828,
+		"name": "SpitfireLFMkIXCW"
+	},
+	{
+		"chaff": 0,
+		"display_name": "P-51D-25-NA",
+		"flare": 0,
+		"max_fuel": 732,
+		"max_height": 13000,
+		"max_speed": 763.2,
+		"name": "P-51D"
+	},
+	{
+		"chaff": 0,
+		"display_name": "P-51D-30-NA",
+		"flare": 0,
+		"max_fuel": 732,
+		"max_height": 13000,
+		"max_speed": 763.2,
+		"name": "P-51D-30-NA"
+	},
+	{
+		"chaff": 0,
+		"display_name": "P-47D-30",
+		"flare": 0,
+		"max_fuel": 1007,
+		"max_height": 13500,
+		"max_speed": 828,
+		"name": "P-47D-30"
+	},
+	{
+		"chaff": 0,
+		"display_name": "P-47D-30 (Early)",
+		"flare": 0,
+		"max_fuel": 1007,
+		"max_height": 13500,
+		"max_speed": 828,
+		"name": "P-47D-30bl1"
+	},
+	{
+		"chaff": 0,
+		"display_name": "P-47D-40",
+		"flare": 0,
+		"max_fuel": 1007,
+		"max_height": 13500,
+		"max_speed": 828,
+		"name": "P-47D-40"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Mosquito FB Mk. VI",
+		"flare": 0,
+		"max_fuel": 1483.1,
+		"max_height": 11500,
+		"max_speed": 648,
+		"name": "MosquitoFBMkVI"
+	},
+	{
+		"chaff": 0,
+		"display_name": "A-20G",
+		"flare": 0,
+		"max_fuel": 1500,
+		"max_height": 10000,
+		"max_speed": 619.2,
+		"name": "A-20G"
+	},
+	{
+		"chaff": 240,
+		"display_name": "A-10A",
+		"flare": 120,
+		"max_fuel": 5029,
+		"max_height": 10000,
+		"max_speed": 720,
+		"name": "A-10A"
+	},
+	{
+		"chaff": 240,
+		"display_name": "A-10C",
+		"flare": 120,
+		"max_fuel": 5029,
+		"max_height": 10000,
+		"max_speed": 720,
+		"name": "A-10C"
+	},
+	{
+		"chaff": 240,
+		"display_name": "A-10C II",
+		"flare": 240,
+		"max_fuel": 5029,
+		"max_height": 10000,
+		"max_speed": 720,
+		"name": "A-10C_2"
+	},
+	{
+		"chaff": 210,
+		"display_name": "AJS37",
+		"flare": 72,
+		"max_fuel": 4476,
+		"max_height": 21000,
+		"max_speed": 2203.2,
+		"name": "AJS37"
+	},
+	{
+		"chaff": 60,
+		"display_name": "AV-8B N/A",
+		"flare": 120,
+		"max_fuel": 3519.423,
+		"max_height": 13716,
+		"max_speed": 990,
+		"name": "AV8BNA"
+	},
+	{
+		"chaff": 120,
+		"display_name": "KC-130",
+		"flare": 60,
+		"max_fuel": 30000,
+		"max_height": 9315,
+		"max_speed": 621,
+		"name": "KC130"
+	},
+	{
+		"chaff": 120,
+		"display_name": "KC-135MPRS Tanker",
+		"flare": 60,
+		"max_fuel": 90700,
+		"max_height": 12000,
+		"max_speed": 1009.008,
+		"name": "KC135MPRS"
+	},
+	{
+		"chaff": 0,
+		"display_name": "C-101EB",
+		"flare": 0,
+		"max_fuel": 1796,
+		"max_height": 12500,
+		"max_speed": 925.2,
+		"name": "C-101EB"
+	},
+	{
+		"chaff": 0,
+		"display_name": "C-101CC",
+		"flare": 0,
+		"max_fuel": 1796,
+		"max_height": 11000,
+		"max_speed": 925.2,
+		"name": "C-101CC"
+	},
+	{
+		"chaff": 96,
+		"display_name": "J-11A",
+		"flare": 96,
+		"max_fuel": 9400,
+		"max_height": 18500,
+		"max_speed": 2499.984,
+		"name": "J-11A"
+	},
+	{
+		"chaff": 36,
+		"display_name": "JF-17",
+		"flare": 32,
+		"max_fuel": 2325,
+		"max_height": 16920,
+		"max_speed": 2520,
+		"name": "JF-17"
+	},
+	{
+		"chaff": 0,
+		"display_name": "KJ-2000",
+		"flare": 0,
+		"max_fuel": 70000,
+		"max_height": 12247,
+		"max_speed": 849.996,
+		"name": "KJ-2000"
+	},
+	{
+		"chaff": 0,
+		"display_name": "WingLoong-I",
+		"flare": 0,
+		"max_fuel": 400,
+		"max_height": 7500,
+		"max_speed": 280,
+		"name": "WingLoong-I"
+	},
+	{
+		"chaff": 120,
+		"display_name": "H-6J",
+		"flare": 120,
+		"max_fuel": 25000,
+		"max_height": 13100,
+		"max_speed": 1044,
+		"name": "H-6J"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Christen Eagle II",
+		"flare": 0,
+		"max_fuel": 71,
+		"max_height": 6000,
+		"max_speed": 306,
+		"name": "Christen Eagle II"
+	},
+	{
+		"chaff": 60,
+		"display_name": "F-16CM bl.50",
+		"flare": 60,
+		"max_fuel": 3249,
+		"max_height": 15240,
+		"max_speed": 2120.04,
+		"name": "F-16C_50"
+	},
+	{
+		"chaff": 0,
+		"display_name": "F-5E",
+		"flare": 0,
+		"max_fuel": 1996,
+		"max_height": 16154,
+		"max_speed": 1742.4,
+		"name": "F-5E"
+	},
+	{
+		"chaff": 30,
+		"display_name": "F-5E-3",
+		"flare": 15,
+		"max_fuel": 2046,
+		"max_height": 16154,
+		"max_speed": 1742.4,
+		"name": "F-5E-3"
+	},
+	{
+		"chaff": 0,
+		"display_name": "F-86F",
+		"flare": 0,
+		"max_fuel": 1282,
+		"max_height": 15100,
+		"max_speed": 964.8,
+		"name": "F-86F Sabre"
+	},
+	{
+		"chaff": 140,
+		"display_name": "F-14B",
+		"flare": 60,
+		"max_fuel": 7348,
+		"max_height": 17000,
+		"max_speed": 2520,
+		"name": "F-14B"
+	},
+	{
+		"chaff": 140,
+		"display_name": "F-14A-135-GR",
+		"flare": 60,
+		"max_fuel": 7348,
+		"max_height": 17000,
+		"max_speed": 2520,
+		"name": "F-14A-135-GR"
+	},
+	{
+		"chaff": 60,
+		"display_name": "F/A-18C Lot 20",
+		"flare": 60,
+		"max_fuel": 4900,
+		"max_height": 18200,
+		"max_speed": 1950.12,
+		"name": "FA-18C_hornet"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Hawk",
+		"flare": 0,
+		"max_fuel": 1272,
+		"max_height": 14630,
+		"max_speed": 2880,
+		"name": "Hawk"
+	},
+	{
+		"chaff": 0,
+		"display_name": "I-16",
+		"flare": 0,
+		"max_fuel": 191,
+		"max_height": 9700,
+		"max_speed": 464.4,
+		"name": "I-16"
+	},
+	{
+		"chaff": 0,
+		"display_name": "L-39C",
+		"flare": 0,
+		"max_fuel": 980,
+		"max_height": 11000,
+		"max_speed": 763.2,
+		"name": "L-39C"
+	},
+	{
+		"chaff": 0,
+		"display_name": "L-39ZA",
+		"flare": 0,
+		"max_fuel": 980,
+		"max_height": 11000,
+		"max_speed": 763.2,
+		"name": "L-39ZA"
+	},
+	{
+		"chaff": 234,
+		"display_name": "M-2000C",
+		"flare": 64,
+		"max_fuel": 3165,
+		"max_height": 17526,
+		"max_speed": 2376,
+		"name": "M-2000C"
+	},
+	{
+		"chaff": 0,
+		"display_name": "MB-339A",
+		"flare": 0,
+		"max_fuel": 626,
+		"max_height": 11000,
+		"max_speed": 763.2,
+		"name": "MB-339A"
+	},
+	{
+		"chaff": 0,
+		"display_name": "MB-339A/PAN",
+		"flare": 0,
+		"max_fuel": 626,
+		"max_height": 11000,
+		"max_speed": 763.2,
+		"name": "MB-339APAN"
+	},
+	{
+		"chaff": 0,
+		"display_name": "MQ-9 Reaper",
+		"flare": 0,
+		"max_fuel": 1300,
+		"max_height": 15000,
+		"max_speed": 400,
+		"name": "MQ-9 Reaper"
+	},
+	{
+		"chaff": 0,
+		"display_name": "MiG-15bis",
+		"flare": 0,
+		"max_fuel": 1172,
+		"max_height": 15100,
+		"max_speed": 992,
+		"name": "MiG-15bis"
+	},
+	{
+		"chaff": 0,
+		"display_name": "MiG-19P",
+		"flare": 0,
+		"max_fuel": 1800,
+		"max_height": 17500,
+		"max_speed": 992,
+		"name": "MiG-19P"
+	},
+	{
+		"chaff": 18,
+		"display_name": "MiG-21Bis",
+		"flare": 40,
+		"max_fuel": 2280,
+		"max_height": 20000,
+		"max_speed": 2509.2,
+		"name": "MiG-21Bis"
+	},
+	{
+		"chaff": 64,
+		"display_name": "Su-34",
+		"flare": 64,
+		"max_fuel": 9800,
+		"max_height": 15000,
+		"max_speed": 1900.008,
+		"name": "Su-34"
+	},
+	{
+		"chaff": 0,
+		"display_name": "TF-51D",
+		"flare": 0,
+		"max_fuel": 501,
+		"max_height": 13000,
+		"max_speed": 763.2,
+		"name": "TF-51D"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Mi-24V",
+		"flare": 192,
+		"flare ": 0,
+		"max_fuel": "1704",
+		"max_height": "4500",
+		"max_speed": "320",
+		"name": "Mi-24V"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Mi-8MTV2",
+		"flare": 128,
+		"flare ": 0,
+		"max_fuel": "1929",
+		"max_height": "5000",
+		"max_speed": "250",
+		"name": "Mi-8MT"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Mi-26",
+		"flare": 192,
+		"flare ": 0,
+		"max_fuel": "9600",
+		"max_height": "6500",
+		"max_speed": "300",
+		"name": "Mi-26"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Ka-27",
+		"flare ": 0,
+		"max_fuel": "2616",
+		"max_height": "5000",
+		"max_speed": "290",
+		"name": "Ka-27"
+	},
+	{
+		"chaff": 30,
+		"display_name": "UH-60A",
+		"flare": 30,
+		"flare ": 0,
+		"max_fuel": "1100",
+		"max_height": "5800",
+		"max_speed": "300",
+		"name": "UH-60A"
+	},
+	{
+		"chaff": 60,
+		"display_name": "CH-53E",
+		"flare": 60,
+		"flare ": 0,
+		"max_fuel": "2880",
+		"max_height": "6200",
+		"max_speed": "310",
+		"name": "CH-53E"
+	},
+	{
+		"chaff": 120,
+		"display_name": "CH-47D",
+		"flare": 120,
+		"flare ": 0,
+		"max_fuel": "3600",
+		"max_height": "6750",
+		"max_speed": "300",
+		"name": "CH-47D"
+	},
+	{
+		"chaff": 30,
+		"display_name": "SH-3W",
+		"flare": 30,
+		"flare ": 0,
+		"max_fuel": "2132",
+		"max_height": "4500",
+		"max_speed": "270",
+		"name": "SH-3W"
+	},
+	{
+		"chaff": 30,
+		"display_name": "AH-64A",
+		"flare": 30,
+		"flare ": 0,
+		"max_fuel": "1157",
+		"max_height": "6400",
+		"max_speed": "300",
+		"name": "AH-64A"
+	},
+	{
+		"chaff": 30,
+		"display_name": "AH-64D",
+		"flare": 30,
+		"flare ": 0,
+		"max_fuel": "1157",
+		"max_height": "4500",
+		"max_speed": "280",
+		"name": "AH-64D"
+	},
+	{
+		"chaff": 30,
+		"display_name": "AH-1W",
+		"flare": 30,
+		"flare ": 0,
+		"max_fuel": "1250.0",
+		"max_height": "5500",
+		"max_speed": "290",
+		"name": "AH-1W"
+	},
+	{
+		"chaff": 30,
+		"display_name": "SH-60B",
+		"flare": 30,
+		"flare ": 0,
+		"max_fuel": "1100",
+		"max_height": "5800",
+		"max_speed": "240",
+		"name": "SH-60B"
+	},
+	{
+		"chaff": 0,
+		"display_name": "UH-1H",
+		"flare": 60,
+		"flare ": 0,
+		"max_fuel": "631",
+		"max_height": "5000",
+		"max_speed": "200",
+		"name": "UH-1H"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Mi-28N",
+		"flare": 128,
+		"flare ": 0,
+		"max_fuel": "1500",
+		"max_height": "5300",
+		"max_speed": "305",
+		"name": "Mi-28N"
+	},
+	{
+		"chaff": 30,
+		"display_name": "OH-58D",
+		"flare": 30,
+		"flare ": 0,
+		"max_fuel": "454",
+		"max_height": "6300",
+		"max_speed": "220",
+		"name": "OH-58D"
+	},
+	{
+		"chaff": 30,
+		"display_name": "AH-64D BLK.II",
+		"flare": 60,
+		"flare ": 0,
+		"max_fuel": 1438,
+		"max_speed": 365,
+		"name": "AH-64D_BLK_II"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Ka-50",
+		"flare": 128,
+		"flare ": 0,
+		"max_fuel": 1450,
+		"max_speed": 350,
+		"name": "Ka-50"
+	},
+	{
+		"chaff": 0,
+		"display_name": "Mi-24P",
+		"flare": 192,
+		"flare ": 0,
+		"max_fuel": 1701,
+		"max_speed": 330,
+		"name": "Mi-24P"
+	},
+	{
+		"chaff": 0,
+		"display_name": "SA342M",
+		"flare": 32,
+		"flare ": 0,
+		"max_fuel": 416.33,
+		"max_height": 6000,
+		"max_speed": 240,
+		"name": "SA342M"
+	},
+	{
+		"chaff": 0,
+		"display_name": "SA342L",
+		"flare": 32,
+		"flare ": 0,
+		"max_fuel": 416.33,
+		"max_height": 6000,
+		"max_speed": 240,
+		"name": "SA342L"
+	},
+	{
+		"chaff": 0,
+		"display_name": "SA342Mistral",
+		"flare": 32,
+		"flare ": 0,
+		"max_fuel": 416.33,
+		"max_height": 6000,
+		"max_speed": 240,
+		"name": "SA342Mistral"
+	},
+	{
+		"chaff": 0,
+		"display_name": "SA342Minigun",
+		"flare": 32,
+		"flare ": 0,
+		"max_fuel": 416.33,
+		"max_height": 6000,
+		"max_speed": 240,
+		"name": "SA342Minigun"
+	}
 ]

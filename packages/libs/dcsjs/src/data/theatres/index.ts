@@ -5,9 +5,9 @@ import { PersianGulf } from "./persianGulf";
 import { Syria } from "./syria";
 
 export const Theatres = {
-  Caucasus,
-  Normandy: Caucasus,
-  PersianGulf,
-  SouthAtlantic: Caucasus,
-  Syria,
+	Caucasus,
+	Normandy: Caucasus,
+	PersianGulf,
+	SouthAtlantic: Caucasus,
+	Syria,
 } satisfies Record<Theatre, TheatreData>;

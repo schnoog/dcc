@@ -8,11 +8,11 @@ import { UsaKoreaWar } from "./usa-korea-war";
 import { UsaModern } from "./usa-mordern";
 
 export const groundUnitsTemplates: GroundUnitsTemplate[] = [
-  UsaModern,
-  RussiaModern,
-  FranceModern,
-  UsaColdWar,
-  RussiaColdWar,
-  UsaKoreaWar,
-  RussiaKoreaWar,
+	UsaModern,
+	RussiaModern,
+	FranceModern,
+	UsaColdWar,
+	RussiaColdWar,
+	UsaKoreaWar,
+	RussiaKoreaWar,
 ];
