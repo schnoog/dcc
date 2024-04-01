@@ -1,0 +1,3505 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mission ground group 1`] = `
+{
+  "coalition": {
+    "blue": {
+      "bullseye": {
+        "x": -291014,
+        "y": 617414,
+      },
+      "country": [
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 21,
+          "name": "Australia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 23,
+          "name": "Austria",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 11,
+          "name": "Belgium",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 8,
+          "name": "Canada",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 28,
+          "name": "Croatia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 26,
+          "name": "Czech Republic",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 13,
+          "name": "Denmark",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 5,
+          "name": "France",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 16,
+          "name": "Georgia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 6,
+          "name": "Germany",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 15,
+          "name": "Israel",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 20,
+          "name": "Italy",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 12,
+          "name": "Norway",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 40,
+          "name": "Poland",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 45,
+          "name": "South Korea",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 9,
+          "name": "Spain",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 46,
+          "name": "Sweden",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 10,
+          "name": "The Netherlands",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 3,
+          "name": "Turkey",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 2,
+          "name": "USA",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [
+              {
+                "groupId": 1,
+                "hidden": false,
+                "name": "Test Group",
+                "route": {
+                  "points": [
+                    {
+                      "ETA": 0,
+                      "ETA_locked": true,
+                      "action": "Off Road",
+                      "alt": 0,
+                      "alt_type": "RADIO",
+                      "name": "",
+                      "speed": 0,
+                      "speed_locked": true,
+                      "task": {
+                        "id": "ComboTask",
+                        "params": {
+                          "tasks": [],
+                        },
+                      },
+                      "type": "Turning Point",
+                      "x": -298594.0361111,
+                      "y": 637215.60223479,
+                    },
+                  ],
+                },
+                "start_time": 0,
+                "task": "Ground Nothing",
+                "taskSelected": true,
+                "tasks": [],
+                "uncontrollable": false,
+                "units": [
+                  {
+                    "coldAtStart": false,
+                    "heading": 0,
+                    "name": "Test Unit",
+                    "skill": "Average",
+                    "type": "Infantry AK",
+                    "unitId": 1,
+                    "x": -298594.0361111,
+                    "y": 637215.60223479,
+                  },
+                ],
+                "visible": false,
+                "x": -298594.0361111,
+                "y": 637215.60223479,
+              },
+            ],
+          },
+        },
+      ],
+      "nav_points": [],
+    },
+    "neutrals": {
+      "bullseye": {
+        "x": 0,
+        "y": 0,
+      },
+      "country": [],
+      "nav_points": [],
+    },
+    "red": {
+      "bullseye": {
+        "x": -291014,
+        "y": 617414,
+      },
+      "country": [
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 18,
+          "name": "Abkhazia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 24,
+          "name": "Belarus",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 27,
+          "name": "China",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 34,
+          "name": "Iran",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 35,
+          "name": "Iraq",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 37,
+          "name": "Kazakhstan",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 38,
+          "name": "North Korea",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 0,
+          "name": "Russia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 43,
+          "name": "Serbia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 19,
+          "name": "South Ossetia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 47,
+          "name": "Syria",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 1,
+          "name": "Ukraine",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+      ],
+      "nav_points": [],
+    },
+  },
+  "coalitions": {
+    "blue": [
+      21,
+      23,
+      11,
+      8,
+      28,
+      26,
+      13,
+      5,
+      16,
+      6,
+      15,
+      20,
+      12,
+      40,
+      45,
+      9,
+      46,
+      10,
+      3,
+      2,
+    ],
+    "neutrals": [
+      70,
+      83,
+      23,
+      65,
+      86,
+      64,
+      25,
+      63,
+      76,
+      90,
+      29,
+      62,
+      30,
+      78,
+      87,
+      31,
+      61,
+      32,
+      33,
+      60,
+      17,
+      35,
+      69,
+      36,
+      59,
+      71,
+      79,
+      58,
+      57,
+      56,
+      55,
+      88,
+      73,
+      39,
+      89,
+      54,
+      77,
+      72,
+      41,
+      42,
+      44,
+      85,
+      75,
+      53,
+      22,
+      52,
+      66,
+      51,
+      74,
+      82,
+      7,
+      68,
+      50,
+      49,
+      48,
+      67,
+    ],
+    "red": [
+      18,
+      24,
+      27,
+      34,
+      35,
+      37,
+      38,
+      0,
+      43,
+      19,
+      47,
+      1,
+    ],
+  },
+  "currentKey": 23,
+  "date": {
+    "Day": 15,
+    "Month": 1,
+    "Year": 2024,
+  },
+  "descriptionBlueTask": "",
+  "descriptionRedTask": "",
+  "descriptionText": "",
+  "failures": {},
+  "goals": {},
+  "pictureFileNameB": [
+    "DCC_Logo_1024.png",
+  ],
+  "pictureFileNameN": [],
+  "pictureFileNameR": [
+    "DCC_Logo_1024.png",
+  ],
+  "start_time": 32400,
+  "theatre": "Caucasus",
+  "triggers": {
+    "zones": {},
+  },
+  "version": 2,
+  "weather": {
+    "atmosphere_type": 0,
+    "clouds": {
+      "base": 9144,
+      "density": 0,
+      "iprecptns": 0,
+      "thickness": 0,
+    },
+    "cyclones": {},
+    "dust_density": 0,
+    "enable_dust": false,
+    "enable_fog": false,
+    "fog": {
+      "density": 0,
+      "thickness": 0,
+      "visibility": 0,
+    },
+    "groundTurbulence": 0,
+    "halo": {
+      "preset": "auto",
+    },
+    "modifiedTime": false,
+    "name": "DCC Weather",
+    "qnh": 0,
+    "season": {
+      "temperature": 0,
+    },
+    "type_weather": 0,
+    "visibility": {
+      "distance": 80000,
+    },
+    "wind": {
+      "at2000": {
+        "dir": 0,
+        "speed": 0,
+      },
+      "at8000": {
+        "dir": 0,
+        "speed": 0,
+      },
+      "atGround": {
+        "dir": 0,
+        "speed": 0,
+      },
+    },
+  },
+}
+`;
+
+exports[`Mission init params 1`] = `
+{
+  "coalition": {
+    "blue": {
+      "bullseye": {
+        "x": -291014,
+        "y": 617414,
+      },
+      "country": [
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 21,
+          "name": "Australia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 23,
+          "name": "Austria",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 11,
+          "name": "Belgium",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 8,
+          "name": "Canada",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 28,
+          "name": "Croatia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 26,
+          "name": "Czech Republic",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 13,
+          "name": "Denmark",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 5,
+          "name": "France",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 16,
+          "name": "Georgia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 6,
+          "name": "Germany",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 15,
+          "name": "Israel",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 20,
+          "name": "Italy",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 12,
+          "name": "Norway",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 40,
+          "name": "Poland",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 45,
+          "name": "South Korea",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 9,
+          "name": "Spain",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 46,
+          "name": "Sweden",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 10,
+          "name": "The Netherlands",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 3,
+          "name": "Turkey",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 2,
+          "name": "USA",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+      ],
+      "nav_points": [],
+    },
+    "neutrals": {
+      "bullseye": {
+        "x": 0,
+        "y": 0,
+      },
+      "country": [],
+      "nav_points": [],
+    },
+    "red": {
+      "bullseye": {
+        "x": -291014,
+        "y": 617414,
+      },
+      "country": [
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 18,
+          "name": "Abkhazia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 24,
+          "name": "Belarus",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 27,
+          "name": "China",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 34,
+          "name": "Iran",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 35,
+          "name": "Iraq",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 37,
+          "name": "Kazakhstan",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 38,
+          "name": "North Korea",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 0,
+          "name": "Russia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 43,
+          "name": "Serbia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 19,
+          "name": "South Ossetia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 47,
+          "name": "Syria",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 1,
+          "name": "Ukraine",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+      ],
+      "nav_points": [],
+    },
+  },
+  "coalitions": {
+    "blue": [
+      21,
+      23,
+      11,
+      8,
+      28,
+      26,
+      13,
+      5,
+      16,
+      6,
+      15,
+      20,
+      12,
+      40,
+      45,
+      9,
+      46,
+      10,
+      3,
+      2,
+    ],
+    "neutrals": [
+      70,
+      83,
+      23,
+      65,
+      86,
+      64,
+      25,
+      63,
+      76,
+      90,
+      29,
+      62,
+      30,
+      78,
+      87,
+      31,
+      61,
+      32,
+      33,
+      60,
+      17,
+      35,
+      69,
+      36,
+      59,
+      71,
+      79,
+      58,
+      57,
+      56,
+      55,
+      88,
+      73,
+      39,
+      89,
+      54,
+      77,
+      72,
+      41,
+      42,
+      44,
+      85,
+      75,
+      53,
+      22,
+      52,
+      66,
+      51,
+      74,
+      82,
+      7,
+      68,
+      50,
+      49,
+      48,
+      67,
+    ],
+    "red": [
+      18,
+      24,
+      27,
+      34,
+      35,
+      37,
+      38,
+      0,
+      43,
+      19,
+      47,
+      1,
+    ],
+  },
+  "currentKey": 23,
+  "date": {
+    "Day": 15,
+    "Month": 1,
+    "Year": 2024,
+  },
+  "descriptionBlueTask": "",
+  "descriptionRedTask": "",
+  "descriptionText": "",
+  "failures": {},
+  "goals": {},
+  "pictureFileNameB": [
+    "DCC_Logo_1024.png",
+  ],
+  "pictureFileNameN": [],
+  "pictureFileNameR": [
+    "DCC_Logo_1024.png",
+  ],
+  "start_time": 32400,
+  "theatre": "Caucasus",
+  "triggers": {
+    "zones": {},
+  },
+  "version": 2,
+  "weather": {
+    "atmosphere_type": 0,
+    "clouds": {
+      "base": 9144,
+      "density": 0,
+      "iprecptns": 0,
+      "thickness": 0,
+    },
+    "cyclones": {},
+    "dust_density": 0,
+    "enable_dust": false,
+    "enable_fog": false,
+    "fog": {
+      "density": 0,
+      "thickness": 0,
+      "visibility": 0,
+    },
+    "groundTurbulence": 0,
+    "halo": {
+      "preset": "auto",
+    },
+    "modifiedTime": false,
+    "name": "DCC Weather",
+    "qnh": 0,
+    "season": {
+      "temperature": 0,
+    },
+    "type_weather": 0,
+    "visibility": {
+      "distance": 80000,
+    },
+    "wind": {
+      "at2000": {
+        "dir": 0,
+        "speed": 0,
+      },
+      "at8000": {
+        "dir": 0,
+        "speed": 0,
+      },
+      "atGround": {
+        "dir": 0,
+        "speed": 0,
+      },
+    },
+  },
+}
+`;
+
+exports[`Mission lua table 1`] = `
+"{
+	["coalition"] = {
+		["blue"] = {
+			["bullseye"] = {
+				["x"] = -291014,
+				["y"] = 617414,
+			},
+			["nav_points"] = { },
+			["country"] = {
+				[1] = {
+					["id"] = 21,
+					["name"] = "Australia",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[2] = {
+					["id"] = 23,
+					["name"] = "Austria",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[3] = {
+					["id"] = 11,
+					["name"] = "Belgium",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[4] = {
+					["id"] = 8,
+					["name"] = "Canada",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[5] = {
+					["id"] = 28,
+					["name"] = "Croatia",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[6] = {
+					["id"] = 26,
+					["name"] = "Czech Republic",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[7] = {
+					["id"] = 13,
+					["name"] = "Denmark",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[8] = {
+					["id"] = 5,
+					["name"] = "France",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[9] = {
+					["id"] = 16,
+					["name"] = "Georgia",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[10] = {
+					["id"] = 6,
+					["name"] = "Germany",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[11] = {
+					["id"] = 15,
+					["name"] = "Israel",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[12] = {
+					["id"] = 20,
+					["name"] = "Italy",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[13] = {
+					["id"] = 12,
+					["name"] = "Norway",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[14] = {
+					["id"] = 40,
+					["name"] = "Poland",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[15] = {
+					["id"] = 45,
+					["name"] = "South Korea",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[16] = {
+					["id"] = 9,
+					["name"] = "Spain",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[17] = {
+					["id"] = 46,
+					["name"] = "Sweden",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[18] = {
+					["id"] = 10,
+					["name"] = "The Netherlands",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[19] = {
+					["id"] = 3,
+					["name"] = "Turkey",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[20] = {
+					["id"] = 2,
+					["name"] = "USA",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+			},
+		},
+		["red"] = {
+			["bullseye"] = {
+				["x"] = -291014,
+				["y"] = 617414,
+			},
+			["nav_points"] = { },
+			["country"] = {
+				[1] = {
+					["id"] = 18,
+					["name"] = "Abkhazia",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[2] = {
+					["id"] = 24,
+					["name"] = "Belarus",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[3] = {
+					["id"] = 27,
+					["name"] = "China",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[4] = {
+					["id"] = 34,
+					["name"] = "Iran",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[5] = {
+					["id"] = 35,
+					["name"] = "Iraq",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[6] = {
+					["id"] = 37,
+					["name"] = "Kazakhstan",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[7] = {
+					["id"] = 38,
+					["name"] = "North Korea",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[8] = {
+					["id"] = 0,
+					["name"] = "Russia",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[9] = {
+					["id"] = 43,
+					["name"] = "Serbia",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[10] = {
+					["id"] = 19,
+					["name"] = "South Ossetia",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[11] = {
+					["id"] = 47,
+					["name"] = "Syria",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+				[12] = {
+					["id"] = 1,
+					["name"] = "Ukraine",
+					["plane"] = {
+						["group"] = { },
+					},
+					["helicopter"] = {
+						["group"] = { },
+					},
+					["vehicle"] = {
+						["group"] = { },
+					},
+					["static"] = {
+						["group"] = { },
+					},
+				},
+			},
+		},
+		["neutrals"] = {
+			["bullseye"] = {
+				["x"] = 0,
+				["y"] = 0,
+			},
+			["nav_points"] = { },
+			["country"] = { },
+		},
+	},
+	["coalitions"] = {
+		["blue"] = {
+			[1] = 21,
+			[2] = 23,
+			[3] = 11,
+			[4] = 8,
+			[5] = 28,
+			[6] = 26,
+			[7] = 13,
+			[8] = 5,
+			[9] = 16,
+			[10] = 6,
+			[11] = 15,
+			[12] = 20,
+			[13] = 12,
+			[14] = 40,
+			[15] = 45,
+			[16] = 9,
+			[17] = 46,
+			[18] = 10,
+			[19] = 3,
+			[20] = 2,
+		},
+		["neutrals"] = {
+			[1] = 70,
+			[2] = 83,
+			[3] = 23,
+			[4] = 65,
+			[5] = 86,
+			[6] = 64,
+			[7] = 25,
+			[8] = 63,
+			[9] = 76,
+			[10] = 90,
+			[11] = 29,
+			[12] = 62,
+			[13] = 30,
+			[14] = 78,
+			[15] = 87,
+			[16] = 31,
+			[17] = 61,
+			[18] = 32,
+			[19] = 33,
+			[20] = 60,
+			[21] = 17,
+			[22] = 35,
+			[23] = 69,
+			[24] = 36,
+			[25] = 59,
+			[26] = 71,
+			[27] = 79,
+			[28] = 58,
+			[29] = 57,
+			[30] = 56,
+			[31] = 55,
+			[32] = 88,
+			[33] = 73,
+			[34] = 39,
+			[35] = 89,
+			[36] = 54,
+			[37] = 77,
+			[38] = 72,
+			[39] = 41,
+			[40] = 42,
+			[41] = 44,
+			[42] = 85,
+			[43] = 75,
+			[44] = 53,
+			[45] = 22,
+			[46] = 52,
+			[47] = 66,
+			[48] = 51,
+			[49] = 74,
+			[50] = 82,
+			[51] = 7,
+			[52] = 68,
+			[53] = 50,
+			[54] = 49,
+			[55] = 48,
+			[56] = 67,
+		},
+		["red"] = {
+			[1] = 18,
+			[2] = 24,
+			[3] = 27,
+			[4] = 34,
+			[5] = 35,
+			[6] = 37,
+			[7] = 38,
+			[8] = 0,
+			[9] = 43,
+			[10] = 19,
+			[11] = 47,
+			[12] = 1,
+		},
+	},
+	["currentKey"] = 23,
+	["date"] = {
+		["Day"] = 15,
+		["Month"] = 1,
+		["Year"] = 2024,
+	},
+	["descriptionBlueTask"] = "",
+	["descriptionRedTask"] = "",
+	["descriptionText"] = "",
+	["failures"] = { },
+	["goals"] = { },
+	["pictureFileNameB"] = {
+		[1] = "DCC_Logo_1024.png",
+	},
+	["pictureFileNameN"] = { },
+	["pictureFileNameR"] = {
+		[1] = "DCC_Logo_1024.png",
+	},
+	["start_time"] = 32400,
+	["theatre"] = "Caucasus",
+	["triggers"] = {
+		["zones"] = { },
+	},
+	["version"] = 2,
+	["weather"] = {
+		["atmosphere_type"] = 0,
+		["cyclones"] = { },
+		["dust_density"] = 0,
+		["enable_dust"] = false,
+		["enable_fog"] = false,
+		["fog"] = {
+			["density"] = 0,
+			["thickness"] = 0,
+			["visibility"] = 0,
+		},
+		["groundTurbulence"] = 0,
+		["halo"] = {
+			["preset"] = "auto",
+		},
+		["modifiedTime"] = false,
+		["name"] = "DCC Weather",
+		["qnh"] = 0,
+		["season"] = {
+			["temperature"] = 0,
+		},
+		["type_weather"] = 0,
+		["visibility"] = {
+			["distance"] = 80000,
+		},
+		["wind"] = {
+			["at8000"] = {
+				["speed"] = 0,
+				["dir"] = 0,
+			},
+			["atGround"] = {
+				["speed"] = 0,
+				["dir"] = 0,
+			},
+			["at2000"] = {
+				["speed"] = 0,
+				["dir"] = 0,
+			},
+		},
+		["clouds"] = {
+			["density"] = 0,
+			["thickness"] = 0,
+			["base"] = 9144,
+			["iprecptns"] = 0,
+		},
+	},
+}"
+`;
+
+exports[`Mission static group 1`] = `
+{
+  "coalition": {
+    "blue": {
+      "bullseye": {
+        "x": -291014,
+        "y": 617414,
+      },
+      "country": [
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 21,
+          "name": "Australia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 23,
+          "name": "Austria",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 11,
+          "name": "Belgium",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 8,
+          "name": "Canada",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 28,
+          "name": "Croatia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 26,
+          "name": "Czech Republic",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 13,
+          "name": "Denmark",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 5,
+          "name": "France",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 16,
+          "name": "Georgia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 6,
+          "name": "Germany",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 15,
+          "name": "Israel",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 20,
+          "name": "Italy",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 12,
+          "name": "Norway",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 40,
+          "name": "Poland",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 45,
+          "name": "South Korea",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 9,
+          "name": "Spain",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 46,
+          "name": "Sweden",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 10,
+          "name": "The Netherlands",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 3,
+          "name": "Turkey",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 2,
+          "name": "USA",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [
+              {
+                "dead": false,
+                "groupId": 1,
+                "heading": 0,
+                "name": "Test Static Group",
+                "route": {
+                  "points": [
+                    {
+                      "action": "",
+                      "alt": 0,
+                      "formation_template": "",
+                      "name": "",
+                      "speed": 0,
+                      "type": "",
+                      "x": -298294.0361111,
+                      "y": 637215.60223479,
+                    },
+                  ],
+                },
+                "units": [
+                  {
+                    "category": "Fortifications",
+                    "heading": 0,
+                    "name": "Test Static Unit",
+                    "rate": 100,
+                    "shape_name": "ComCenter",
+                    "type": ".Command Center",
+                    "unitId": 1,
+                    "x": -298294.0361111,
+                    "y": 637215.60223479,
+                  },
+                ],
+                "x": -298294.0361111,
+                "y": 637215.60223479,
+              },
+            ],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+      ],
+      "nav_points": [],
+    },
+    "neutrals": {
+      "bullseye": {
+        "x": 0,
+        "y": 0,
+      },
+      "country": [],
+      "nav_points": [],
+    },
+    "red": {
+      "bullseye": {
+        "x": -291014,
+        "y": 617414,
+      },
+      "country": [
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 18,
+          "name": "Abkhazia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 24,
+          "name": "Belarus",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 27,
+          "name": "China",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 34,
+          "name": "Iran",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 35,
+          "name": "Iraq",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 37,
+          "name": "Kazakhstan",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 38,
+          "name": "North Korea",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 0,
+          "name": "Russia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 43,
+          "name": "Serbia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 19,
+          "name": "South Ossetia",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 47,
+          "name": "Syria",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+        {
+          "helicopter": {
+            "group": [],
+          },
+          "id": 1,
+          "name": "Ukraine",
+          "plane": {
+            "group": [],
+          },
+          "static": {
+            "group": [],
+          },
+          "vehicle": {
+            "group": [],
+          },
+        },
+      ],
+      "nav_points": [],
+    },
+  },
+  "coalitions": {
+    "blue": [
+      21,
+      23,
+      11,
+      8,
+      28,
+      26,
+      13,
+      5,
+      16,
+      6,
+      15,
+      20,
+      12,
+      40,
+      45,
+      9,
+      46,
+      10,
+      3,
+      2,
+    ],
+    "neutrals": [
+      70,
+      83,
+      23,
+      65,
+      86,
+      64,
+      25,
+      63,
+      76,
+      90,
+      29,
+      62,
+      30,
+      78,
+      87,
+      31,
+      61,
+      32,
+      33,
+      60,
+      17,
+      35,
+      69,
+      36,
+      59,
+      71,
+      79,
+      58,
+      57,
+      56,
+      55,
+      88,
+      73,
+      39,
+      89,
+      54,
+      77,
+      72,
+      41,
+      42,
+      44,
+      85,
+      75,
+      53,
+      22,
+      52,
+      66,
+      51,
+      74,
+      82,
+      7,
+      68,
+      50,
+      49,
+      48,
+      67,
+    ],
+    "red": [
+      18,
+      24,
+      27,
+      34,
+      35,
+      37,
+      38,
+      0,
+      43,
+      19,
+      47,
+      1,
+    ],
+  },
+  "currentKey": 23,
+  "date": {
+    "Day": 15,
+    "Month": 1,
+    "Year": 2024,
+  },
+  "descriptionBlueTask": "",
+  "descriptionRedTask": "",
+  "descriptionText": "",
+  "failures": {},
+  "goals": {},
+  "pictureFileNameB": [
+    "DCC_Logo_1024.png",
+  ],
+  "pictureFileNameN": [],
+  "pictureFileNameR": [
+    "DCC_Logo_1024.png",
+  ],
+  "start_time": 32400,
+  "theatre": "Caucasus",
+  "triggers": {
+    "zones": {},
+  },
+  "version": 2,
+  "weather": {
+    "atmosphere_type": 0,
+    "clouds": {
+      "base": 9144,
+      "density": 0,
+      "iprecptns": 0,
+      "thickness": 0,
+    },
+    "cyclones": {},
+    "dust_density": 0,
+    "enable_dust": false,
+    "enable_fog": false,
+    "fog": {
+      "density": 0,
+      "thickness": 0,
+      "visibility": 0,
+    },
+    "groundTurbulence": 0,
+    "halo": {
+      "preset": "auto",
+    },
+    "modifiedTime": false,
+    "name": "DCC Weather",
+    "qnh": 0,
+    "season": {
+      "temperature": 0,
+    },
+    "type_weather": 0,
+    "visibility": {
+      "distance": 80000,
+    },
+    "wind": {
+      "at2000": {
+        "dir": 0,
+        "speed": 0,
+      },
+      "at8000": {
+        "dir": 0,
+        "speed": 0,
+      },
+      "atGround": {
+        "dir": 0,
+        "speed": 0,
+      },
+    },
+  },
+}
+`;
+
+exports[`Mission warehouse 1`] = `
+"{
+	["airports"] = {
+		[12] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[13] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[14] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[15] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[16] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[17] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[18] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[19] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[20] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[21] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[22] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[23] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[24] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[25] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[26] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[27] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[28] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[29] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[30] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[31] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+		[32] = {
+			["aircrafts"] = { },
+			["coalition"] = "NEUTRAL",
+			["diesel"] = {
+				["InitFuel"] = 100,
+			},
+			["gasoline"] = {
+				["InitFuel"] = 100,
+			},
+			["jet_fuel"] = {
+				["InitFuel"] = 100,
+			},
+			["methanol_mixture"] = {
+				["InitFuel"] = 100,
+			},
+			["OperatingLevel_Air"] = 10,
+			["OperatingLevel_Eqp"] = 10,
+			["OperatingLevel_Fuel"] = 10,
+			["periodicity"] = 30,
+			["size"] = 100,
+			["speed"] = 16.666666,
+			["suppliers"] = { },
+			["unlimitedAircrafts"] = true,
+			["unlimitedFuel"] = true,
+			["unlimitedMunitions"] = true,
+			["weapons"] = { },
+		},
+	},
+	["warehouses"] = { },
+}"
+`;

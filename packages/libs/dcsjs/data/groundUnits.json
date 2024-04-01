@@ -1,0 +1,1394 @@
+[
+  {
+    "category": "Artillery",
+    "display_name": "Mortar 2B11 120mm",
+    "name": "2B11 mortar",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Artillery",
+    "display_name": "SPH 2S1 Gvozdika 122mm",
+    "name": "SAU Gvozdika",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "SPH 2S19 Msta 152mm",
+    "name": "SAU Msta",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "SPH 2S3 Akatsia 152mm",
+    "name": "SAU Akatsia",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "SPM 2S9 Nona 120mm M",
+    "name": "SAU 2-C9",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "SPH M109 Paladin 155mm",
+    "name": "M-109",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "SPH Dana vz77 152mm",
+    "name": "SpGH_Dana",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "APC AAV-7 Amphibious",
+    "name": "AAV7",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "IFV BMD-1",
+    "name": "BMD-1",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "IFV BMP-1",
+    "name": "BMP-1",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "IFV BMP-2",
+    "name": "BMP-2",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "IFV BMP-3",
+    "name": "BMP-3",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "Scout BRDM-2",
+    "name": "BRDM-2",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "APC BTR-RD",
+    "name": "BTR_D",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "Scout Cobra",
+    "name": "Cobra",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "IFV LAV-25",
+    "name": "LAV-25",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "Scout HMMWV",
+    "name": "M1043 HMMWV Armament",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "ATGM HMMWV",
+    "name": "M1045 HMMWV TOW",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "IFV M1126 Stryker ICV",
+    "name": "M1126 Stryker ICV",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "APC M113",
+    "name": "M-113",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "ATGM Stryker",
+    "name": "M1134 Stryker ATGM",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "IFV M2A2 Bradley",
+    "name": "M-2 Bradley",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "IFV Warrior ",
+    "name": "MCV-80",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "APC MTLB",
+    "name": "MTLB",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "IFV Marder",
+    "name": "Marder",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "APC TPz Fuchs ",
+    "name": "TPZ",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "Grad MRL FDDM (FC)",
+    "name": "Grad_FDDM",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Fortification",
+    "display_name": "Bunker 2",
+    "name": "Bunker",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Paratrooper RPG-16",
+    "name": "Paratrooper RPG-16",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Paratrooper AKS",
+    "name": "Paratrooper AKS-74",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Insurgent AK-74",
+    "name": "Infantry AK Ins",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Fortification",
+    "display_name": "Bunker 1",
+    "name": "Sandbox",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Infantry AK-74",
+    "name": "Soldier AK",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Infantry AK-74 Rus ver1",
+    "name": "Infantry AK",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Infantry M249",
+    "name": "Soldier M249",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Infantry M4",
+    "name": "Soldier M4",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Infantry M4 Georgia",
+    "name": "Soldier M4 GRG",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Infantry RPG",
+    "name": "Soldier RPG",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Artillery",
+    "display_name": "MRLS FDDM (FC)",
+    "name": "MLRS FDDM",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Infantry AK-74 Rus ver2",
+    "name": "Infantry AK ver2",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Infantry AK-74 Rus ver3",
+    "name": "Infantry AK ver3",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Artillery",
+    "display_name": "MLRS BM-21 Grad 122mm",
+    "name": "Grad-URAL",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "MLRS 9K57 Uragan BM-27 220mm",
+    "name": "Uragan_BM-27",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "MLRS 9A52 Smerch CM 300mm",
+    "name": "Smerch",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "MLRS 9A52 Smerch HE 300mm",
+    "name": "Smerch_HE",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "MLRS M270 227mm",
+    "name": "MLRS",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-19 Tunguska \"Grison\" ",
+    "name": "2S6 Tunguska",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-6 Kub \"Gainful\" TEL",
+    "name": "Kub 2P25 ln",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-3 S-125 \"Goa\" LN",
+    "name": "5p73 s-125 ln",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-10 S-300 \"Grumble\" TEL D",
+    "name": "S-300PS 5P85C ln",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-10 S-300 \"Grumble\" TEL C",
+    "name": "S-300PS 5P85D ln",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-11 Buk \"Gadfly\" Fire Dome TEL",
+    "name": "SA-11 Buk LN 9A310M1",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-8 Osa \"Gecko\" TEL",
+    "name": "Osa 9A33 ln",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-15 Tor \"Gauntlet\"",
+    "name": "Tor 9A331",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-13 Strela 10M3 \"Gopher\" TEL",
+    "name": "Strela-10M3",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-9 Strela 1 \"Gaskin\" TEL",
+    "name": "Strela-1 9P31",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-11 Buk \"Gadfly\" C2 ",
+    "name": "SA-11 Buk CC 9S470M1",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Patriot CR (AMG AN/MRC-137)",
+    "name": "Patriot AMG",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Patriot ECS",
+    "name": "Patriot ECS",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SPAAA Gepard",
+    "name": "Gepard",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Hawk Platoon Command Post (PCP)",
+    "name": "Hawk pcp",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SPAAA Vulcan M163",
+    "name": "Vulcan",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Hawk LN M192",
+    "name": "Hawk ln",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Chaparral M48",
+    "name": "M48 Chaparral",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Linebacker - Bradley M6",
+    "name": "M6 Linebacker",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Patriot LN",
+    "name": "Patriot ln",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Avenger (Stinger)",
+    "name": "M1097 Avenger",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Patriot EPP-III",
+    "name": "Patriot EPP",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Patriot C2 ICC",
+    "name": "Patriot cp",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Roland ADS",
+    "name": "Roland ADS",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-10 S-300 \"Grumble\" C2 ",
+    "name": "S-300PS 54K6 cp",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "MANPADS Stinger",
+    "name": "Soldier stinger",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "MANPADS Stinger C2 Desert",
+    "name": "Stinger comm dsr",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "MANPADS Stinger C2",
+    "name": "Stinger comm",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SPAAA ZSU-23-4 Shilka \"Gun Dish\"",
+    "name": "ZSU-23-4 Shilka",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "AAA ZU-23 Closed Emplacement",
+    "name": "ZU-23 Emplacement Closed",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "AAA ZU-23 Emplacement",
+    "name": "ZU-23 Emplacement",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SPAAA ZU-23-2 Mounted Ural 375",
+    "name": "Ural-375 ZU-23",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "AAA ZU-23 Insurgent Closed Emplacement",
+    "name": "ZU-23 Closed Insurgent",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SPAAA ZU-23-2 Insurgent Mounted Ural-375",
+    "name": "Ural-375 ZU-23 Insurgent",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "AAA ZU-23 Insurgent Emplacement",
+    "name": "ZU-23 Insurgent",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "MANPADS SA-18 Igla \"Grouse\"",
+    "name": "SA-18 Igla manpad",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "MANPADS SA-18 Igla \"Grouse\" C2",
+    "name": "SA-18 Igla comm",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "MANPADS SA-18 Igla-S \"Grouse\"",
+    "name": "SA-18 Igla-S manpad",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "MANPADS SA-18 Igla-S \"Grouse\" C2",
+    "name": "SA-18 Igla-S comm",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "MANPADS SA-18 Igla \"Grouse\" Ins",
+    "name": "Igla manpad INS",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "EWR 1L13",
+    "name": "1L13 EWR",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-6 Kub \"Straight Flush\" STR",
+    "name": "Kub 1S91 str",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-10 S-300 \"Grumble\" Flap Lid TR ",
+    "name": "S-300PS 40B6M tr",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-10 S-300PS Low Alt SR 5N66M",
+    "name": "S-300PS 40B6MD sr",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "EWR 55G6",
+    "name": "55G6 EWR",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-10 S-300 \"Grumble\" Big Bird SR ",
+    "name": "S-300PS 64H6E sr",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-11 Buk \"Gadfly\" Snow Drift SR",
+    "name": "SA-11 Buk SR 9S18M1",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "MCC-SR Sborka \"Dog Ear\" SR",
+    "name": "Dog Ear radar",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Hawk TR (AN/MPQ-46)",
+    "name": "Hawk tr",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Hawk SR (AN/MPQ-50)",
+    "name": "Hawk sr",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Patriot STR",
+    "name": "Patriot str",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Hawk CWAR AN/MPQ-55",
+    "name": "Hawk cwar",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-2/3/5 P19 \"Flat Face\" SR ",
+    "name": "p-19 s-125 sr",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Roland EWR",
+    "name": "Roland Radar",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-3 S-125 \"Low Blow\" TR",
+    "name": "snr s-125 tr",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Fortification",
+    "display_name": "Barracks armed",
+    "name": "house1arm",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Fortification",
+    "display_name": "Watch tower armed",
+    "name": "house2arm",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Fortification",
+    "display_name": "Road outpost",
+    "name": "outpost_road",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Fortification",
+    "display_name": "Outpost",
+    "name": "outpost",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Fortification",
+    "display_name": "Building armed",
+    "name": "houseA_arm",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Fortification",
+    "display_name": "Beacon TACAN Portable TTS 3030",
+    "name": "TACAN_beacon",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT Challenger II",
+    "name": "Challenger2",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT Leclerc",
+    "name": "Leclerc",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT M60A3 Patton",
+    "name": "M-60",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "SPG Stryker MGS",
+    "name": "M1128 Stryker MGS",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT M1A2 Abrams",
+    "name": "M-1 Abrams",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT T-55",
+    "name": "T-55",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT T-72B",
+    "name": "T-72B",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT T-80U",
+    "name": "T-80UD",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT T-90",
+    "name": "T-90",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT Leopard 1A3",
+    "name": "Leopard1A3",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT Merkava IV",
+    "name": "Merkava_Mk4",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "GPU APA-5D on Ural 4320",
+    "name": "Ural-4320 APA-5D",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Refueler ATMZ-5",
+    "name": "ATMZ-5",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Refueler ATZ-10",
+    "name": "ATZ-10",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck GAZ-3307",
+    "name": "GAZ-3307",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck GAZ-3308",
+    "name": "GAZ-3308",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck GAZ-66",
+    "name": "GAZ-66",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Refueler M978 HEMTT",
+    "name": "M978 HEMTT Tanker",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Firefighter HEMMT TFFT",
+    "name": "HEMTT TFFT",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Bus IKARUS-280",
+    "name": "IKARUS Bus",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck KAMAZ 43101",
+    "name": "KAMAZ Truck",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Bus LAZ-695",
+    "name": "LAZ Bus",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Bus LiAZ-677",
+    "name": "LiAZ Bus",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "LUV HMMWV Jeep",
+    "name": "Hummer",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck M939 Heavy",
+    "name": "M 818",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck MAZ-6303",
+    "name": "MAZ-6303",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "MCC Predator UAV CP & GCS",
+    "name": "Predator GCS",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "MCC-COMM Predator UAV CL",
+    "name": "Predator TrojanSpirit",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Suidae",
+    "name": "Suidae",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "LUV Tigr",
+    "name": "Tigr_233036",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Bus ZIU-9 Trolley",
+    "name": "Trolley bus",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "LUV UAZ-469 Jeep",
+    "name": "UAZ-469",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Firefighter Ural ATsP-6",
+    "name": "Ural ATsP-6",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck Ural-4320-31 Arm'd",
+    "name": "Ural-4320-31",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck Ural-4320T",
+    "name": "Ural-4320T",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck Ural-375 Mobile C2",
+    "name": "Ural-375 PBU",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck Ural-375",
+    "name": "Ural-375",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Car VAZ-2109",
+    "name": "VAZ Car",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "GPU APA-80 on ZIL-131",
+    "name": "ZiL-131 APA-80",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck SKP-11 Mobile ATC",
+    "name": "SKP-11",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck ZIL-131 (C2)",
+    "name": "ZIL-131 KUNG",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck ZIL-4331",
+    "name": "ZIL-4331",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck KrAZ-6322 6x6",
+    "name": "KrAZ6322",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Infantry",
+    "display_name": "JTAC",
+    "name": "JTAC",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Infantry",
+    "display_name": "Infantry",
+    "name": "Infantry Animated",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Locomotive",
+    "display_name": "Loco VL80 Electric",
+    "name": "Electric locomotive",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Locomotive",
+    "display_name": "Loco CHME3T",
+    "name": "Locomotive",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Carriage",
+    "display_name": "Freight Van",
+    "name": "Coach cargo",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Carriage",
+    "display_name": "Open Wagon",
+    "name": "Coach cargo open",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Carriage",
+    "display_name": "Tank Car blue",
+    "name": "Coach a tank blue",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Carriage",
+    "display_name": "Tank Car yellow",
+    "name": "Coach a tank yellow",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Carriage",
+    "display_name": "Passenger Car",
+    "name": "Coach a passenger",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Carriage",
+    "display_name": "Coach Platform",
+    "name": "Coach a platform",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "RAF Rescue",
+    "name": "tacr2a",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "LARC-V",
+    "name": "LARC-V",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "AAA KS-19 100mm",
+    "name": "KS-19",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "AAA Fire Can SON-9",
+    "name": "SON_9",
+    "playerCanDrive": false
+  },
+  {
+    "category": "MissilesSS",
+    "display_name": "SSM SS-1C Scud-B",
+    "name": "Scud_B",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Armor",
+    "display_name": "Scout HL with DSHK 12.7mm",
+    "name": "HL_DSHK",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "Scout HL with KORD 12.7mm",
+    "name": "HL_KORD",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "Scout LC with DSHK 12.7mm",
+    "name": "tt_DSHK",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "Scout LC with KORD 12.7mm",
+    "name": "tt_KORD",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SPAAA HL with ZU-23",
+    "name": "HL_ZU-23",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SPAAA LC with ZU-23",
+    "name": "tt_ZU-23",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "MLRS HL with B8M1 80mm",
+    "name": "HL_B8M1",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "MLRS LC with B8M1 80mm",
+    "name": "tt_B8M1",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM NASAMS SR MPQ64F1",
+    "name": "NASAMS_Radar_MPQ64F1",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM NASAMS C2",
+    "name": "NASAMS_Command_Post",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM NASAMS LN AIM-120B",
+    "name": "NASAMS_LN_B",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM NASAMS LN AIM-120C",
+    "name": "NASAMS_LN_C",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Armor",
+    "display_name": "Tk M4 Sherman",
+    "name": "M4_Sherman",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "APC M2A1 Halftrack",
+    "name": "M2A1_halftrack",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "EWR AN/FPS-117 Radar (domed)",
+    "name": "FPS-117 Dome",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "EWR AN/FPS-117 ECS",
+    "name": "FPS-117 ECS",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "EWR AN/FPS-117 Radar",
+    "name": "FPS-117",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Armor",
+    "display_name": "APC BTR-80",
+    "name": "BTR-80",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-2 S-75 RD-75 Amazonka RF",
+    "name": "RD_75",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-2 S-75 \"Guideline\" LN",
+    "name": "S_75M_Volhov",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-2 S-75 \"Fan Song\" TR",
+    "name": "SNR_75V",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-5 S-200 ST-68U \"Tin Shield\" SR",
+    "name": "RLS_19J6",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-5 S-200 \"Square Pair\" TR",
+    "name": "RPC_5N62V",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM SA-5 S-200 \"Gammon\" LN",
+    "name": "S-200_Launcher",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SPAAA ZSU-57-2",
+    "name": "ZSU_57_2",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "AAA S-60 57mm",
+    "name": "S-60_Type59_Artillery",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "Diesel Power Station 5I57A",
+    "name": "generator_5i57",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT T-72B3",
+    "name": "T-72B3",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Armor",
+    "display_name": "LT PT-76",
+    "name": "PT_76",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Armor",
+    "display_name": "IFV BTR-82A",
+    "name": "BTR-82A",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Refueler ATZ-5",
+    "name": "ATZ-5",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Firefighter Vehicle AA-7.2/60",
+    "name": "AA8",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Refueler TZ-22 Tractor (KrAZ-258B1)",
+    "name": "TZ-22_KrAZ",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Refueler ATZ-60 Tractor (MAZ-7410)",
+    "name": "ATZ-60_Maz",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck ZIL-135",
+    "name": "ZIL-135",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "S-75 Tractor (ZIL-131)",
+    "name": "S_75_ZIL",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Rapier LN",
+    "name": "rapier_fsa_launcher",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Rapier Tracker",
+    "name": "rapier_fsa_optical_tracker_unit",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "SAM Rapier Blindfire TR",
+    "name": "rapier_fsa_blindfire_radar",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "AAA Bofors 40mm",
+    "name": "bofors40",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT Chieftain Mk.3",
+    "name": "Chieftain_mk3",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck Bedford",
+    "name": "Bedford_MWD",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck Land Rover 101 FC",
+    "name": "Land_Rover_101_FC",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "LUV Land Rover 109",
+    "name": "Land_Rover_109_S3",
+    "playerCanDrive": true
+  },
+  {
+    "category": "MissilesSS",
+    "display_name": "AShM SS-N-2 Silkworm",
+    "name": "hy_launcher",
+    "playerCanDrive": false
+  },
+  {
+    "category": "MissilesSS",
+    "display_name": "AShM Silkworm SR",
+    "name": "Silkworm_SR",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Locomotive",
+    "display_name": "Loco ES44AH",
+    "name": "ES44AH",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Carriage",
+    "display_name": "Flatcar",
+    "name": "Boxcartrinity",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Carriage",
+    "display_name": "Tank Cartrinity",
+    "name": "Tankcartrinity",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Carriage",
+    "display_name": "Well Car",
+    "name": "Wellcarnsc",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "AAA 8,8cm Flak 18",
+    "name": "flak18",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Armor",
+    "display_name": "Tk PzIV H",
+    "name": "Pz_IV_H",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT Leopard-2A5",
+    "name": "Leopard-2A5",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT Leopard-2A6M",
+    "name": "Leopard-2",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT Leopard-2A4",
+    "name": "leopard-2A4",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MBT Leopard-2A4 Trs",
+    "name": "leopard-2A4_trs",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "APC Sd.Kfz.251 Halftrack",
+    "name": "Sd_Kfz_251",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Unarmed",
+    "display_name": "Truck Opel Blitz",
+    "name": "Blitz_36-6700A",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "SPH T155 Firtina 155mm",
+    "name": "T155_Firtina",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "ATGM VAB Mephisto",
+    "name": "VAB_Mephisto",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "ZTZ-96B",
+    "name": "ZTZ96B",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "ZBD-04A",
+    "name": "ZBD04A",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "HQ-7 Self-Propelled LN",
+    "name": "HQ-7_LN_SP",
+    "playerCanDrive": false
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "HQ-7 LN Electro-Optics",
+    "name": "HQ-7_LN_EO",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Air Defence",
+    "display_name": "HQ-7 Self-Propelled STR",
+    "name": "HQ-7_STR_SP",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Artillery",
+    "display_name": "PLZ-05",
+    "name": "PLZ05",
+    "playerCanDrive": true
+  },
+  {
+    "category": "Armor",
+    "display_name": "MT Type 59",
+    "name": "TYPE-59",
+    "playerCanDrive": true
+  }
+]

@@ -1,0 +1,9 @@
+mapResource = 
+{
+    ["ResKey_Action_6"] = "mist_4_5_122.lua",
+    ["ResKey_Action_7"] = "json.lua",
+    ["ResKey_Action_8"] = "mission-config.lua",
+    ["ResKey_Action_9"] = "state.lua",
+    ["ResKey_ImageBriefing_6"] = "DCC_Logo_1024.png",
+    ["ResKey_ImageBriefing_7"] = "DCC_Logo_1024.png",
+}

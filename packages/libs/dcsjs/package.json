@@ -1,0 +1,76 @@
+{
+  "name": "@foxdelta2/dcsjs",
+  "version": "0.4.0-next.8",
+  "description": "Mission Generator for DCS",
+  "scripts": {
+    "parse": "ts-node src/scripts/parse.ts",
+    "format-time": "ts-node src/scripts/formatTime.ts",
+    "aircraftValidation": "ts-node src/scripts/aircraftValidation.ts",
+    "generateTypes": "ts-node src/scripts/generateTypes.ts",
+    "generateData": "ts-node src/scripts/generateData.ts",
+    "generateAirdromes": "ts-node src/scripts/generateAirdromes.ts",
+    "generate": "tsup --config utils/tsup.config.js --env.TEST && node ./dist/scripts/generate.js",
+    "test": "jest",
+    "lint": "eslint src",
+    "prettier": "prettier --write .",
+    "prepack": "npm run build && npm run lint && npm run prettier",
+    "build": "tsup --config utils/tsup.config.js",
+    "dev": "tsup --config utils/tsup.config.js --watch",
+    "validate": "tsc --noEmit",
+    "publish:next": "pnpm publish --tag next",
+    "clean": "rm -rf .turbo",
+    "clean:all": "rm -rf .turbo node_modules",
+    "validate:lint": "eslint src --max-warnings 0",
+    "validate:ts": "tsc --noEmit"
+  },
+  "keywords": [
+    "dcs"
+  ],
+  "author": "foxdelta2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhyver/dcsjs.git"
+  },
+  "homepage": "https://github.com/rhyver/dcsjs#readme",
+  "bugs": "https://github.com/rhyver/dcsjs/issues",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./save": {
+      "import": "./dist/save.mjs",
+      "require": "./dist/save.js",
+      "types": "./dist/save.d.ts"
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.6.0"
+  },
+  "devDependencies": {
+    "@kilcekru/ts-basics": "^3.1.1",
+    "@types/adm-zip": "^0.5.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^18.11.9",
+    "jest": "^29.7.0",
+    "prettier": "^2.8.1",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@kilcekru/lua-table": "^1.1.2",
+    "adm-zip": "^0.5.10",
+    "fs-extra": "^11.2.0",
+    "zod": "^3.22.4"
+  }
+}
