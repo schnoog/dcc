@@ -142,7 +142,12 @@ export class Country {
 					name: "AWACS",
 					type: aircraftType,
 					unitId: mission.nextUnitId,
-					callsign: "Magic",
+					callsign: {
+						name: "Magic",
+						"1": 1,
+						"2": 1,
+						"3": 1,
+					},
 					isClient: false,
 					onboardNumber: 1,
 					pylons: [],
@@ -150,7 +155,7 @@ export class Country {
 			],
 			isHelicopter: false,
 			countryName: this.name,
-			cruiseSpeed: 200,
+			cruiseSpeed: 389,
 			hasClients: false,
 			name: `AWACS-${coalition}`,
 			position: {
