@@ -1,5 +1,5 @@
 {
-	"extends": "@kilcekru/ts-basics/tsconfig-base.json",
+	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
 		"jsx": "preserve",
 		"jsxImportSource": "solid-js",
@@ -9,11 +9,9 @@
 		"plugins": [{ "name": "typescript-plugin-css-modules" }],
 		"experimentalDecorators": true,
 		"paths": {
-			// for easier development of campaign using dcsjs, uncomment following line
-			// "@foxdelta2/dcsjs": ["../../../dcsjs/src/index.ts"],
+			"@foxdelta2/dcsjs": ["../../packages/libs/dcsjs/src/index.ts"],
 			"@kilcekru/dcc-shared-*": ["../../packages/shared/*/src/index.ts"],
 			"@kilcekru/dcc-lib-*": ["../../packages/libs/*/src/index.ts"]
 		}
-	},
-	"files": ["./less.d.ts"]
+	}
 }
