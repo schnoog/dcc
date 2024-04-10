@@ -370,11 +370,13 @@ export class FlightGroup extends UnitGroup {
 
 			if (wp.arrivalTime > mission.time) {
 				waypoints.push(wp);
+				continue;
 			}
 
 			if (wp.type === "RaceTrack End") {
 				if (raceTrackEnd != null && raceTrackEnd > mission.time) {
 					waypoints.push(wp);
+					continue;
 				}
 
 				raceTrackEnd = undefined;
@@ -387,6 +389,7 @@ export class FlightGroup extends UnitGroup {
 
 			if (wp.arrivalTime + wp.duration > mission.time) {
 				waypoints.push(wp);
+				continue;
 			}
 		}
 

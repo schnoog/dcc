@@ -243,7 +243,7 @@ export const MapContainer = () => {
 			? `G${args.hostile ? "H" : "F"}C*${sidcUnitCode[args.unitCode]}`
 			: `S${args.hostile ? "H" : "F"}${args.domain === "air" ? "A" : args.domain === "sea" ? "S" : "G"}-${
 					sidcUnitCode[args.unitCode]
-			  }`;
+				}`;
 	}
 	function addMarker(args: {
 		unitCode: SidcUnitCodeKey;
@@ -269,7 +269,7 @@ export const MapContainer = () => {
 							Neutral: args.color,
 							Unknown: args.color,
 						},
-				  }),
+					}),
 		});
 
 		const icon = L.icon({
@@ -408,7 +408,7 @@ export const MapContainer = () => {
 								Neutral: selectedMarker.color,
 								Unknown: selectedMarker.color,
 							},
-					  }),
+						}),
 			});
 
 			selectedMarker.marker.setIcon(

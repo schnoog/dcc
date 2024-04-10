@@ -37,8 +37,13 @@ export class DeadFlightGroup extends EscortedFlightGroup {
 				duration,
 				type: "Task",
 				name: "DEAD",
+				onGround: true,
 			}),
 		];
+
+		if (args.holdWaypoint != null) {
+			waypoints.unshift(args.holdWaypoint);
+		}
 
 		return new DeadFlightGroup({
 			...args,
