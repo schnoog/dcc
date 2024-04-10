@@ -4,7 +4,7 @@ import * as Components from "@kilcekru/dcc-lib-components";
 import * as Types from "@kilcekru/dcc-shared-types";
 import * as Utils from "@kilcekru/dcc-shared-utils";
 import { createMemo, createSignal, For, Setter } from "solid-js";
-import { produce } from "solid-js/store";
+import { produce, unwrap } from "solid-js/store";
 
 import { AircraftLabel } from "../../../components/aircraft-label/AircraftLabel";
 import { useCreateCampaignStore, useSetCreateCampaignStore } from "../CreateCampaignContext";
@@ -113,6 +113,7 @@ export const CustomFaction = () => {
 	const [cas, setCas] = createSignal<Array<string>>(store.faction?.aircraftTypes.CAS ?? []);
 	const [awacs, setAwacs] = createSignal<Array<string>>(store.faction?.aircraftTypes.AWACS ?? []);
 	const [sead, setSead] = createSignal<Array<string>>(store.faction?.aircraftTypes.SEAD ?? []);
+	const [dead, setDead] = createSignal<Array<string>>(store.faction?.aircraftTypes.DEAD ?? []);
 	const [strike, setStrike] = createSignal<Array<string>>(store.faction?.aircraftTypes["Pinpoint Strike"] ?? []);
 	const [csar, setCsar] = createSignal<Array<string>>(store.faction?.aircraftTypes.CSAR ?? []);
 	const [airAssault, setAirAssault] = createSignal<Array<string>>(store.faction?.aircraftTypes["Air Assault"] ?? []);
@@ -142,9 +143,14 @@ export const CustomFaction = () => {
 				setter = setAwacs;
 				break;
 			}
-			case "DEAD": {
+			case "SEAD": {
 				list = sead();
 				setter = setSead;
+				break;
+			}
+			case "DEAD": {
+				list = dead();
+				setter = setDead;
 				break;
 			}
 			case "Pinpoint Strike": {
@@ -178,13 +184,14 @@ export const CustomFaction = () => {
 	const onNext = () => {
 		const f: Types.Campaign.Faction = {
 			aircraftTypes: {
-				CAP: cap() as DcsJs.AircraftType[],
-				CAS: cas() as DcsJs.AircraftType[],
-				AWACS: awacs() as DcsJs.AircraftType[],
-				SEAD: sead() as DcsJs.AircraftType[],
-				"Pinpoint Strike": strike() as DcsJs.AircraftType[],
-				CSAR: csar() as DcsJs.AircraftType[],
-				"Air Assault": airAssault() as DcsJs.AircraftType[],
+				CAP: unwrap(cap() as DcsJs.AircraftType[]),
+				CAS: unwrap(cas() as DcsJs.AircraftType[]),
+				AWACS: unwrap(awacs() as DcsJs.AircraftType[]),
+				SEAD: unwrap(sead() as DcsJs.AircraftType[]),
+				DEAD: unwrap(dead() as DcsJs.AircraftType[]),
+				"Pinpoint Strike": unwrap(strike() as DcsJs.AircraftType[]),
+				CSAR: unwrap(csar() as DcsJs.AircraftType[]),
+				"Air Assault": unwrap(airAssault() as DcsJs.AircraftType[]),
 			},
 			countryName: country(),
 			name: name() == "" ? "Custom" : name(),
@@ -195,10 +202,21 @@ export const CustomFaction = () => {
 			created: store.faction?.created,
 		};
 
-		// eslint-disable-next-line no-console
-		onSave(f).catch((e) => console.error(Utils.errMsg(e)));
+		onSave(f).catch((e) => {
+			// eslint-disable-next-line no-console
+			console.log("faction", f);
+			// eslint-disable-next-line no-console
+			console.error(Utils.errMsg(e));
+			return;
+		});
 
-		store.faction = f;
+		setStore(
+			produce((draft) => {
+				const next = draft.prevScreen === "Faction" ? "Enemy Faction" : "Settings";
+				draft.prevScreen = draft.currentScreen;
+				draft.currentScreen = next;
+			}),
+		);
 	};
 
 	const onPrev = () => {
@@ -250,6 +268,8 @@ export const CustomFaction = () => {
 					/>
 					<h2 class={Styles["mission-task"]}>SEAD</h2>
 					<AircraftList missionTask="SEAD" selectedAircrafts={sead()} toggle={(name) => toggleAircraft("SEAD", name)} />
+					<h2 class={Styles["mission-task"]}>DEAD</h2>
+					<AircraftList missionTask="DEAD" selectedAircrafts={dead()} toggle={(name) => toggleAircraft("DEAD", name)} />
 					<h2 class={Styles["mission-task"]}>Strike</h2>
 					<AircraftList
 						missionTask="Pinpoint Strike"
