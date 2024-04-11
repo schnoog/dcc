@@ -78,20 +78,22 @@ export class World {
 			theatre: args.scenario.theatre,
 		});
 
-		// Create SAMs
-		generateSAMs({
-			coalition: "blue",
-			objectivePlans: blueOps,
-			objectives: store.queries.objectives,
-			theatre: args.scenario.theatre,
-		});
+		if (store.campaignParams.samActive !== Types.Campaign.SAMActive.None) {
+			// Create SAMs
+			generateSAMs({
+				coalition: "blue",
+				objectivePlans: blueOps,
+				objectives: store.queries.objectives,
+				theatre: args.scenario.theatre,
+			});
 
-		generateSAMs({
-			coalition: "red",
-			objectivePlans: redOps,
-			objectives: store.queries.objectives,
-			theatre: args.scenario.theatre,
-		});
+			generateSAMs({
+				coalition: "red",
+				objectivePlans: redOps,
+				objectives: store.queries.objectives,
+				theatre: args.scenario.theatre,
+			});
+		}
 
 		generateGroundGroups({
 			coalition: "blue",

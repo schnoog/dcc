@@ -1,5 +1,5 @@
 import * as DcsJs from "@foxdelta2/dcsjs";
-import type * as Types from "@kilcekru/dcc-shared-types";
+import * as Types from "@kilcekru/dcc-shared-types";
 import * as Utils from "@kilcekru/dcc-shared-utils";
 
 import { Events, Serialization } from "../../utils";
@@ -166,8 +166,9 @@ export class GroundGroup extends Group<keyof Events.EventMap.GroundGroup> {
 			});
 		}
 
-		if (groupTypeShoradTemplates.length > 0) {
-			const length = Utils.Random.number(0, 100) > 60 ? 1 : 0;
+		if (groupTypeShoradTemplates.length > 0 && store.campaignParams.shoradLevel !== Types.Campaign.ShoradLevel.None) {
+			const threshold = store.campaignParams.shoradLevel === Types.Campaign.ShoradLevel.Some ? 80 : 50;
+			const length = Utils.Random.number(0, 100) > threshold ? 1 : 0;
 			Array.from({ length }, () => {
 				const unitTemplate = Utils.Random.item(groupTypeShoradTemplates);
 

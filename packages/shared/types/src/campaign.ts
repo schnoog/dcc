@@ -3,6 +3,17 @@ import { z } from "zod";
 
 import type * as Serialization from "./serialization";
 
+export enum SAMActive {
+	None,
+	ActiveNoRepair,
+	ActiveWithRepair,
+}
+
+export enum ShoradLevel {
+	None,
+	Some,
+	Normal,
+}
 export namespace Schema {
 	export const campaignSynopsis = z.object({
 		id: z.string(),
@@ -62,6 +73,8 @@ export namespace Schema {
 		nightMissions: z.boolean(),
 		badWeather: z.boolean(),
 		hotStart: z.boolean(),
+		samActive: z.nativeEnum(SAMActive),
+		shoradLevel: z.nativeEnum(ShoradLevel),
 	});
 
 	export const campaignTask = z.enum([
