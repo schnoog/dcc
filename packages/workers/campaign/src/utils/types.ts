@@ -10,6 +10,7 @@ export const entityTypeSchema = z.enum([
 	"DeadFlightGroup",
 	"SeadFlightGroup",
 	"EscortFlightGroup",
+	"Farp",
 	"GenericStructure",
 	"GroundGroup",
 	"GroundUnit",

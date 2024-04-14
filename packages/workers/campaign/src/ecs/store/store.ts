@@ -33,6 +33,11 @@ function initializeStore(): Store {
 				red: new Set(),
 				neutrals: new Set(),
 			},
+			homeBases: {
+				blue: new Set(),
+				red: new Set(),
+				neutrals: new Set(),
+			},
 			packages: {
 				blue: new SuperSet(flightGroupQueries),
 				red: new SuperSet(flightGroupQueries),
@@ -115,6 +120,7 @@ function initializeStore(): Store {
 
 interface Queries {
 	airdromes: Record<DcsJs.Coalition, Set<Entities.Airdrome>>;
+	homeBases: Record<DcsJs.Coalition, Set<Entities.HomeBase>>;
 	packages: Record<DcsJs.Coalition, SuperSet<Entities.Package, (typeof flightGroupQueries)[number]>>;
 	flightGroups: Record<DcsJs.Coalition, SuperSet<Entities.FlightGroup, (typeof flightGroupQueries)[number]>>;
 	groundGroups: Record<DcsJs.Coalition, SuperSet<Entities.GroundGroup, (typeof groundGroupSubQueries)[number]>>;

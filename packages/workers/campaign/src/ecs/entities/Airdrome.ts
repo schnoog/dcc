@@ -22,7 +22,7 @@ export class Airdrome extends HomeBase<keyof Events.EventMap.Airdrome> {
 	static create(args: AirdromeProps) {
 		const ad = new Airdrome(args);
 
-		ad.generateAircraftsForHomeBase({ coalition: args.coalition });
+		ad.generateAircraftsForHomeBase({ coalition: args.coalition, homeBaseType: "Airdrome" });
 
 		return ad;
 	}

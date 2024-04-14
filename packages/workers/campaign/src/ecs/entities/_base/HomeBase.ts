@@ -3,7 +3,7 @@ import * as Types from "@kilcekru/dcc-shared-types";
 import * as Utils from "@kilcekru/dcc-shared-utils";
 
 import { Events, Serialization } from "../../../utils";
-import { getEntity, store } from "../../store";
+import { getEntity, QueryKey, store } from "../../store";
 import { Aircraft } from "../Aircraft";
 import { MapEntity, MapEntityProps } from "./MapEntity";
 
@@ -47,7 +47,10 @@ export abstract class HomeBase<EventNames extends keyof Events.EventMap.All = ne
 	}
 
 	public constructor(args: HomeBaseProps | Types.Serialization.HomeBaseSerialized) {
-		super(args);
+		const superArgs = Serialization.isSerialized(args)
+			? args
+			: { ...args, queries: ["homeBases", ...(args.queries ?? [])] as QueryKey[] };
+		super(superArgs);
 		this.type = args.type;
 
 		if (Serialization.isSerialized(args)) {
@@ -55,7 +58,7 @@ export abstract class HomeBase<EventNames extends keyof Events.EventMap.All = ne
 		}
 	}
 
-	public generateAircraftsForHomeBase(args: { coalition: DcsJs.Coalition }) {
+	public generateAircraftsForHomeBase(args: { coalition: DcsJs.Coalition; homeBaseType: DcsJs.HomeBaseType }) {
 		for (const task in Types.Campaign.Schema.campaignTask.Values ?? {}) {
 			this.generateAircraftsForTask({
 				...args,
@@ -64,7 +67,11 @@ export abstract class HomeBase<EventNames extends keyof Events.EventMap.All = ne
 		}
 	}
 
-	public generateAircraftsForTask(args: { coalition: DcsJs.Coalition; task: Types.Campaign.CampaignTask }) {
+	public generateAircraftsForTask(args: {
+		coalition: DcsJs.Coalition;
+		homeBaseType: DcsJs.HomeBaseType;
+		task: Types.Campaign.CampaignTask;
+	}) {
 		const taskAircraftTypes = store.factionDefinitions[args.coalition]?.aircraftTypes[args.task];
 
 		if (taskAircraftTypes == null) {
@@ -72,6 +79,18 @@ export abstract class HomeBase<EventNames extends keyof Events.EventMap.All = ne
 		}
 
 		for (const aircraftType of taskAircraftTypes) {
+			if (args.homeBaseType === "Farp") {
+				const data = DcsJs.aircraftDefinitions[aircraftType];
+
+				if (data == null) {
+					throw new Error(`aircraft: ${aircraftType} not found`);
+				}
+
+				if (!data.isHelicopter) {
+					continue;
+				}
+			}
+
 			const count = Math.max(2, Utils.Config.inventory.aircraft[args.task] / taskAircraftTypes.length);
 
 			Array.from({ length: count }).forEach(() => {

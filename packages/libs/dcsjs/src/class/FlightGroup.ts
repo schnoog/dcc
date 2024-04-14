@@ -146,12 +146,48 @@ export class FlightGroup extends UnitGroup {
 		return airdrome;
 	}
 
+	#homeBaseWaypointParams(mission: Mission):
+		| {
+				airdromeId: number;
+		  }
+		| {
+				linkUnit: number;
+				helipadId: number;
+		  } {
+		switch (this.homeBaseType) {
+			case "Farp": {
+				const country = mission.getCountry(this.coalition);
+
+				for (const staticGroup of country.staticGroups) {
+					if (staticGroup.name === this.homeBaseName) {
+						return {
+							linkUnit: staticGroup.unitId,
+							helipadId: staticGroup.unitId,
+						};
+					}
+				}
+
+				throw new Error(`Farp ${this.homeBaseName} not found`);
+			}
+			default:
+				return { airdromeId: this.#getAirdrome(mission).airdromeDefinition.id };
+		}
+	}
+
 	#calcPositionAndParking(mission: Mission, index: number): StartPosition {
 		if (this.#calcStartType(mission) === "air") {
 			return {
 				x: this.position.x + index * 100,
 				y: this.position.y + index * 100,
 				...this.#calcAltParams(false),
+			};
+		}
+
+		if (this.homeBaseType === "Farp") {
+			return {
+				x: this.position.x,
+				y: this.position.y,
+				...this.#calcAltParams(true),
 			};
 		}
 
@@ -176,7 +212,6 @@ export class FlightGroup extends UnitGroup {
 		startPosition: StartPosition,
 	): Data.GeneratedTypes.RoutePoint[] {
 		const startType = this.#calcStartType(mission);
-		const airdrome = this.#getAirdrome(mission);
 
 		switch (startType) {
 			case "air": {
@@ -285,7 +320,7 @@ export class FlightGroup extends UnitGroup {
 						speed: this.cruiseSpeed,
 						speed_locked: true,
 						type: "TakeOffParkingHot",
-						airdromeId: airdrome.airdromeDefinition.id,
+						...this.#homeBaseWaypointParams(mission),
 						task: {
 							id: "ComboTask",
 							params: {
@@ -311,7 +346,7 @@ export class FlightGroup extends UnitGroup {
 						speed: this.cruiseSpeed,
 						speed_locked: true,
 						type: "TakeOffParking",
-						airdromeId: airdrome.airdromeDefinition.id,
+						...this.#homeBaseWaypointParams(mission),
 						task: {
 							id: "ComboTask",
 							params: {

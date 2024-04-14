@@ -141,6 +141,22 @@ export class Mission {
 		}
 	}
 
+	public getCountry(coalition: Data.Coalition) {
+		const factionCountryName = this.#factionCountries[coalition];
+
+		if (factionCountryName == null) {
+			throw new Error(`Faction country missing for ${coalition}`);
+		}
+
+		const country = this.#countries.get(factionCountryName);
+
+		if (country == null) {
+			throw new Error(`Country ${factionCountryName} not found`);
+		}
+
+		return country;
+	}
+
 	#coalitionCountriesToGenerated(coalition: Data.Coalition) {
 		const generatedCountries: Data.GeneratedTypes.Country[] = [];
 

@@ -18,6 +18,8 @@ export interface EscortedFlightGroup {}
 
 export interface EscortingFlightGroup {}
 
+export interface Farp {}
+
 export interface FlightGroup {
 	landed: void;
 	destroyed: void;

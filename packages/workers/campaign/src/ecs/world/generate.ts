@@ -70,22 +70,36 @@ export function generateStructures(args: {
 				continue;
 			}
 
-			if (structureType === "Barrack" || structureType === "Depot") {
-				Entities.UnitCamp.create({
-					name: structurePlan.structureName,
-					objectiveId: objective.id,
-					position: strikeTarget.position,
-					structureType,
-					coalition: args.coalition,
-				});
-			} else {
-				Entities.GenericStructure.create({
-					name: structurePlan.structureName,
-					objectiveId: objective.id,
-					position: strikeTarget.position,
-					structureType,
-					coalition: args.coalition,
-				});
+			switch (structureType) {
+				case "Barrack":
+				case "Depot": {
+					Entities.UnitCamp.create({
+						name: structurePlan.structureName,
+						objectiveId: objective.id,
+						position: strikeTarget.position,
+						structureType,
+						coalition: args.coalition,
+					});
+					break;
+				}
+				case "Farp": {
+					Entities.Farp.create({
+						name: structurePlan.structureName,
+						objectiveId: objective.id,
+						position: strikeTarget.position,
+						coalition: args.coalition,
+					});
+					break;
+				}
+				default: {
+					Entities.GenericStructure.create({
+						name: structurePlan.structureName,
+						objectiveId: objective.id,
+						position: strikeTarget.position,
+						structureType,
+						coalition: args.coalition,
+					});
+				}
 			}
 		}
 	}

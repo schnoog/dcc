@@ -248,6 +248,7 @@ export type GroundUnitType = z.infer<typeof Schema.groundUnitType>; // TODO
 // queryName
 export const queryNameSchema = z.enum([
 	"airdromes",
+	"homeBases",
 	"packages",
 	"flightGroups",
 	"groundGroups",
@@ -282,6 +283,7 @@ export const entityTypeSchema = z.enum([
 	"DeadFlightGroup",
 	"SeadFlightGroup",
 	"EscortFlightGroup",
+	"Farp",
 	"GenericStructure",
 	"GroundGroup",
 	"GroundUnit",
@@ -542,6 +544,13 @@ const airdromeSchema = homeBaseSchema.extend({
 });
 export type AirdromeSerialized = z.TypeOf<typeof airdromeSchema>;
 
+const farpSchema = homeBaseSchema.extend({
+	entityType: z.literal("Farp"),
+	objectiveId: z.string(),
+	buildingIds: z.array(z.string()),
+});
+export type FarpSerialized = z.TypeOf<typeof farpSchema>;
+
 export const stateEntitySchema = z.discriminatedUnion("entityType", [
 	genericStructureSchema,
 	unitCampSchema,
@@ -551,6 +560,7 @@ export const stateEntitySchema = z.discriminatedUnion("entityType", [
 	aircraftSchema,
 	airAssaultFlightGroupSchema,
 	deadFlightGroupSchema,
+	farpSchema,
 	escortFlightGroupSchema,
 	strikeFlightGroupSchema,
 	casFlightGroupSchema,

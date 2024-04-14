@@ -19,6 +19,10 @@ export class Country {
 	#plane: FlightGroup[] = [];
 	#helicopter: FlightGroup[] = [];
 
+	get staticGroups() {
+		return this.#staticGroups;
+	}
+
 	constructor(args: CountryProps) {
 		this.id = args.id;
 		this.name = args.name;

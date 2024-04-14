@@ -173,7 +173,7 @@ const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = a
 		}
 
 		// Structures
-		if (entity.entityType === "GenericStructure" || entity.entityType === "UnitCamp") {
+		if (entity.entityType === "GenericStructure" || entity.entityType === "UnitCamp" || entity.entityType === "Farp") {
 			const units = [];
 
 			for (const id of entity.buildingIds) {
