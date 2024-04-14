@@ -110,6 +110,32 @@ export class World {
 		this.mapUpdate();
 	}
 
+	public updateClientStartTimes() {
+		let firstStartTime = Infinity;
+		const clientPackages = new Set<Entities.Package>();
+
+		for (const fg of store.queries.flightGroups.blue) {
+			if (fg.hasClients) {
+				const plannedStartTime = fg.package.plannedStartTime;
+				if (plannedStartTime < firstStartTime) {
+					firstStartTime = plannedStartTime;
+				}
+
+				clientPackages.add(fg.package);
+			}
+		}
+
+		if (firstStartTime !== Infinity) {
+			for (const pkg of clientPackages) {
+				pkg.startTime = firstStartTime;
+			}
+		} else {
+			for (const pkg of clientPackages) {
+				pkg.resetStartTime();
+			}
+		}
+	}
+
 	public timeUpdate() {
 		postEvent({
 			name: "timeUpdate",

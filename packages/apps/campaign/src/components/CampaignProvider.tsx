@@ -67,6 +67,8 @@ export const initState: CampaignState = {
 		nightMissions: false,
 		training: false,
 		hotStart: false,
+		samActive: Types.Campaign.SAMActive.ActiveWithRepair,
+		shoradLevel: Types.Campaign.ShoradLevel.Normal,
 	},
 	openModals: new Set(),
 	startTimeReached: false,

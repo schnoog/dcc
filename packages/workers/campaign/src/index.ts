@@ -95,6 +95,7 @@ addEventListener("message", (e: MessageEvent<Campaign.WorkerMessage>) => {
 
 			flightGroup.setClient(e.data.payload.count);
 
+			world.updateClientStartTimes();
 			world.stateUpdate();
 
 			const state = Serialization.serialize();

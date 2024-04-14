@@ -67,8 +67,16 @@ export class Package extends Entity<keyof Events.EventMap.Package> {
 		return this.#startTime;
 	}
 
+	get plannedStartTime() {
+		return this.#plannedStartTime;
+	}
+
 	get flightGroups() {
 		return Array.from(this.#flightGroupIds).map((id) => getEntity<FlightGroup>(id));
+	}
+
+	set startTime(time: number) {
+		this.#startTime = time;
 	}
 
 	private constructor(args: PackageProps | Types.Serialization.PackageSerialized) {
@@ -384,6 +392,10 @@ export class Package extends Entity<keyof Events.EventMap.Package> {
 		if (activeFlightGroups === 0) {
 			this.destructor();
 		}
+	}
+
+	resetStartTime() {
+		this.#startTime = this.#plannedStartTime;
 	}
 
 	override destructor(): void {
