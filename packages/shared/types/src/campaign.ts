@@ -311,6 +311,7 @@ export type WorkerState = {
 	version: number;
 	factionDefinitions: Record<DcsJs.Coalition, Faction | undefined>;
 	theatre: DcsJs.Theatre;
+	weather: DcsJs.Weather;
 };
 
 export type WorkerEventTick = { name: "tick"; dt: number };

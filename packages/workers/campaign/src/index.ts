@@ -38,6 +38,7 @@ addEventListener("message", (e: MessageEvent<Campaign.WorkerMessage>) => {
 					...state,
 					factionDefinitions: store.factionDefinitions,
 					theatre: store.theatre,
+					weather: store.weather,
 				},
 			});
 
@@ -83,6 +84,7 @@ addEventListener("message", (e: MessageEvent<Campaign.WorkerMessage>) => {
 					active: false,
 					factionDefinitions: store.factionDefinitions,
 					theatre: store.theatre,
+					weather: store.weather,
 				},
 			});
 
@@ -105,6 +107,7 @@ addEventListener("message", (e: MessageEvent<Campaign.WorkerMessage>) => {
 					...state,
 					factionDefinitions: store.factionDefinitions,
 					theatre: store.theatre,
+					weather: store.weather,
 				},
 			});
 

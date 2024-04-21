@@ -288,51 +288,51 @@ export class Mission {
 			version: 22,
 			sortie: "DictKey_sortie_5",
 			weather: {
-				/*atmosphere_type: 0,
-        cyclones: {},
-        dust_density: 0,
-        enable_dust: false,
-        enable_fog: false,
-        fog: {
-          density: 0,
-          thickness: 0,
-          visibility: 0,
-        },
-        groundTurbulence: 0,
-        halo: {
-          preset: "auto",
-        },
-        modifiedTime: false,
-        name: "DCC Weather",
-        qnh: 0,
-        season: {
-          temperature: this.weather.temperature,
-        },
-        type_weather: 0,
-        visibility: {
-          distance: 80000 - this.weather.cloudCover * 10000,
-        },
-        wind: {
-          at8000: {
-            speed: this.weather.wind.speed * 3,
-            dir: this.weather.wind.direction,
-          },
-          atGround: {
-            speed: this.weather.wind.speed,
-            dir: this.weather.wind.direction,
-          },
-          at2000: {
-            speed: this.weather.wind.speed * 1.5,
-            dir: this.weather.wind.direction,
-          },
-        },
-        clouds: {
-          density: Math.round(this.weather.cloudCover * 10),
-          thickness: Math.round(this.weather.cloudCover * 200),
-          base: 9144 - this.weather.cloudCover * 10150,
-          iprecptns: this.weather.cloudCover > 0.6 ? 1 : 0,
-        },  */
 				atmosphere_type: 0,
+				cyclones: {},
+				dust_density: 0,
+				enable_dust: false,
+				enable_fog: false,
+				fog: {
+					density: 0,
+					thickness: 0,
+					visibility: 0,
+				},
+				groundTurbulence: 0,
+				halo: {
+					preset: "auto",
+				},
+				modifiedTime: false,
+				name: "DCC Weather",
+				qnh: 0,
+				season: {
+					temperature: this.weather.temperature,
+				},
+				type_weather: 0,
+				visibility: {
+					distance: 80000 - this.weather.cloudCover * 10000,
+				},
+				wind: {
+					at8000: {
+						speed: this.weather.wind.speed * 3,
+						dir: this.weather.wind.direction,
+					},
+					atGround: {
+						speed: this.weather.wind.speed,
+						dir: this.weather.wind.direction,
+					},
+					at2000: {
+						speed: this.weather.wind.speed * 1.5,
+						dir: this.weather.wind.direction,
+					},
+				},
+				clouds: {
+					density: Math.round(this.weather.cloudCover * 10),
+					thickness: Math.round(this.weather.cloudCover * 200),
+					base: 9144 - this.weather.cloudCover * 10150,
+					iprecptns: this.weather.cloudCover > 0.6 ? 1 : 0,
+				},
+				/* atmosphere_type: 0,
 				wind: {
 					at8000: {
 						speed: 0,
@@ -375,7 +375,7 @@ export class Mission {
 					preset: "Preset2",
 					base: 2500,
 					iprecptns: 0,
-				},
+				}, */
 			},
 		};
 	}
