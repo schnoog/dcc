@@ -136,7 +136,7 @@ async function saveMission() {
 
 	const path = "./dist/test.miz";
 
-	await save(mission, path);
+	await save({ mission, path });
 
 	// eslint-disable-next-line no-console
 	console.log("👌 done");

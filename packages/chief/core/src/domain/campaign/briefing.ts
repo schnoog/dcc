@@ -3,9 +3,12 @@ import * as Utils from "@kilcekru/dcc-shared-utils";
 
 import { capture } from "../capture";
 
-export async function generateBriefingKneeboards(campaign: Types.Serialization.UIState) {
+export async function generateBriefingKneeboards(
+	campaign: Types.Serialization.UIStateEntitiesArray,
+	entities: Map<string, Types.Serialization.StateEntitySerialized>,
+) {
 	const documents: Types.Capture.Document[] = [];
-	const getEntity = Utils.ECS.EntitySelector(campaign.entities);
+	const getEntity = Utils.ECS.EntitySelector(entities);
 
 	for (const entity of campaign.entities.values()) {
 		if (entity.entityType !== "Package" || entity.coalition !== "blue") {
@@ -36,7 +39,7 @@ export async function generateBriefingKneeboards(campaign: Types.Serialization.U
 						package: entity,
 						flightGroup: fg,
 						theatre: campaign.theatre,
-						entities: campaign.entities,
+						entities,
 					},
 				});
 			}

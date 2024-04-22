@@ -296,7 +296,9 @@ const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = a
 		red: Utils.Random.item(campaign.factionDefinitions.red?.aircraftTypes["AWACS"] ?? []) ?? "A-50",
 	});
 
-	await DcsJSSave.save(mission, path);
+	const kneeboards = await Domain.Campaign.generateBriefingKneeboards(campaign, entityMap);
+
+	await DcsJSSave.save({ mission, path, kneeboards });
 
 	return { success: true };
 };

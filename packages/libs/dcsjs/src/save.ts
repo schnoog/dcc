@@ -11,8 +11,8 @@ import Mist from "./template/l10n/DEFAULT/mist_4_5_122.lua";
 import State from "./template/l10n/DEFAULT/state.lua";
 import Options from "./template/options.template";
 
-export async function save(mission: Mission, path?: string) {
-	if (path != null && path.endsWith(".miz") === false) {
+export async function save(args: { mission: Mission; path?: string; kneeboards?: Array<Buffer> }) {
+	if (args.path != null && args.path.endsWith(".miz") === false) {
 		throw new Error("invalid path");
 	}
 
@@ -25,20 +25,26 @@ export async function save(mission: Mission, path?: string) {
 	zip.addFile("l10n/DEFAULT/mapResource", Buffer.from(MapResource));
 	zip.addFile("l10n/DEFAULT/mist_4_5_122.lua", Buffer.from(Mist));
 	zip.addFile("l10n/DEFAULT/json.lua", Buffer.from(Json));
-	zip.addFile("l10n/DEFAULT/mission-config.lua", Buffer.from("config = " + mission.toMissionConfig(), "utf-8"));
+	zip.addFile("l10n/DEFAULT/mission-config.lua", Buffer.from("config = " + args.mission.toMissionConfig(), "utf-8"));
 	zip.addFile("l10n/DEFAULT/state.lua", Buffer.from(State));
-	zip.addFile("mission", Buffer.from("mission = " + mission.toMissionLuaTable(), "utf-8"));
+	zip.addFile("mission", Buffer.from("mission = " + args.mission.toMissionLuaTable(), "utf-8"));
 	zip.addFile("options", Buffer.from(Options));
-	zip.addFile("theatre", Buffer.from(mission.theatre));
-	zip.addFile("warehouses", Buffer.from("warehouses = " + mission.toWarehouseLuaTable(), "utf-8"));
+	zip.addFile("theatre", Buffer.from(args.mission.theatre));
+	zip.addFile("warehouses", Buffer.from("warehouses = " + args.mission.toWarehouseLuaTable(), "utf-8"));
 
 	zip.addLocalFile(Path.join(__dirname, Logo), "l10n/DEFAULT", "DCC_Logo_1024.png");
 
-	if (path) {
-		zip.writeZip(path);
+	if (args.kneeboards != null) {
+		args.kneeboards.forEach((kb, i) => {
+			zip.addFile(`KNEEBOARD/IMAGES/dcc-briefing-${(i + 1).toString().padStart(2, "0")}.png`, kb);
+		});
+	}
+
+	if (args.path) {
+		zip.writeZip(args.path);
 
 		// eslint-disable-next-line no-console
-		console.log("🚀 mission saved to", path);
+		console.log("🚀 mission saved to", args.path);
 		return;
 	}
 
