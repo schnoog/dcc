@@ -1,9 +1,60 @@
 ---
+export const prerender = false;
+
 import Layout from "../layouts/main.astro"
-import { Roadmap as ReactRoadmap} from '../components/Roadmap';
+
+type Milestone = {
+    title: string;
+    id: number;
+}
+
+type Issue = {
+    title: string;
+    milestone?: Milestone;
+    state: string;
+}
+
+type Error = {
+    message: string;
+    errors: any
+}
+
+const response = await fetch('https://api.github.com/repos/Kilcekru/dcc/issues?state=all&milestone=3');
+const issues = await response.json() as Issue[] | Error;
+
+if ('message' in issues) {
+    console.error(issues);
+    throw new Error(issues.message);
+}
+
+const openIssues: Issue[] = []
+const closedIssues: Issue[] = []
+
+for (const issue of issues) {
+    if (issue.state === 'open') {
+        openIssues.push(issue);
+    } else {
+        closedIssues.push(issue);
+    }
+}
+
 ---
 
 <Layout>
     <h1>Roadmap</h1>
-    <ReactRoadmap client:load />
+    <div class="relative h-4 w-full overflow-hidden rounded-full bg-secondary">
+    <div class="h-full w-full flex-1 bg-primary transition-all" style={{ transform: `translateX(-${100 - (20 || 0)}%)` }} />
+</div>
+    <div class="grid grid-cols-2">
+        <div>
+    {openIssues.map(issue => (
+        <p>{issue.title}({issue.state})</p>
+    ))}
+    </div>
+    <div>
+        {closedIssues.map(issue => (
+            <p>{issue.title}({issue.state})</p>
+        ))}
+        </div>
+    </div>
 </Layout>
