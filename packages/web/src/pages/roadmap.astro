@@ -1,0 +1,9 @@
+---
+import Layout from "../layouts/main.astro"
+import { Roadmap as ReactRoadmap} from '../components/Roadmap';
+---
+
+<Layout>
+    <h1>Roadmap</h1>
+    <ReactRoadmap client:load />
+</Layout>

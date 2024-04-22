@@ -1,0 +1,16 @@
+---
+title: 'Markdown + Tailwind'
+// Component Imports
+import Button from '../components/Button.astro';
+import Layout from "../layouts/main.astro"
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
+
+---
+
+<Layout>
+		<div class="grid place-items-center h-screen content-center">
+			<Button>Tailwind Button in Astro!</Button>
+			<a href="/readme" class="p-4 underline">Markdown is also supported...</a>
+		</div>
+</Layout>

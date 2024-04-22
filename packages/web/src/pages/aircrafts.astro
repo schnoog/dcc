@@ -1,0 +1,15 @@
+---
+import * as DcsJs from "../../../libs/dcsjs/src"
+import Layout from "../layouts/main.astro"
+
+const aircrafts = DcsJs.aircraftDefinitions
+---
+
+<Layout>
+    <h1>DCSJS</h1>
+    <ul>
+        {Object.values(aircrafts).map((item) => (
+          <li>{item.display_name}</li>
+        ))}
+      </ul>
+</Layout>

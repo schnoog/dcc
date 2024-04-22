@@ -4,4 +4,5 @@ packages:
   - packages/libs/*
   - packages/shared/*
   - packages/workers/*
+  - packages/web
   - utils/*
