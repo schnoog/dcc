@@ -1,4 +1,5 @@
-import { Cell, flexRender, Table as TanTable } from "@tanstack/react-table";
+import { flexRender } from "@tanstack/react-table";
+import type { Cell, Table as TanTable } from "@tanstack/table-core";
 import * as React from "react";
 
 export type TableProps<DataType> = {

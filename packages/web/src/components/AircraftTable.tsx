@@ -2,7 +2,6 @@ import * as React from "react";
 import * as DcsJs from "../../../libs/dcsjs/src";
 import {
   createColumnHelper,
-  flexRender,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
@@ -15,6 +14,8 @@ export function AircraftTable({
 }: {
   items: Record<DcsJs.AircraftType, DcsJs.AircraftDefinition>;
 }) {
+  const [globalFilter, setGlobalFilter] = React.useState("");
+
   const columns = React.useMemo(
     () => [
       columnHelper.accessor("display_name", {
@@ -40,10 +41,18 @@ export function AircraftTable({
     columns,
     data: Object.values(items),
     getCoreRowModel: getCoreRowModel(),
+    onGlobalFilterChange: setGlobalFilter,
   });
 
   return (
     <div>
+      <input
+        value={globalFilter ?? ""}
+        onChange={(value) => setGlobalFilter(String(value))}
+        className="font-lg border-block color-midnight border p-2 shadow"
+        placeholder="Search all columns..."
+      />
+
       <Table table={table} />
     </div>
   );
