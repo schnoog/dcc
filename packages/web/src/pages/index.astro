@@ -1,16 +1,31 @@
 ---
-title: 'Markdown + Tailwind'
 // Component Imports
-import Button from '../components/Button.astro';
-import Layout from "../layouts/main.astro"
+import Layout from "../layouts/main.astro";
+import Hero from "../images/hero.jpg";
+import { Image, getImage } from "astro:assets";
+import DownloadButton from "../components/DownloadButton.astro";
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
-
 ---
 
 <Layout>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/readme" class="p-4 underline">Markdown is also supported...</a>
-		</div>
+  <div class="relative grid h-[1000px] place-items-center content-center">
+    <Image
+      src={Hero}
+      class="absolute left-0 top-0 z-0 h-full w-full object-cover backdrop-blur-sm"
+      alt="Hero Image"
+    />
+    <div
+      class="relative flex flex-col gap-10 p-8 text-center backdrop-blur-md backdrop-saturate-50"
+    >
+      <h1
+        class="inline-block bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-clip-text text-9xl text-transparent"
+      >
+        DCC
+      </h1>
+      <h2 class="text-2xl">Dynamic Campaign Generator for DCS</h2>
+      <DownloadButton />
+    </div>
+  </div>
 </Layout>

@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro"
 ---
 
 <html lang="en">
@@ -9,12 +10,7 @@
 		<title>DCC</title>
 	</head>
 	<body class="bg-midnight text-white">
-		<nav>
-			<a href="/">Home</a>
-			<a href="/readme">Readme</a>
-			<a href="/database">Database</a>
-			<a href="/roadmap">Roadmap</a>
-		</nav>
+		<Header />
 		<article>
 			<slot />
 		</article>
