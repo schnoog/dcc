@@ -17,25 +17,32 @@ type Error = {
   errors: any;
 };
 
-const response = await fetch(
-  "https://api.github.com/repos/Kilcekru/dcc/issues?state=all&milestone=3",
-);
-const issues = (await response.json()) as Issue[] | Error;
-
-if ("message" in issues) {
-  console.error(issues);
-  throw new Error(issues.message);
-}
-
 const openIssues: Issue[] = [];
 const closedIssues: Issue[] = [];
 
-for (const issue of issues) {
-  if (issue.state === "open") {
-    openIssues.push(issue);
-  } else {
-    closedIssues.push(issue);
+const response = await fetch(
+  "https://api.github.com/repos/Kilcekru/dcc/issues?state=all&milestone=3",
+);
+
+console.log(response);
+
+try {
+  const issues = (await response.json()) as Issue[] | Error;
+
+  if ("message" in issues) {
+    console.error(issues);
+    throw new Error(issues.message);
   }
+
+  for (const issue of issues) {
+    if (issue.state === "open") {
+      openIssues.push(issue);
+    } else {
+      closedIssues.push(issue);
+    }
+  }
+} catch (error) {
+  console.error(error);
 }
 ---
 
