@@ -8,7 +8,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), react()],
   output: "hybrid",
-  adapter: cloudflare({
-    imageService: "compile",
-  }),
+  adapter: cloudflare(),
 });
