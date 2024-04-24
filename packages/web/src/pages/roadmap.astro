@@ -25,8 +25,11 @@ const response = await fetch(
 );
 
 console.log("Status", response.status);
+console.log("Status Text", response.statusText);
 console.log("Ok", response.ok);
-console.log("Text", response.body);
+console.log("Text", await response.text());
+
+if (!response.ok) throw new Error(response.statusText);
 
 try {
   const issues = (await response.json()) as Issue[] | Error;
