@@ -22,14 +22,21 @@ const closedIssues: Issue[] = [];
 
 const response = await fetch(
   "https://api.github.com/repos/Kilcekru/dcc/issues?state=all&milestone=3",
+  {
+    headers: {
+      "User-Agent": "DCC-Web",
+      Accept: "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+  },
 );
 
-console.log("Status", response.status);
-console.log("Status Text", response.statusText);
-console.log("Ok", response.ok);
-console.log("Text", await response.text());
-
-if (!response.ok) throw new Error(response.statusText);
+if (!response.ok) {
+  console.error("Status", response.status);
+  console.error("Status Text", response.statusText);
+  console.error("Text", await response.text());
+  throw new Error(response.statusText);
+}
 
 try {
   const issues = (await response.json()) as Issue[] | Error;
