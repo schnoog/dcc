@@ -1,0 +1,16 @@
+---
+import { Github } from "../github-types";
+
+interface Props {
+	issue: Github.Issue;
+}
+
+const { issue } = Astro.props;
+---
+
+<a href={issue.html_url} target="_blank">
+	<li class="min-h-16 rounded-md bg-midnight p-2">
+		<h3 class="text-l">{issue.title}</h3>
+		{issue.labels.map((label) => <span class="rounded-md bg-gray-800 px-1 text-white">{label.name}</span>)}
+	</li>
+</a>
