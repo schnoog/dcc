@@ -1,39 +1,39 @@
 {
-  "name": "@kilcekru/dcc-web",
-  "version": "0.1.0",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "clean": "rm -rf .turbo dist",
-    "clean:all": "rm -rf .turbo node_modules"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/cloudflare": "^10.2.3",
-    "@astrojs/mdx": "^2.3.1",
-    "@astrojs/node": "^8.2.5",
-    "@astrojs/react": "^3.3.0",
-    "@astrojs/tailwind": "^5.1.0",
-    "@foxdelta2/dcsjs": "*",
-    "@tanstack/react-table": "^8.16.0",
-    "@tanstack/table-core": "^8.16.0",
-    "@types/canvas-confetti": "^1.6.3",
-    "astro": "^4.6.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-tailwindcss": "^0.5.14",
-    "vite": "^5.2.10",
-    "wrangler": "^3.51.2"
-  }
+	"name": "@kilcekru/dcc-web",
+	"version": "0.1.0",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"clean": "rm -rf .turbo dist",
+		"clean:all": "rm -rf .turbo node_modules"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.5.10",
+		"@astrojs/cloudflare": "^10.2.3",
+		"@astrojs/mdx": "^2.3.1",
+		"@astrojs/node": "^8.2.5",
+		"@astrojs/react": "^3.3.0",
+		"@astrojs/tailwind": "^5.1.0",
+		"@foxdelta2/dcsjs": "*",
+		"@tanstack/react-table": "^8.16.0",
+		"@tanstack/table-core": "^8.16.0",
+		"@types/canvas-confetti": "^1.6.3",
+		"astro": "^4.6.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"tailwindcss": "^3.4.3",
+		"typescript": "^5.4.5"
+	},
+	"devDependencies": {
+		"@types/react": "^18.2.79",
+		"@types/react-dom": "^18.2.25",
+		"prettier": "^3.0.3",
+		"prettier-plugin-astro": "^0.13.0",
+		"prettier-plugin-tailwindcss": "^0.5.14",
+		"vite": "^5.2.10",
+		"wrangler": "^3.51.2"
+	}
 }
