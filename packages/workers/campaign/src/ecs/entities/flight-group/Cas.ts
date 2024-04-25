@@ -10,10 +10,12 @@ import type { GroundGroup } from "../GroundGroup";
 
 interface CasFlightGroupProps extends Omit<EscortedFlightGroupProps, "entityType" | "task"> {
 	targetGroundGroupId: Types.Campaign.Id;
+	jtacFrequency: number;
 }
 
 export class CasFlightGroup extends EscortedFlightGroup<keyof Events.EventMap.CasFlightGroup> {
 	readonly #targetGroundGroupId: Types.Campaign.Id;
+	readonly #jtacFrequency: number;
 
 	get target() {
 		return getEntity<GroundGroup>(this.#targetGroundGroupId);
@@ -25,6 +27,7 @@ export class CasFlightGroup extends EscortedFlightGroup<keyof Events.EventMap.Ca
 			: { ...args, task: "CAS" as const, entityType: "CasFlightGroup" as const };
 		super(superArgs);
 		this.#targetGroundGroupId = args.targetGroundGroupId;
+		this.#jtacFrequency = args.jtacFrequency;
 	}
 
 	/**
@@ -77,8 +80,34 @@ export class CasFlightGroup extends EscortedFlightGroup<keyof Events.EventMap.Ca
 		return targetGroundGroup;
 	}
 
+	static nextJtacFrequency() {
+		let jtacFrequency = 240;
+
+		for (const fg of store.queries.flightGroups["blue"].values("CAS")) {
+			if (!(fg instanceof CasFlightGroup)) {
+				continue;
+			}
+
+			if (fg.#jtacFrequency > jtacFrequency) {
+				jtacFrequency = fg.#jtacFrequency;
+			}
+		}
+
+		for (const fg of store.queries.flightGroups["red"].values("CAS")) {
+			if (!(fg instanceof CasFlightGroup)) {
+				continue;
+			}
+
+			if (fg.#jtacFrequency > jtacFrequency) {
+				jtacFrequency = fg.#jtacFrequency;
+			}
+		}
+
+		return jtacFrequency + 1;
+	}
+
 	static create(
-		args: Omit<CasFlightGroupProps, "taskWaypoints"> & {
+		args: Omit<CasFlightGroupProps, "taskWaypoints" | "jtacFrequency"> & {
 			targetGroundGroupId: Types.Campaign.Id;
 			holdWaypoint: WaypointTemplate | undefined;
 		},
@@ -112,6 +141,7 @@ export class CasFlightGroup extends EscortedFlightGroup<keyof Events.EventMap.Ca
 			...args,
 			targetGroundGroupId: targetGroundGroup.id,
 			taskWaypoints: waypoints,
+			jtacFrequency: this.nextJtacFrequency(),
 		});
 	}
 
@@ -124,6 +154,7 @@ export class CasFlightGroup extends EscortedFlightGroup<keyof Events.EventMap.Ca
 			...super.serialize(),
 			entityType: "CasFlightGroup",
 			targetGroundGroupId: this.#targetGroundGroupId,
+			jtacFrequency: this.#jtacFrequency,
 		};
 	}
 }

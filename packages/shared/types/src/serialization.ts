@@ -419,6 +419,7 @@ export type CapFlightGroupSerialized = z.TypeOf<typeof capFlightGroupSchema>;
 const casFlightGroupSchema = escortedFlightGroupSchema.extend({
 	entityType: z.literal("CasFlightGroup"),
 	targetGroundGroupId: z.string(),
+	jtacFrequency: z.number(),
 });
 export type CasFlightGroupSerialized = z.TypeOf<typeof casFlightGroupSchema>;
 

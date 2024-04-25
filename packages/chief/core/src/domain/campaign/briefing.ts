@@ -38,8 +38,7 @@ export async function generateBriefingKneeboards(
 					data: {
 						package: entity,
 						flightGroup: fg,
-						theatre: campaign.theatre,
-						entities,
+						campaign,
 					},
 				});
 			}

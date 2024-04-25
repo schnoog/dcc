@@ -62,8 +62,6 @@ const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = a
 		return { success: false };
 	}
 
-	// const kneeboards = await Domain.Campaign.generateBriefingKneeboards(campaign); TODO
-
 	const mission = new DcsJs.Mission({
 		id: campaign.missionId,
 		date: new Date(campaign.date),

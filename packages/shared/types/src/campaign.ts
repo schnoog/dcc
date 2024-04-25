@@ -139,8 +139,7 @@ export type MissionState = z.infer<typeof Schema.missionState>;
 export interface BriefingDocument {
 	package: Serialization.PackageSerialized;
 	flightGroup: Serialization.FlightGroupSerialized;
-	theatre: DcsJs.Theatre;
-	entities: Map<Id, Serialization.StateEntitySerialized>;
+	campaign: Serialization.UIStateEntitiesArray;
 }
 
 export type StructurePlan = {
