@@ -10,9 +10,9 @@ import {
 } from "@tanstack/react-table";
 import { Table } from "./Table";
 
-const columnHelper = createColumnHelper<DcsJs.Launcher>();
+const columnHelper = createColumnHelper<DcsJs.Weapon>();
 
-export function PylonTable({ items }: { items: Record<string, DcsJs.Launcher> }) {
+export function WeaponTable({ items }: { items: Record<string, DcsJs.Weapon> }) {
 	const values = React.useMemo(() => Object.values(items), [items]);
 	const columns = React.useMemo(
 		() => [
@@ -22,6 +22,11 @@ export function PylonTable({ items }: { items: Record<string, DcsJs.Launcher> })
 				footer: (info) => info.column.id,
 			}),
 			columnHelper.accessor("type", {
+				cell: (info) => info.getValue(),
+				header: "Type",
+				footer: (info) => info.column.id,
+			}),
+			columnHelper.accessor("year", {
 				cell: (info) => info.getValue(),
 				header: "Type",
 				footer: (info) => info.column.id,
@@ -39,19 +44,17 @@ export function PylonTable({ items }: { items: Record<string, DcsJs.Launcher> })
 	});
 
 	return (
-		<div>
-			<Table
-				table={table}
-				cell={(cell) => {
-					return (
-						<td key={cell.id}>
-							<a href={`/database/pylons/${cell.row.original.name}`} className="block h-full w-full p-2">
-								{flexRender(cell.column.columnDef.cell, cell.getContext())}
-							</a>
-						</td>
-					);
-				}}
-			/>
-		</div>
+		<Table
+			table={table}
+			cell={(cell) => {
+				return (
+					<td key={cell.id}>
+						<a href={`/database/weapons/${cell.row.original.name}`} className="block h-full w-full p-2">
+							{flexRender(cell.column.columnDef.cell, cell.getContext())}
+						</a>
+					</td>
+				);
+			}}
+		/>
 	);
 }

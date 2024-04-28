@@ -1,12 +1,22 @@
 import { flexRender } from "@tanstack/react-table";
-import type { Cell, Column, CoreColumn, Table as TanTable } from "@tanstack/table-core";
+import type { Cell, Column, CoreColumn, RowData, Table as TanTable } from "@tanstack/table-core";
 import * as React from "react";
+import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
+import { EllipsisVertical } from "lucide-react";
+import { RadioGroup, RadioGroupItem } from "./RadioGroup";
+import { Label } from "./Label";
+
+declare module "@tanstack/react-table" {
+	interface ColumnMeta<TData extends RowData, TValue> {
+		filterVariant?: "select" | "booleanSelect" | "input";
+	}
+}
 
 // A typical debounced input react component
 function DebouncedInput({
 	value: initialValue,
 	onChange,
-	debounce = 500,
+	debounce = 100,
 	...props
 }: {
 	value: string | number;
@@ -30,8 +40,62 @@ function DebouncedInput({
 	return <input {...props} value={value} onChange={(e) => setValue(e.target.value)} />;
 }
 
+function Select<DataType>({ column }: { column: Column<DataType, unknown> }) {
+	const sortedUniqueValues = React.useMemo(
+		() => Array.from(column.getFacetedUniqueValues().keys()).sort().slice(0, 5000),
+		[column.getFacetedUniqueValues()],
+	);
+
+	return (
+		<RadioGroup
+			onValueChange={(value) => column.setFilterValue(value)}
+			value={column.getFilterValue() as string | undefined}
+		>
+			{sortedUniqueValues.map((value) => {
+				const id = `option-${value}`;
+				return (
+					<div className="flex items-center space-x-2" key={id}>
+						<RadioGroupItem value={value} id={id} />
+						<Label htmlFor={id}>{value}</Label>
+					</div>
+				);
+			})}
+		</RadioGroup>
+	);
+}
+
+function BooleanSelect<DataType>({ column }: { column: Column<DataType, unknown> }) {
+	console.log(column.getFilterValue());
+
+	const value = column.getFilterValue() as boolean | undefined;
+	return (
+		<RadioGroup
+			onValueChange={(value) => column.setFilterValue(value === "yes" ? true : false)}
+			value={value === true ? "yes" : value === false ? "no" : undefined}
+		>
+			<div className="flex items-center space-x-2" key={"yes"}>
+				<RadioGroupItem value={"yes"} id={"option-yes"} />
+				<Label htmlFor={"option-yes"}>Yes</Label>
+			</div>
+			<div className="flex items-center space-x-2" key={"no"}>
+				<RadioGroupItem value={"no"} id={"option-no"} />
+				<Label htmlFor={"option-no"}>No</Label>
+			</div>
+		</RadioGroup>
+	);
+}
+
 function Filter<DataType>({ column }: { column: Column<DataType, unknown> }) {
+	const { filterVariant } = column.columnDef.meta ?? {};
 	const columnFilterValue = column.getFilterValue();
+
+	if (filterVariant === "select") {
+		return <Select column={column} />;
+	}
+
+	if (filterVariant === "booleanSelect") {
+		return <BooleanSelect column={column} />;
+	}
 
 	return (
 		<DebouncedInput
@@ -57,12 +121,23 @@ export function Table<DataType>({ cell, table }: TableProps<DataType>) {
 						{headerGroup.headers.map((header) => {
 							return (
 								<th key={header.id} className="p-2 text-start">
-									{flexRender(header.column.columnDef.header, header.getContext())}
-									{header.column.getCanFilter() ? (
-										<div>
-											<Filter column={header.column} />
-										</div>
-									) : null}
+									<div className="flex justify-between">
+										<button onClick={() => header.column.toggleSorting()}>
+											{flexRender(header.column.columnDef.header, header.getContext())}
+										</button>
+										{header.column.getCanFilter() ? (
+											<Popover>
+												<>
+													<PopoverTrigger>
+														<EllipsisVertical />
+													</PopoverTrigger>
+													<PopoverContent>
+														<Filter column={header.column} />
+													</PopoverContent>
+												</>
+											</Popover>
+										) : null}
+									</div>
 								</th>
 							);
 						})}

@@ -1,0 +1,33 @@
+---
+interface Props {
+	label: string;
+	value: string | number | boolean | undefined;
+	defaultValue?: string;
+	unit?: string;
+	multiplier?: number;
+}
+
+const { label, value, defaultValue, unit, multiplier } = Astro.props;
+let printValue = value;
+
+if (value === undefined) {
+	printValue = defaultValue;
+}
+
+if (typeof value === "boolean") {
+	printValue = value === true ? "Yes" : "No";
+}
+
+if (typeof value === "number") {
+	if (multiplier) {
+		printValue = Math.round(value * multiplier);
+	} else {
+		printValue = Math.round(value);
+	}
+}
+---
+
+<div>
+	<dt class="text-nowrap opacity-75">{label}</dt>
+	<dd class="text-xl">{printValue}{value == null ? null : unit}</dd>
+</div>

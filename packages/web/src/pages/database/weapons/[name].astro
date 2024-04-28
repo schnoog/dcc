@@ -1,0 +1,82 @@
+---
+import * as DcsJs from "../../../../../libs/dcsjs/src";
+import Layout from "../../../layouts/database.astro";
+import LabelValue from "../../../components/LabelValue.astro";
+
+interface Props {
+	name: string;
+}
+
+const { name } = Astro.params;
+
+const weapons = DcsJs.weapons;
+const pylons = DcsJs.launchers;
+const aircrafts = Object.values(DcsJs.aircraftDefinitions);
+
+if (name == null || !(name in weapons)) {
+	throw new Error(`Weapon ${name} not found`);
+}
+
+const weapon = weapons[name] as DcsJs.Weapon;
+
+const usedByPylons = Object.values(pylons).filter((pylon) => pylon.type === "Weapon" && pylon.weapon === weapon.name);
+
+const usedBy = aircrafts.filter((aircraft) => {
+	return aircraft.loadouts.some((lo) =>
+		lo.pylons.some((pylon) => usedByPylons.some((ubp) => pylon.CLSID === ubp.CLSID)),
+	);
+});
+
+function isA2a(weapon: DcsJs.Weapon): weapon is DcsJs.A2AWeapon {
+	return weapon.type in DcsJs.a2aWeaponType.Values;
+}
+
+function isA2gRange(weapon: DcsJs.Weapon): weapon is DcsJs.A2GRangeWeapon {
+	return weapon.type in DcsJs.a2gRangeWeaponType.Values;
+}
+
+function isA2g(weapon: DcsJs.Weapon): weapon is DcsJs.A2GWeapon {
+	return weapon.type in DcsJs.a2gWeaponType.Values;
+}
+---
+
+<Layout>
+	<h1 class="mb-10 text-4xl">{weapon.displayName}</h1>
+	<dl class="grid grid-cols-4 gap-10">
+		<LabelValue label="Type" value={weapon.type} />
+		<LabelValue label="Year" value={weapon.year} defaultValue="-" />
+		{
+			isA2a(weapon) ? (
+				<>
+					<LabelValue label="Range" value={weapon.rangeType} />
+					<LabelValue label="Range" value={weapon.range} unit="nm" multiplier={0.0005} />
+				</>
+			) : isA2gRange(weapon) ? (
+				<>
+					<LabelValue label="Range" value={weapon.range} unit="m" />
+					<LabelValue label="Targets" value={weapon.targets.join(", ")} />
+				</>
+			) : (
+				<>
+					<LabelValue label="Targets" value={weapon.target} />
+					<LabelValue label="Weight" value={weapon.weight} unit="kg" defaultValue="-" />
+					<LabelValue label="High Drag" value={weapon.highDrag} defaultValue="No" />
+				</>
+			)
+		}
+	</dl>
+	{
+		(
+			<div class="mt-10">
+				<h2 class="text-2xl">Used by</h2>
+				{usedBy.map((aircraft) => {
+					return (
+						<a href={`/database/aircrafts/${aircraft.name}`} class="mt-2 block hover:underline">
+							{aircraft.display_name}
+						</a>
+					);
+				})}
+			</div>
+		)
+	}
+</Layout>

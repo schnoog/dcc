@@ -1,0 +1,12 @@
+---
+import * as DcsJs from "../../../../../libs/dcsjs/src";
+import Layout from "../../../layouts/database.astro";
+import { WeaponTable } from "../../../components/WeaponTable";
+
+const weapons = DcsJs.weapons;
+---
+
+<Layout>
+	<h3>Weapons</h3>
+	<WeaponTable items={weapons} client:load />
+</Layout>

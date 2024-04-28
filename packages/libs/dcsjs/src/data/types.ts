@@ -326,6 +326,7 @@ export type SamTemplate = z.TypeOf<typeof Schema.samTemplate>;
 export type Weather = z.TypeOf<typeof Schema.weather>;
 export type A2AWeapon = z.TypeOf<typeof Schema.a2AWeapon>;
 export type A2GWeapon = z.TypeOf<typeof Schema.a2GWeapon>;
+export type A2GRangeWeapon = z.TypeOf<typeof Schema.a2GRangeWeapon>;
 export type Launcher = z.TypeOf<typeof Schema.launcher>;
 export type AirdromeStand = z.TypeOf<typeof Schema.airdromeStand>;
 export type RoutePointTaskTemplate = z.TypeOf<typeof Schema.routePointTaskTemplate>;

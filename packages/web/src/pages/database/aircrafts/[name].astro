@@ -1,0 +1,82 @@
+---
+import * as DcsJs from "../../../../../libs/dcsjs/src";
+import Layout from "../../../layouts/database.astro";
+import LabelValue from "../../../components/LabelValue.astro";
+
+interface Props {
+	name: DcsJs.AircraftType;
+}
+
+const { name } = Astro.params;
+const aircrafts = DcsJs.aircraftDefinitions;
+const pylons = DcsJs.launchers;
+
+if (name == null || !(name in aircrafts)) {
+	throw new Error(`Aircraft ${name} not found`);
+}
+
+const aircraft = aircrafts[name] as DcsJs.AircraftDefinition;
+---
+
+<Layout>
+	<h1 class="mb-10 text-4xl">{aircraft.display_name}</h1>
+	<dl class="grid grid-cols-4 gap-10">
+		<LabelValue label="Chaff" value={aircraft.chaff} />
+		<LabelValue label="Flare" value={aircraft.flare} />
+		<LabelValue label="Max Fuel" value={aircraft.max_fuel} unit="gal" />
+		<LabelValue label="Max Speed" value={aircraft.max_speed} unit="kn" multiplier={0.54} />
+		<LabelValue label="Max Altitude" value={aircraft.max_height} unit="ft" multiplier={3.2808} />
+		<LabelValue label="Cruise Speed" value={aircraft.cruiseSpeed} unit="kn" multiplier={1.9438} />
+		<LabelValue label="Cruise Altitude" value={aircraft.cruiseAltitude} unit="ft" multiplier={3.2808} />
+		<LabelValue label="Controllable" value={aircraft.controllable} />
+		<LabelValue label="Carrier Capable" value={aircraft.carrierCapable} />
+		<LabelValue label="Helicopter" value={aircraft.isHelicopter} />
+		<LabelValue label="Large" value={aircraft.isLarge} defaultValue="No" />
+		<LabelValue label="Mod" value={aircraft.isMod} defaultValue="No" />
+		{
+			aircraft.allowedFrequency == null ? null : (
+				<LabelValue label="Allowed Frequencies" value={aircraft.allowedFrequency.join(" -      ")} />
+			)
+		}
+	</dl>
+	<div class="mt-10">
+		<h2 class="text-nowrap opacity-75">Custom Callsigns</h2>
+		{
+			aircraft.customCallsigns == null ? (
+				<p>-</p>
+			) : (
+				<ul class="list-inside list-disc">
+					{aircraft.customCallsigns.map((callsign) => (
+						<li>{callsign}</li>
+					))}
+				</ul>
+			)
+		}
+	</div>
+	<div class="mt-10">
+		<h2 class="text-2xl">Loadouts</h2>
+		<div class="grid grid-cols-2 gap-10">
+			{
+				aircraft.loadouts.map((loadout) => {
+					return (
+						<div class="mt-5">
+							<h3 class="text-2xl font-light ">{loadout.task}</h3>
+							{loadout.pylons.map((pylon) => {
+								const pylonDef = Object.values(pylons).find((p) => p.CLSID === pylon.CLSID);
+
+								if (pylonDef == null || pylon.CLSID === "<CLEAN>") {
+									return <p class="mt-2">-</p>;
+								}
+								return (
+									<a href={`/database/pylons/${pylonDef.name}`} class="mt-2 block hover:underline">
+										{pylonDef.displayName}
+									</a>
+								);
+							})}
+						</div>
+					);
+				})
+			}
+		</div>
+	</div>
+</Layout>

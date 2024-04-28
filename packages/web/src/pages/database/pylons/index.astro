@@ -1,0 +1,12 @@
+---
+import * as DcsJs from "../../../../../libs/dcsjs/src";
+import Layout from "../../../layouts/database.astro";
+import { PylonTable } from "../../../components/PylonTable";
+
+const pylons = DcsJs.launchers;
+---
+
+<Layout>
+	<h3 class="mb-10 text-4xl">Pylons</h3>
+	<PylonTable items={pylons} client:load />
+</Layout>

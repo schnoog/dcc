@@ -7,6 +7,7 @@ export default {
 				midnight: "#27212e",
 				midnightLight: "#4d4655",
 				white: "#ffffff",
+				background: "#613d82",
 			},
 		},
 	},

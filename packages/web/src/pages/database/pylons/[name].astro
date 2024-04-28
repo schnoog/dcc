@@ -1,0 +1,57 @@
+---
+import * as DcsJs from "../../../../../libs/dcsjs/src";
+import Layout from "../../../layouts/database.astro";
+import LabelValue from "../../../components/LabelValue.astro";
+
+interface Props {
+	name: string;
+}
+
+const { name } = Astro.params;
+const pylons = DcsJs.launchers;
+const weapons = DcsJs.weapons;
+const aircrafts = Object.values(DcsJs.aircraftDefinitions);
+
+if (name == null || !(name in pylons)) {
+	throw new Error(`Pylon ${name} not found`);
+}
+
+const launcher = pylons[name] as DcsJs.Launcher;
+const weapon = launcher.type === "Weapon" ? (weapons[launcher.weapon] as DcsJs.Weapon) : undefined;
+
+const usedBy = aircrafts.filter((aircraft) => {
+	return aircraft.loadouts.some((lo) => lo.pylons.some((pylon) => pylon.CLSID === launcher.CLSID));
+});
+---
+
+<Layout>
+	<h1 class="mb-10 text-4xl">{launcher.displayName}</h1>
+	<dl class="grid grid-cols-4 gap-10">
+		<LabelValue label="Type" value={launcher.type} />
+		{launcher.total > 1 ? <LabelValue label="Quantity" value={launcher.total} /> : null}
+	</dl>
+	{
+		weapon == null ? null : (
+			<div class="mt-10">
+				<h2 class="text-2xl">Weapon</h2>
+				<a href={`/database/weapons/${weapon.name}`} class="mt-2 block hover:underline">
+					{weapon.displayName}
+				</a>
+			</div>
+		)
+	}
+	{
+		(
+			<div class="mt-10">
+				<h2 class="text-2xl">Used by</h2>
+				{usedBy.map((aircraft) => {
+					return (
+						<a href={`/database/aircrafts/${aircraft.name}`} class="mt-2 block hover:underline">
+							{aircraft.display_name}
+						</a>
+					);
+				})}
+			</div>
+		)
+	}
+</Layout>

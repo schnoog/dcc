@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/main.astro";
 import { Github } from "../github-types";
+import { formatDate } from "../../../shared/utils/src/format";
 import IssueCard from "../components/IssueCard.astro";
 import IssueList from "../components/IssueList.astro";
 
@@ -49,7 +50,8 @@ try {
 const totalCount = openIssues.length + closedIssues.length;
 const progess = (closedIssues.length / totalCount) * 100;
 
-console.log("Progress", progess);
+const releaseDate = new Date();
+releaseDate.setDate(releaseDate.getDate() + Math.round(openIssues.length / 3) * 7);
 ---
 
 <Layout>
@@ -66,6 +68,9 @@ console.log("Progress", progess);
 			style={{ transform: `translateX(-${100 - (progess || 0)}%)` }}
 		>
 		</div>
+	</div>
+	<div class="mx-10 mt-2 flex justify-end">
+		<p>Estimated Release: {formatDate(releaseDate)}</p>
 	</div>
 	<div class="grid grid-cols-2 gap-10 p-10">
 		<IssueList title="Open Issues">
