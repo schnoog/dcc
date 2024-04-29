@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import "@/base.css";
 ---
 
 <html lang="en">
@@ -9,7 +10,7 @@ import Header from "../components/Header.astro";
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<title>DCC</title>
 	</head>
-	<body class="bg-midnight text-white">
+	<body class="dark bg-background font-sans text-white">
 		<Header />
 		<article class="pt-16">
 			<slot />

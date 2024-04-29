@@ -1,10 +1,10 @@
 import { flexRender } from "@tanstack/react-table";
-import type { Cell, Column, CoreColumn, RowData, Table as TanTable } from "@tanstack/table-core";
+import type { Cell, Column, RowData, Table as TanTable } from "@tanstack/table-core";
 import * as React from "react";
-import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Label } from "./ui/label";
 import { EllipsisVertical } from "lucide-react";
-import { RadioGroup, RadioGroupItem } from "./RadioGroup";
-import { Label } from "./Label";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 
 declare module "@tanstack/react-table" {
 	interface ColumnMeta<TData extends RowData, TValue> {

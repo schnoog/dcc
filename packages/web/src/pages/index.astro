@@ -1,31 +1,108 @@
 ---
 // Component Imports
 import Layout from "../layouts/main.astro";
-import Hero from "../images/hero.jpg";
+import Hero from "../images/campaign-2.png";
 import { Image, getImage } from "astro:assets";
 import DownloadButton from "../components/DownloadButton.astro";
+import { Button } from "../components/ui/button";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
 <Layout>
-  <div class="relative grid h-[1000px] place-items-center content-center">
-    <Image
-      src={Hero}
-      class="absolute left-0 top-0 z-0 h-full w-full object-cover backdrop-blur-sm"
-      alt="Hero Image"
-    />
-    <div
-      class="relative flex flex-col gap-10 p-8 text-center backdrop-blur-md backdrop-saturate-50"
-    >
-      <h1
-        class="inline-block bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 bg-clip-text text-9xl text-transparent"
-      >
-        DCC
-      </h1>
-      <h2 class="text-2xl">Dynamic Campaign Generator for DCS</h2>
-      <DownloadButton />
-    </div>
-  </div>
+	<div class="relative flex flex-col items-center justify-center py-24 !pb-[28rem] md:py-32 lg:py-36">
+		<div class="section-x-inset-xl flex w-full flex-col items-center gap-24 md:gap-32">
+			<div class="flex gap-12 px-24">
+				<div class="flex flex-1 flex-col items-center justify-center gap-3">
+					<h1 class="sm:text-heading-2xl lg:text-heading-xl text-balance text-5xl font-bold leading-tight">
+						Digital Crew Chief
+					</h1>
+					<p class="text-xl">Dynamic Campaign App for DCS</p>
+
+					<DownloadButton><Button size={"lg"} className="text-md mt-10 w-32">Download</Button></DownloadButton>
+				</div>
+				<div class="flex-1">
+					<Image src={Hero} alt="Digital Crew Chief" />
+				</div>
+			</div>
+		</div>
+		<div class="section-x-inset-xl mx-16 flex flex-col items-center gap-24 md:gap-32">
+			<div class="my-8 flex flex-col gap-4 md:my-16 md:grid md:grid-cols-3 lg:grid-cols-4">
+				<div
+					class="grid w-full auto-rows-max grid-cols-1 content-between items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8 md:col-span-2 lg:col-span-3"
+				>
+					<p class="text-pretty font-bold tracking-wide lg:text-3xl">
+						Digital Crew Chief(DCC) is a dynamic campaign mode for Digital Combat Simulator (DCS) that allows you to
+						create and manage your own campaigns. <span class="font-normal tracking-normal text-neutral-500"
+							>It is designed to be easy to use and flexible, allowing you to create a wide variety of missions and
+							campaigns.</span
+						>
+					</p>
+				</div>
+				<ul class="flex w-full flex-col gap-4">
+					<li>
+						<div
+							class="grid w-full auto-rows-max grid-cols-1 items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8"
+						>
+							<div class="md:text-heading-md mt-4 text-4xl">1300+</div>
+							<div class="text-lg text-neutral-500">Discord Members</div>
+						</div>
+					</li>
+					<li>
+						<div
+							class="grid w-full auto-rows-max grid-cols-1 items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8"
+						>
+							<div class="md:text-heading-md mt-4 text-4xl">8000+</div>
+							<div class="text-lg text-neutral-500">Downloads</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<a href="docs/">
+				<Button size={"lg"} className="text-md mt-10 w-44">Documentation</Button>
+			</a>
+		</div>
+		<div class="section-x-inset-xl mx-16 flex flex-col items-center gap-24 md:gap-32">
+			<div class="my-8 flex flex-col gap-4 md:my-16 md:grid md:grid-cols-3 lg:grid-cols-4">
+				<div
+					class="grid w-full auto-rows-max grid-cols-1 content-between items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8 md:col-span-2 lg:col-span-3"
+				>
+					<p class="text-pretty font-bold tracking-wide lg:text-3xl">Singleplayer & Multiplayer</p>
+					<p class="text-lg text-neutral-500">
+						Fligh your missions in solo with AI. Or fligh with your friends as wingman.
+					</p>
+				</div>
+				<div
+					class="grid w-full auto-rows-max grid-cols-1 content-between items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8 md:col-span-2 lg:col-span-3"
+				>
+					<p class="text-pretty font-bold tracking-wide lg:text-3xl">Factions</p>
+					<p class="text-lg text-neutral-500">
+						Choose one of the predefined factions from the Cold War Sweden to Modern US Air Force. If no faction fits
+						your needs, you can create your own faction and choose what you want to fligh.
+					</p>
+				</div>
+				<ul class="flex w-full flex-col gap-4">
+					<li>
+						<div
+							class="grid w-full auto-rows-max grid-cols-1 items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8"
+						>
+							<div class="md:text-heading-md mt-4 text-4xl">3</div>
+							<div class="text-neutral-500">Scenarios</div>
+						</div>
+					</li>
+					<li>
+						<div
+							class="grid w-full auto-rows-max grid-cols-1 items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8"
+						>
+							<div class="md:text-heading-md mt-4 text-4xl">7</div>
+							<div class="text-neutral-500">Mission Types</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </Layout>
