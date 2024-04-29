@@ -9,6 +9,8 @@ import { Label } from "./Label";
 declare module "@tanstack/react-table" {
 	interface ColumnMeta<TData extends RowData, TValue> {
 		filterVariant?: "select" | "booleanSelect" | "input";
+		maxWidth?: number;
+		minWidth?: number;
 	}
 }
 
@@ -37,7 +39,9 @@ function DebouncedInput({
 		return () => clearTimeout(timeout);
 	}, [value]);
 
-	return <input {...props} value={value} onChange={(e) => setValue(e.target.value)} />;
+	return (
+		<input {...props} value={value} onChange={(e) => setValue(e.target.value)} className="w-full bg-transparent" />
+	);
 }
 
 function Select<DataType>({ column }: { column: Column<DataType, unknown> }) {

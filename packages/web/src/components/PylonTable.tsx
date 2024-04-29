@@ -4,6 +4,7 @@ import {
 	createColumnHelper,
 	flexRender,
 	getCoreRowModel,
+	getFacetedUniqueValues,
 	getFilteredRowModel,
 	getSortedRowModel,
 	useReactTable,
@@ -36,6 +37,7 @@ export function PylonTable({ items }: { items: Record<string, DcsJs.Launcher> })
 		getCoreRowModel: getCoreRowModel(),
 		getFilteredRowModel: getFilteredRowModel(),
 		getSortedRowModel: getSortedRowModel(),
+		getFacetedUniqueValues: getFacetedUniqueValues(),
 	});
 
 	return (

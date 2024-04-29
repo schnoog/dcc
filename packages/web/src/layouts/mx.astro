@@ -1,0 +1,23 @@
+---
+import Main from "./main.astro";
+---
+
+<style is:global>
+	h1 {
+		font-size: 2.25rem;
+		line-height: 2.25rem;
+		margin-bottom: 2.5rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+		margin-top: 1.875rem;
+		margin-bottom: 1rem;
+	}
+</style>
+<Main>
+	<article class="prose prose-headings:text-4xl prose-a:text-blue-600 max-w-[900px] p-10">
+		<slot />
+	</article>
+</Main>

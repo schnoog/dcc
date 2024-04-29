@@ -4,6 +4,7 @@ import {
 	createColumnHelper,
 	flexRender,
 	getCoreRowModel,
+	getFacetedUniqueValues,
 	getFilteredRowModel,
 	getSortedRowModel,
 	useReactTable,
@@ -25,10 +26,13 @@ export function WeaponTable({ items }: { items: Record<string, DcsJs.Weapon> }) 
 				cell: (info) => info.getValue(),
 				header: "Type",
 				footer: (info) => info.column.id,
+				meta: {
+					filterVariant: "select",
+				},
 			}),
 			columnHelper.accessor("year", {
 				cell: (info) => info.getValue(),
-				header: "Type",
+				header: "Year",
 				footer: (info) => info.column.id,
 			}),
 		],
@@ -41,6 +45,7 @@ export function WeaponTable({ items }: { items: Record<string, DcsJs.Weapon> }) 
 		getCoreRowModel: getCoreRowModel(),
 		getFilteredRowModel: getFilteredRowModel(),
 		getSortedRowModel: getSortedRowModel(),
+		getFacetedUniqueValues: getFacetedUniqueValues(),
 	});
 
 	return (

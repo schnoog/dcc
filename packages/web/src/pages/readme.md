@@ -1,6 +1,6 @@
 ---
 title: 'Readme - DCC'
-layout: ../layouts/main.astro
+layout: "../layouts/mx.astro"
 ---
 
 # DCC - Digital Crew Chief
