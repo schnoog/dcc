@@ -1,5 +1,6 @@
 ---
 import { Github } from "../github-types";
+import Badge from "./Badge.astro";
 
 interface Props {
 	issue: Github.Issue;
@@ -9,8 +10,13 @@ const { issue } = Astro.props;
 ---
 
 <a href={issue.html_url} target="_blank">
-	<li class="min-h-16 rounded-md bg-midnight p-2">
-		<h3 class="text-l">{issue.title}</h3>
-		{issue.labels.map((label) => <span class="rounded-md bg-gray-800 px-1 text-white">{label.name}</span>)}
+	<li class="min-h-16 rounded-md border border-neutral-800 bg-neutral-900 p-6 hover:bg-neutral-800 sm:p-8">
+		<h3 class="text-pretty tracking-wide lg:text-xl">{issue.title}</h3>
+		<div class="overflow-hidden">
+			<p class="mt-2 overflow-hidden overflow-ellipsis text-neutral-500">{issue.body}</p>
+		</div>
+		<div class="mt-2 flex gap-2">
+			{issue.labels.map((label) => <Badge>{label.name}</Badge>)}
+		</div>
 	</li>
 </a>

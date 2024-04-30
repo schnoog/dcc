@@ -2,7 +2,7 @@
 // Component Imports
 import Layout from "../layouts/main.astro";
 import Hero from "../images/campaign-2.png";
-import { Image, getImage } from "astro:assets";
+import { Image } from "astro:assets";
 import DownloadButton from "../components/DownloadButton.astro";
 import { Button } from "../components/ui/button";
 
@@ -62,13 +62,13 @@ import { Button } from "../components/ui/button";
 		</div>
 		<div>
 			<a href="docs/">
-				<Button size={"lg"} className="text-md mt-10 w-44">Documentation</Button>
+				<Button size={"lg"} className="text-md mt-10 h-12 w-44">Documentation</Button>
 			</a>
 		</div>
 		<div class="section-x-inset-xl mx-16 flex flex-col items-center gap-24 md:gap-32">
 			<div class="my-8 flex flex-col gap-4 md:my-16 md:grid md:grid-cols-3 lg:grid-cols-4">
 				<div
-					class="grid w-full auto-rows-max grid-cols-1 content-between items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8 md:col-span-2 lg:col-span-3"
+					class="grid w-full grid-cols-1 content-between items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8 md:col-span-2 lg:col-span-2"
 				>
 					<p class="text-pretty font-bold tracking-wide lg:text-3xl">Singleplayer & Multiplayer</p>
 					<p class="text-lg text-neutral-500">
@@ -76,7 +76,16 @@ import { Button } from "../components/ui/button";
 					</p>
 				</div>
 				<div
-					class="grid w-full auto-rows-max grid-cols-1 content-between items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8 md:col-span-2 lg:col-span-3"
+					class="grid w-full auto-rows-max grid-cols-1 content-between items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8 md:col-span-1 lg:col-span-2"
+				>
+					<p class="text-pretty font-bold tracking-wide lg:text-3xl">Choose your Mission</p>
+					<p class="text-lg text-neutral-500">
+						Choose from a variety of mission types, including air-to-air, air-to-ground, and more. Each mission type has
+						its own unique objectives and challenges.
+					</p>
+				</div>
+				<div
+					class="grid w-full auto-rows-max grid-cols-1 content-between items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8 md:col-span-2 lg:col-span-4"
 				>
 					<p class="text-pretty font-bold tracking-wide lg:text-3xl">Factions</p>
 					<p class="text-lg text-neutral-500">
@@ -84,24 +93,6 @@ import { Button } from "../components/ui/button";
 						your needs, you can create your own faction and choose what you want to fligh.
 					</p>
 				</div>
-				<ul class="flex w-full flex-col gap-4">
-					<li>
-						<div
-							class="grid w-full auto-rows-max grid-cols-1 items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8"
-						>
-							<div class="md:text-heading-md mt-4 text-4xl">3</div>
-							<div class="text-neutral-500">Scenarios</div>
-						</div>
-					</li>
-					<li>
-						<div
-							class="grid w-full auto-rows-max grid-cols-1 items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8"
-						>
-							<div class="md:text-heading-md mt-4 text-4xl">7</div>
-							<div class="text-neutral-500">Mission Types</div>
-						</div>
-					</li>
-				</ul>
 			</div>
 		</div>
 	</div>

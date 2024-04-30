@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import { Header } from "../components/Header";
 import "@/base.css";
 ---
 
@@ -11,7 +11,7 @@ import "@/base.css";
 		<title>DCC</title>
 	</head>
 	<body class="dark bg-background font-sans text-white">
-		<Header />
+		<Header client:visible />
 		<article class="pt-16">
 			<slot />
 		</article>
