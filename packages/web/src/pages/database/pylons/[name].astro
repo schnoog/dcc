@@ -29,7 +29,7 @@ export const getStaticPaths = (() => {
 				pylon,
 				weapon,
 				usedBy: aircrafts.filter((aircraft) => {
-					return aircraft.loadouts.some((lo) => lo.pylons.some((pylon) => pylon.CLSID === pylon.CLSID));
+					return aircraft.loadouts.some((lo) => lo.pylons.some((p) => p.CLSID === pylon.CLSID));
 				}),
 			},
 		});
