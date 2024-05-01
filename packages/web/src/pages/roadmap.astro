@@ -1,5 +1,7 @@
 ---
-import Layout from "../layouts/main.astro";
+export const prerender = false;
+
+import Layout from "../layouts/mx.astro";
 import { Github } from "../github-types";
 import { formatDate } from "../../../shared/utils/src/format";
 import IssueCard from "../components/IssueCard.astro";

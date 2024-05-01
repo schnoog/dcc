@@ -2,30 +2,8 @@
 import * as DcsJs from "../../../../../libs/dcsjs/src";
 import Layout from "../../../layouts/database.astro";
 import LabelValue from "../../../components/LabelValue.astro";
-
-interface Props {
-	name: string;
-}
-
-const { name } = Astro.params;
-
-const weapons = DcsJs.weapons;
-const pylons = DcsJs.launchers;
-const aircrafts = Object.values(DcsJs.aircraftDefinitions);
-
-if (name == null || !(name in weapons)) {
-	throw new Error(`Weapon ${name} not found`);
-}
-
-const weapon = weapons[name] as DcsJs.Weapon;
-
-const usedByPylons = Object.values(pylons).filter((pylon) => pylon.type === "Weapon" && pylon.weapon === weapon.name);
-
-const usedBy = aircrafts.filter((aircraft) => {
-	return aircraft.loadouts.some((lo) =>
-		lo.pylons.some((pylon) => usedByPylons.some((ubp) => pylon.CLSID === ubp.CLSID)),
-	);
-});
+import { GetStaticPaths } from "astro";
+import { escapeRegExp } from "../../../lib/utils";
 
 function isA2a(weapon: DcsJs.Weapon): weapon is DcsJs.A2AWeapon {
 	return weapon.type in DcsJs.a2aWeaponType.Values;
@@ -38,6 +16,43 @@ function isA2gRange(weapon: DcsJs.Weapon): weapon is DcsJs.A2GRangeWeapon {
 function isA2g(weapon: DcsJs.Weapon): weapon is DcsJs.A2GWeapon {
 	return weapon.type in DcsJs.a2gWeaponType.Values;
 }
+
+export const getStaticPaths = (() => {
+	const aircraftList: {
+		params: { name: string };
+		props: {
+			weapon: DcsJs.Weapon;
+			usedBy: DcsJs.AircraftDefinition[];
+		};
+	}[] = [];
+
+	const pylons = DcsJs.launchers;
+	const weapons = DcsJs.weapons;
+	const aircrafts = Object.values(DcsJs.aircraftDefinitions);
+
+	for (const weapon of Object.values(weapons)) {
+		const usedByPylons = Object.values(pylons).filter(
+			(pylon) => pylon.type === "Weapon" && pylon.weapon === weapon.name,
+		);
+
+		aircraftList.push({
+			params: {
+				name: escapeRegExp(weapon.name),
+			},
+			props: {
+				weapon,
+				usedBy: aircrafts.filter((aircraft) => {
+					return aircraft.loadouts.some((lo) =>
+						lo.pylons.some((pylon) => usedByPylons.some((ubp) => pylon.CLSID === ubp.CLSID)),
+					);
+				}),
+			},
+		});
+	}
+	return aircraftList;
+}) satisfies GetStaticPaths;
+
+const { weapon, usedBy } = Astro.props;
 ---
 
 <Layout>

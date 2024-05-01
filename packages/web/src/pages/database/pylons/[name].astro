@@ -2,33 +2,49 @@
 import * as DcsJs from "../../../../../libs/dcsjs/src";
 import Layout from "../../../layouts/database.astro";
 import LabelValue from "../../../components/LabelValue.astro";
+import { GetStaticPaths } from "astro";
+import { escapeRegExp } from "../../../lib/utils";
 
-interface Props {
-	name: string;
-}
+export const getStaticPaths = (() => {
+	const aircraftList: {
+		params: { name: string };
+		props: {
+			pylon: DcsJs.Launcher;
+			weapon?: DcsJs.Weapon;
+			usedBy: DcsJs.AircraftDefinition[];
+		};
+	}[] = [];
 
-const { name } = Astro.params;
-const pylons = DcsJs.launchers;
-const weapons = DcsJs.weapons;
-const aircrafts = Object.values(DcsJs.aircraftDefinitions);
+	const pylons = DcsJs.launchers;
+	const weapons = DcsJs.weapons;
+	const aircrafts = Object.values(DcsJs.aircraftDefinitions);
 
-if (name == null || !(name in pylons)) {
-	throw new Error(`Pylon ${name} not found`);
-}
+	for (const pylon of Object.values(pylons)) {
+		const weapon = pylon.type === "Weapon" ? (weapons[pylon.weapon] as DcsJs.Weapon) : undefined;
+		aircraftList.push({
+			params: {
+				name: escapeRegExp(pylon.name),
+			},
+			props: {
+				pylon,
+				weapon,
+				usedBy: aircrafts.filter((aircraft) => {
+					return aircraft.loadouts.some((lo) => lo.pylons.some((pylon) => pylon.CLSID === pylon.CLSID));
+				}),
+			},
+		});
+	}
+	return aircraftList;
+}) satisfies GetStaticPaths;
 
-const launcher = pylons[name] as DcsJs.Launcher;
-const weapon = launcher.type === "Weapon" ? (weapons[launcher.weapon] as DcsJs.Weapon) : undefined;
-
-const usedBy = aircrafts.filter((aircraft) => {
-	return aircraft.loadouts.some((lo) => lo.pylons.some((pylon) => pylon.CLSID === launcher.CLSID));
-});
+const { pylon, weapon, usedBy } = Astro.props;
 ---
 
 <Layout>
-	<h1 class="mb-10 text-4xl">{launcher.displayName}</h1>
+	<h1 class="mb-10 text-4xl">{pylon.displayName}</h1>
 	<dl class="grid grid-cols-4 gap-10">
-		<LabelValue label="Type" value={launcher.type} />
-		{launcher.total > 1 ? <LabelValue label="Quantity" value={launcher.total} /> : null}
+		<LabelValue label="Type" value={pylon.type} />
+		{pylon.total > 1 ? <LabelValue label="Quantity" value={pylon.total} /> : null}
 	</dl>
 	{
 		weapon == null ? null : (

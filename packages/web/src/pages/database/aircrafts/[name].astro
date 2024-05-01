@@ -2,20 +2,48 @@
 import * as DcsJs from "../../../../../libs/dcsjs/src";
 import Layout from "../../../layouts/database.astro";
 import LabelValue from "../../../components/LabelValue.astro";
+import { GetStaticPaths } from "astro";
+import { escapeRegExp } from "../../../lib/utils";
 
-interface Props {
-	name: DcsJs.AircraftType;
-}
+export const getStaticPaths = (() => {
+	const aircraftList: {
+		params: { name: string };
+		props: {
+			aircraft: DcsJs.AircraftDefinition;
+			loadouts: {
+				task: string;
+				pylons: (DcsJs.Launcher | null)[];
+			}[];
+		};
+	}[] = [];
 
-const { name } = Astro.params;
-const aircrafts = DcsJs.aircraftDefinitions;
-const pylons = DcsJs.launchers;
+	const aircrafts = DcsJs.aircraftDefinitions;
+	const pylons = DcsJs.launchers;
 
-if (name == null || !(name in aircrafts)) {
-	throw new Error(`Aircraft ${name} not found`);
-}
+	for (const aircraft of Object.values(aircrafts)) {
+		aircraftList.push({
+			params: {
+				name: aircraft.name,
+			},
+			props: {
+				aircraft,
+				loadouts: aircraft.loadouts.map((loadout) => {
+					return {
+						task: loadout.task,
+						pylons: loadout.pylons.map((pylon) => {
+							const pylonDef = Object.values(pylons).find((p) => p.CLSID === pylon.CLSID);
 
-const aircraft = aircrafts[name] as DcsJs.AircraftDefinition;
+							return pylonDef == null || pylon.CLSID === "<CLEAN>" ? null : pylonDef;
+						}),
+					};
+				}),
+			},
+		});
+	}
+	return aircraftList;
+}) satisfies GetStaticPaths;
+
+const { aircraft, loadouts } = Astro.props;
 ---
 
 <Layout>
@@ -58,19 +86,17 @@ const aircraft = aircrafts[name] as DcsJs.AircraftDefinition;
 		<h2 class="text-2xl">Loadouts</h2>
 		<div class="grid grid-cols-2 gap-10">
 			{
-				aircraft.loadouts.map((loadout) => {
+				loadouts.map((loadout) => {
 					return (
 						<div class="mt-5">
 							<h3 class="text-2xl font-light ">{loadout.task}</h3>
 							{loadout.pylons.map((pylon) => {
-								const pylonDef = Object.values(pylons).find((p) => p.CLSID === pylon.CLSID);
-
-								if (pylonDef == null || pylon.CLSID === "<CLEAN>") {
+								if (pylon == null) {
 									return <p class="mt-2">-</p>;
 								}
 								return (
-									<a href={`/database/pylons/${pylonDef.name}`} class="mt-2 block hover:underline">
-										{pylonDef.displayName}
+									<a href={`/database/pylons/${escapeRegExp(pylon.name)}`} class="mt-2 block hover:underline">
+										{pylon.displayName}
 									</a>
 								);
 							})}

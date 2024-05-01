@@ -10,6 +10,7 @@ import {
 	useReactTable,
 } from "@tanstack/react-table";
 import { Table } from "./Table";
+import { escapeRegExp } from "../lib/utils";
 
 const columnHelper = createColumnHelper<DcsJs.Launcher>();
 
@@ -47,7 +48,7 @@ export function PylonTable({ items }: { items: Record<string, DcsJs.Launcher> })
 				cell={(cell) => {
 					return (
 						<td key={cell.id}>
-							<a href={`/database/pylons/${cell.row.original.name}`} className="block h-full w-full p-2">
+							<a href={`/database/pylons/${escapeRegExp(cell.row.original.CLSID)}`} className="block h-full w-full p-2">
 								{flexRender(cell.column.columnDef.cell, cell.getContext())}
 							</a>
 						</td>

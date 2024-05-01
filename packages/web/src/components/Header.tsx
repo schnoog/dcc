@@ -1,5 +1,3 @@
-import DownloadButton from "./DownloadButton.astro";
-import NavItem from "./NavItem.astro";
 import React from "react";
 import {
 	NavigationMenu,
@@ -10,9 +8,13 @@ import {
 	NavigationMenuLink,
 	navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
+import { Button } from "./ui/button";
+import discord from "../images/discord.svg";
+import github from "../images/github.svg";
+import icon from "../images/icon.png";
 
 import { cn } from "../lib/utils";
-import { Database } from "lucide-react";
+import { Database, Github } from "lucide-react";
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
 	({ className, title, children, ...props }, ref) => {
@@ -38,51 +40,68 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
 
 export function Header() {
 	return (
-		<nav className="class= fixed left-0 right-0 top-0 z-10 flex h-16 justify-between bg-primary p-4">
-			<div className="flex gap-4">
-				<a href="/">
-					<img src={"../images/icon.svg"} alt="DCC Icon" className="h-8 w-8" />
+		<NavigationMenu className="left-0 right-0 top-0 z-10 flex h-16 w-full max-w-full justify-between bg-primary px-10">
+			<NavigationMenuList>
+				<NavigationMenuLink href="/">
+					<img src={icon.src} className="h-8 w-8" />
+				</NavigationMenuLink>
+				<NavigationMenuLink className={navigationMenuTriggerStyle()} href="/docs">
+					Docs
+				</NavigationMenuLink>
+				<NavigationMenuItem>
+					<NavigationMenuTrigger>Database</NavigationMenuTrigger>
+					<NavigationMenuContent>
+						<ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+							<li className="row-span-3">
+								<NavigationMenuLink asChild>
+									<a
+										className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:bg-accent focus:shadow-md"
+										href="/database"
+									>
+										<Database size={48} />
+										<div className="mb-2 mt-4 text-lg font-medium">DCC Database</div>
+										<p className="text-sm leading-tight text-muted-foreground">Find out what is used in DCC</p>
+									</a>
+								</NavigationMenuLink>
+							</li>
+							<ListItem href="/database/aircrafts" title="Aircrafts">
+								Explore the Aircrafts in DCC
+							</ListItem>
+							<ListItem href="/database/pylons" title="Pylons">
+								Which pylons are attached to which Aircraft
+							</ListItem>
+							<ListItem href="/database/weapons" title="Weapons">
+								What Weapons are used in DCC
+							</ListItem>
+						</ul>
+					</NavigationMenuContent>
+				</NavigationMenuItem>
+				<a href="/roadmap" data-astro-prefetch>
+					<NavigationMenuLink className={navigationMenuTriggerStyle()}>Roadmap</NavigationMenuLink>
 				</a>
-
-				<NavigationMenu>
-					<NavigationMenuList>
-						<a href="/docs">
-							<NavigationMenuLink className={navigationMenuTriggerStyle()}>Docs</NavigationMenuLink>
-						</a>
-						<NavigationMenuItem>
-							<NavigationMenuTrigger>Database</NavigationMenuTrigger>
-							<NavigationMenuContent>
-								<ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-									<li className="row-span-3">
-										<NavigationMenuLink asChild>
-											<a
-												className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-												href="/database"
-											>
-												<Database size={48} />
-												<div className="mb-2 mt-4 text-lg font-medium">DCC Database</div>
-												<p className="text-sm leading-tight text-muted-foreground">Find out what is used in DCC</p>
-											</a>
-										</NavigationMenuLink>
-									</li>
-									<ListItem href="/database/aircrafts" title="Aircrafts">
-										Explore the Aircrafts in DCC
-									</ListItem>
-									<ListItem href="/database/pylons" title="Pylons">
-										Which pylons are attached to which Aircraft
-									</ListItem>
-									<ListItem href="/database/weapons" title="Weapons">
-										What Weapons are used in DCC
-									</ListItem>
-								</ul>
-							</NavigationMenuContent>
-						</NavigationMenuItem>
-						<a href="/roadmap">
-							<NavigationMenuLink className={navigationMenuTriggerStyle()}>Roadmap</NavigationMenuLink>
-						</a>
-					</NavigationMenuList>
-				</NavigationMenu>
-			</div>
-		</nav>
+			</NavigationMenuList>
+			<NavigationMenuList>
+				<NavigationMenuLink
+					className={navigationMenuTriggerStyle()}
+					href="https://discord.gg/jZZ3pFpY3e"
+					target="_blank"
+				>
+					<img src={discord.src} />
+				</NavigationMenuLink>
+				<NavigationMenuLink
+					className={navigationMenuTriggerStyle()}
+					href="https://github.com/Kilcekru/dcc"
+					target="_blank"
+				>
+					<img src={github.src} />
+				</NavigationMenuLink>
+				<NavigationMenuLink
+					href="https://github.com/Kilcekru/dcc/releases/download/v0.4.1/DCC-0.4.1-Setup.exe"
+					download
+				>
+					<Button variant="outline">Download</Button>
+				</NavigationMenuLink>
+			</NavigationMenuList>
+		</NavigationMenu>
 	);
 }

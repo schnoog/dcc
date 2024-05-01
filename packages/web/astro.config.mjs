@@ -13,11 +13,12 @@ export default defineConfig({
 		}),
 		react(),
 	],
-	output: "server",
+	output: "hybrid",
 	adapter: cloudflare({
 		mode: "directory",
 	}),
 	image: {
 		service: passthroughImageService(),
 	},
+	prefetch: true,
 });
