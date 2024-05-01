@@ -1,14 +1,28 @@
 ---
 import { Header } from "../components/Header";
 import "@/base.css";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+export interface Props {
+	description: string;
+	keywords: string;
+	canonical?: boolean;
+}
+
+const { canonical = true, description, keywords } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={"DCC, DCS, Digital Crew Chief, " + keywords} />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		{canonical ? <link rel="canonical" href={canonicalURL} /> : null}
+
 		<title>DCC - Digital Crew Chief for DCS</title>
 	</head>
 	<body class="dark bg-background font-sans text-white">

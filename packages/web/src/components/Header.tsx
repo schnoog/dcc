@@ -104,7 +104,7 @@ export function Header() {
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
-					<NavigationMenuLink href={downloadUrl} download>
+					<NavigationMenuLink href={downloadUrl} target="_blank">
 						<Button variant="outline">Download</Button>
 					</NavigationMenuLink>
 				</NavigationMenuItem>

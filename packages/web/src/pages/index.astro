@@ -1,16 +1,15 @@
 ---
-// Component Imports
 import Layout from "../layouts/main.astro";
 import Hero from "../images/campaign-2.png";
 import { Image } from "astro:assets";
-import DownloadButton from "../components/DownloadButton.astro";
 import { Button } from "../components/ui/button";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import { downloadUrl } from "../lib/utils";
 ---
 
-<Layout>
+<Layout
+	description="Digital Crew Chief(DCC) is a dynamic campaign mode for Digital Combat Simulator (DCS) that allows you to create and manage your own campaigns."
+	keywords="Dynamic Campaign, DCS Campaign, DCS Mission, DCS Campaign Generator"
+>
 	<div class="relative flex max-w-[1100px] flex-col items-center justify-center py-24 md:py-32 lg:py-36">
 		<div class="section-x-inset-xl flex w-full flex-col items-center gap-24 md:gap-32">
 			<div class="flex gap-12 px-24">
@@ -20,7 +19,7 @@ import { Button } from "../components/ui/button";
 					</h1>
 					<p class="text-xl">Dynamic Campaign App for DCS</p>
 
-					<DownloadButton><Button size={"lg"} className="text-md mt-10 w-32">Download</Button></DownloadButton>
+					<a href={downloadUrl}><Button size={"lg"} className="text-md mt-10 w-32">Download</Button></a>
 				</div>
 				<div class="flex-1" class="shadow-lg shadow-primary">
 					<Image src={Hero} alt="Digital Crew Chief Screenshot" />

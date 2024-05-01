@@ -1,8 +1,15 @@
 ---
 import Main from "./main.astro";
+
+export interface Props {
+	description: string;
+	keywords: string;
+}
+
+const { description, keywords } = Astro.props;
 ---
 
-<Main>
+<Main description={description} keywords={"Database, " + keywords}>
 	<article class="w-full p-10">
 		<slot />
 	</article>

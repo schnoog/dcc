@@ -40,7 +40,7 @@ export const getStaticPaths = (() => {
 const { pylon, weapon, usedBy } = Astro.props;
 ---
 
-<Layout>
+<Layout description={`${pylon.name} Pylon Definition for Digital Crew Chief(DCC)`} keywords={`Pylon, ${pylon.name}`}>
 	<h1 class="mb-10 text-4xl">{pylon.displayName}</h1>
 	<dl class="grid grid-cols-4 gap-10">
 		<LabelValue label="Type" value={pylon.type} />

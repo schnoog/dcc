@@ -55,7 +55,10 @@ export const getStaticPaths = (() => {
 const { weapon, usedBy } = Astro.props;
 ---
 
-<Layout>
+<Layout
+	description={`${weapon.name} Weapon Definition for Digital Crew Chief(DCC)`}
+	keywords={`Weapon, ${weapon.name}`}
+>
 	<h1 class="mb-10 text-4xl">{weapon.displayName}</h1>
 	<dl class="grid grid-cols-4 gap-10">
 		<LabelValue label="Type" value={weapon.type} />
