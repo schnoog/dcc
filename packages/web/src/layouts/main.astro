@@ -12,8 +12,10 @@ import "@/base.css";
 	</head>
 	<body class="dark bg-background font-sans text-white">
 		<Header client:visible />
-		<article class="pt-16">
-			<slot />
+		<article class="flex flex-col items-center pt-16">
+			<div class="w-full max-w-[1100px]">
+				<slot />
+			</div>
 		</article>
 	</body>
 </html>

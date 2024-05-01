@@ -13,7 +13,7 @@ import discord from "../images/discord.svg";
 import github from "../images/github.svg";
 import icon from "../images/icon.png";
 
-import { cn } from "../lib/utils";
+import { cn, discordUrl, downloadUrl } from "../lib/utils";
 import { Database, Github } from "lucide-react";
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
@@ -81,11 +81,7 @@ export function Header() {
 				</a>
 			</NavigationMenuList>
 			<NavigationMenuList>
-				<NavigationMenuLink
-					className={navigationMenuTriggerStyle()}
-					href="https://discord.gg/jZZ3pFpY3e"
-					target="_blank"
-				>
+				<NavigationMenuLink className={navigationMenuTriggerStyle()} href={discordUrl} target="_blank">
 					<img src={discord.src} />
 				</NavigationMenuLink>
 				<NavigationMenuLink
@@ -95,10 +91,7 @@ export function Header() {
 				>
 					<img src={github.src} />
 				</NavigationMenuLink>
-				<NavigationMenuLink
-					href="https://github.com/Kilcekru/dcc/releases/download/v0.4.1/DCC-0.4.1-Setup.exe"
-					download
-				>
+				<NavigationMenuLink href={downloadUrl} download>
 					<Button variant="outline">Download</Button>
 				</NavigationMenuLink>
 			</NavigationMenuList>

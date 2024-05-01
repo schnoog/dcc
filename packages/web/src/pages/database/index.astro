@@ -1,7 +1,35 @@
 ---
-import Layout from "../../layouts/database.astro"
+import Layout from "../../layouts/database.astro";
+import { discordUrl } from "../../lib/utils";
 ---
 
 <Layout>
-    <h1>DCSJS Database</h1>
+	<h1 class="mb-10 text-4xl">DCC Database</h1>
+	<div
+		class="grid w-full grid-cols-1 content-between items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8 md:col-span-2 lg:col-span-2"
+	>
+		<p class="text-neutral-0 text-lg">
+			Here you can find all the data we use in DCC. From what aircrafts are used to which weapons they use.
+		</p>
+		<p class="text-neutral-0 text-lg">
+			If you have any correction or suggestions, please contact us on our <a
+				href={discordUrl}
+				class="underline"
+				target="_blank">Discord</a
+			>.
+		</p>
+	</div>
+	<div class="section-x-inset-xl mx-16 flex flex-col items-center">
+		<div class="my-8 grid w-full grid-cols-3 gap-4">
+			<a class="w-full rounded-md border border-neutral-800 bg-neutral-900 p-6" href="/database/aircrafts">
+				<p class="text-neutral-0 text-2xl">Aircrafts</p>
+			</a>
+			<a class="w-full rounded-md border border-neutral-800 bg-neutral-900 p-6" href="/database/pylons">
+				<p class="text-neutral-0 text-2xl">Pylons</p>
+			</a>
+			<a class="w-full rounded-md border border-neutral-800 bg-neutral-900 p-6" href="/database/weapons">
+				<p class="text-neutral-0 text-2xl">Weapons</p>
+			</a>
+		</div>
+	</div>
 </Layout>

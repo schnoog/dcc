@@ -194,7 +194,7 @@ We will improve and expand these systems in the future.
 - Mods: Install and Remove supported DCS mods with a simple click
 
 ### Dynamic Campaign
-[Roadmap](https://github.com/users/Kilcekru/projects/2)
+[Roadmap](/roadmap)
 
 ## Discord
 [Join our Discord server and stay connected.](https://discord.gg/jZZ3pFpY3e)
