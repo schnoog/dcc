@@ -16,6 +16,7 @@
 		"@astrojs/mdx": "^2.3.1",
 		"@astrojs/node": "^8.2.5",
 		"@astrojs/react": "^3.3.0",
+		"@astrojs/sitemap": "^3.1.4",
 		"@astrojs/tailwind": "^5.1.0",
 		"@foxdelta2/dcsjs": "*",
 		"@radix-ui/react-label": "^2.0.2",

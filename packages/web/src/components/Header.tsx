@@ -42,14 +42,20 @@ export function Header() {
 	return (
 		<NavigationMenu className="left-0 right-0 top-0 z-10 flex h-16 w-full max-w-full justify-between bg-primary px-10">
 			<NavigationMenuList>
-				<NavigationMenuLink href="/">
-					<img src={icon.src} className="h-8 w-8" />
-				</NavigationMenuLink>
-				<NavigationMenuLink className={navigationMenuTriggerStyle()} href="/docs">
-					Docs
-				</NavigationMenuLink>
 				<NavigationMenuItem>
-					<NavigationMenuTrigger>Database</NavigationMenuTrigger>
+					<NavigationMenuLink href="/">
+						<img src={icon.src} className="h-8 w-8" alt="Digital Crew Chief Logo" />
+					</NavigationMenuLink>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<NavigationMenuLink className={navigationMenuTriggerStyle()} href="/docs">
+						Docs
+					</NavigationMenuLink>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<NavigationMenuLink href="/database">
+						<NavigationMenuTrigger>Database</NavigationMenuTrigger>
+					</NavigationMenuLink>
 					<NavigationMenuContent>
 						<ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
 							<li className="row-span-3">
@@ -76,24 +82,32 @@ export function Header() {
 						</ul>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
-				<a href="/roadmap" data-astro-prefetch>
-					<NavigationMenuLink className={navigationMenuTriggerStyle()}>Roadmap</NavigationMenuLink>
-				</a>
+				<NavigationMenuItem>
+					<NavigationMenuLink className={navigationMenuTriggerStyle()} href="/roadmap" data-astro-prefetch>
+						Roadmap
+					</NavigationMenuLink>
+				</NavigationMenuItem>
 			</NavigationMenuList>
 			<NavigationMenuList>
-				<NavigationMenuLink className={navigationMenuTriggerStyle()} href={discordUrl} target="_blank">
-					<img src={discord.src} />
-				</NavigationMenuLink>
-				<NavigationMenuLink
-					className={navigationMenuTriggerStyle()}
-					href="https://github.com/Kilcekru/dcc"
-					target="_blank"
-				>
-					<img src={github.src} />
-				</NavigationMenuLink>
-				<NavigationMenuLink href={downloadUrl} download>
-					<Button variant="outline">Download</Button>
-				</NavigationMenuLink>
+				<NavigationMenuItem>
+					<NavigationMenuLink className={navigationMenuTriggerStyle()} href={discordUrl} target="_blank">
+						<img src={discord.src} alt="Discord" />
+					</NavigationMenuLink>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<NavigationMenuLink
+						className={navigationMenuTriggerStyle()}
+						href="https://github.com/Kilcekru/dcc"
+						target="_blank"
+					>
+						<img src={github.src} alt="Github" />
+					</NavigationMenuLink>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<NavigationMenuLink href={downloadUrl} download>
+						<Button variant="outline">Download</Button>
+					</NavigationMenuLink>
+				</NavigationMenuItem>
 			</NavigationMenuList>
 		</NavigationMenu>
 	);
