@@ -15,13 +15,6 @@ export default defineConfig({
 		}),
 		react(),
 		sitemap(),
-		compress({
-			css: false,
-			html: false,
-			img: false,
-			js: true,
-			svg: false,
-		}),
 	],
 	output: "hybrid",
 	adapter: cloudflare({

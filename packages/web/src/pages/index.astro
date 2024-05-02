@@ -3,7 +3,7 @@ import Layout from "../layouts/main.astro";
 import Hero from "../images/campaign-3.webp";
 import { Image } from "astro:assets";
 import { Button } from "../components/ui/button";
-import { downloadUrl } from "../lib/utils";
+import { discordUrl, downloadUrl } from "../lib/utils";
 ---
 
 <Layout
@@ -41,12 +41,13 @@ import { downloadUrl } from "../lib/utils";
 				</div>
 				<ul class="flex w-full flex-col gap-4">
 					<li>
-						<div
+						<a
+							href={discordUrl}
 							class="grid w-full auto-rows-max grid-cols-1 items-start gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-6 sm:p-8"
 						>
 							<div class="md:text-heading-md mt-4 text-4xl">1300+</div>
 							<div class="text-lg text-neutral-500">Discord Members</div>
-						</div>
+						</a>
 					</li>
 					<li>
 						<div
