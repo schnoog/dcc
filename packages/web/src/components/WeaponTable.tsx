@@ -11,6 +11,7 @@ import {
 } from "@tanstack/react-table";
 import { Table } from "./Table";
 import { escapeRegExp } from "../lib/utils";
+import { cn } from "../lib/utils";
 
 const columnHelper = createColumnHelper<DcsJs.Weapon>();
 
@@ -52,9 +53,9 @@ export function WeaponTable({ items }: { items: Record<string, DcsJs.Weapon> }) 
 	return (
 		<Table
 			table={table}
-			cell={(cell) => {
+			cell={(cell, i) => {
 				return (
-					<td key={cell.id}>
+					<td key={cell.id} className={cn({ "text-primary-light underline": i === 0 })}>
 						<a href={`/database/weapons/${escapeRegExp(cell.row.original.name)}`} className="block h-full w-full p-2">
 							{flexRender(cell.column.columnDef.cell, cell.getContext())}
 						</a>

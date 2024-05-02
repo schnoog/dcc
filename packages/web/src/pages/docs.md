@@ -59,7 +59,7 @@ Still in early development we currently only offer a dynamic campaign, but more 
 Campaign Mode for Digital Combat Simulator(DCS) inspired by Falcon BMS and Liberation
 ---no configuration, just fly---
 
-![App Screenshot](../images/campaign-1.png)
+![App Screenshot](../images/campaign-2.png)
 
 ## How does the Campaign work
 The campaign is defined by two definition, Scenario and faction.

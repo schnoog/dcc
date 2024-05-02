@@ -49,8 +49,8 @@ const { pylon, weapon, usedBy } = Astro.props;
 	{
 		weapon == null ? null : (
 			<div class="mt-10">
-				<h2 class="text-2xl">Weapon</h2>
-				<a href={`/database/weapons/${weapon.name}`} class="mt-2 block hover:underline">
+				<h2 class="mb-2 text-2xl">Weapon</h2>
+				<a href={`/database/weapons/${weapon.name}`} class="p-2 text-primary-light underline hover:bg-neutral-900">
 					{weapon.displayName}
 				</a>
 			</div>
@@ -60,13 +60,21 @@ const { pylon, weapon, usedBy } = Astro.props;
 		(
 			<div class="mt-10">
 				<h2 class="text-2xl">Used by</h2>
-				{usedBy.map((aircraft) => {
-					return (
-						<a href={`/database/aircrafts/${aircraft.name}`} class="mt-2 block hover:underline">
-							{aircraft.display_name}
-						</a>
-					);
-				})}
+				<table>
+					<tbody>
+						{usedBy.map((aircraft) => {
+							return (
+								<tr class=" hover:bg-neutral-900">
+									<td class="min-w-36">
+										<a href={`/database/aircrafts/${aircraft.name}`} class="block p-2 text-primary-light  underline">
+											{aircraft.display_name}
+										</a>
+									</td>
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
 			</div>
 		)
 	}

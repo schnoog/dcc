@@ -5,6 +5,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Label } from "./ui/label";
 import { EllipsisVertical } from "lucide-react";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import { cn } from "../lib/utils";
 
 declare module "@tanstack/react-table" {
 	interface ColumnMeta<TData extends RowData, TValue> {
@@ -114,7 +115,7 @@ function Filter<DataType>({ column }: { column: Column<DataType, unknown> }) {
 
 export type TableProps<DataType> = {
 	table: TanTable<DataType>;
-	cell?: (cell: Cell<DataType, unknown>) => React.ReactNode;
+	cell?: (cell: Cell<DataType, unknown>, i?: number) => React.ReactNode;
 };
 export function Table<DataType>({ cell, table }: TableProps<DataType>) {
 	return (
@@ -151,11 +152,11 @@ export function Table<DataType>({ cell, table }: TableProps<DataType>) {
 			<tbody>
 				{table.getRowModel().rows.map((row) => {
 					return (
-						<tr key={row.id}>
+						<tr key={row.id} className="hover:bg-neutral-900">
 							{cell == null
-								? row.getVisibleCells().map((cell) => {
+								? row.getVisibleCells().map((cell, i) => {
 										return (
-											<td key={cell.id} className="p-2">
+											<td key={cell.id} className={cn({ underline: i === 0 })}>
 												{flexRender(cell.column.columnDef.cell, cell.getContext())}
 											</td>
 										);

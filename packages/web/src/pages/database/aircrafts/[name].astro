@@ -93,16 +93,30 @@ const { aircraft, loadouts } = Astro.props;
 					return (
 						<div class="mt-5">
 							<h3 class="text-2xl font-light ">{loadout.task}</h3>
-							{loadout.pylons.map((pylon) => {
-								if (pylon == null) {
-									return <p class="mt-2">-</p>;
-								}
-								return (
-									<a href={`/database/pylons/${escapeRegExp(pylon.name)}`} class="mt-2 block hover:underline">
-										{pylon.displayName}
-									</a>
-								);
-							})}
+							<table>
+								<tbody>
+									{loadout.pylons.map((pylon) => {
+										if (pylon == null) {
+											return;
+											<tr>
+												<td>-</td>
+											</tr>;
+										}
+										return (
+											<tr class="hover:bg-neutral-900">
+												<td class="min-w-36">
+													<a
+														href={`/database/pylons/${escapeRegExp(pylon.name)}`}
+														class="block p-2 text-primary-light underline"
+													>
+														{pylon.displayName}
+													</a>
+												</td>
+											</tr>
+										);
+									})}
+								</tbody>
+							</table>
 						</div>
 					);
 				})

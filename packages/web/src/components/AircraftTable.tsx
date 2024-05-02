@@ -10,6 +10,7 @@ import {
 	useReactTable,
 } from "@tanstack/react-table";
 import { Table } from "./Table";
+import { cn } from "../lib/utils";
 
 const columnHelper = createColumnHelper<DcsJs.AircraftDefinition>();
 
@@ -67,9 +68,9 @@ export const AircraftTable = React.memo(function AircraftTable({
 	return (
 		<Table
 			table={table}
-			cell={(cell) => {
+			cell={(cell, i) => {
 				return (
-					<td key={cell.id}>
+					<td key={cell.id} className={cn({ "text-primary-light underline": i === 0 })}>
 						<a href={`/database/aircrafts/${cell.row.original.name}`} className="block h-full w-full p-2">
 							{flexRender(cell.column.columnDef.cell, cell.getContext())}
 						</a>

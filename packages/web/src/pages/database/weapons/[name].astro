@@ -87,13 +87,21 @@ const { weapon, usedBy } = Astro.props;
 		(
 			<div class="mt-10">
 				<h2 class="text-2xl">Used by</h2>
-				{usedBy.map((aircraft) => {
-					return (
-						<a href={`/database/aircrafts/${aircraft.name}`} class="mt-2 block hover:underline">
-							{aircraft.display_name}
-						</a>
-					);
-				})}
+				<table>
+					<tbody>
+						{usedBy.map((aircraft) => {
+							return (
+								<tr class=" hover:bg-neutral-900">
+									<td class="min-w-36">
+										<a href={`/database/aircrafts/${aircraft.name}`} class="block p-2 text-primary-light underline">
+											{aircraft.display_name}
+										</a>
+									</td>
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
 			</div>
 		)
 	}
