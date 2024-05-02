@@ -17,7 +17,7 @@ export default defineConfig({
 	output: "hybrid",
 	adapter: cloudflare({
 		mode: "directory",
-		imageService: "cloudflare",
 	}),
 	prefetch: true,
+	images: passthroughImageService(),
 });

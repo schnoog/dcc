@@ -11,7 +11,7 @@ import {
 import { Button } from "./ui/button";
 import discord from "../images/discord.svg";
 import github from "../images/github.svg";
-import icon from "../images/icon.png";
+import icon from "../images/icon-2.webp";
 
 import { cn, discordUrl, downloadUrl } from "../lib/utils";
 import { Database, Github } from "lucide-react";
