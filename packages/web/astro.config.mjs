@@ -16,11 +16,11 @@ export default defineConfig({
 		react(),
 		sitemap(),
 		compress({
-			css: true,
+			css: false,
 			html: true,
 			img: false,
 			js: true,
-			svg: true,
+			svg: false,
 		}),
 	],
 	output: "hybrid",
