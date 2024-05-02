@@ -14,7 +14,7 @@ import github from "../images/github.svg";
 import icon from "../images/icon-2.webp";
 
 import { cn, discordUrl, downloadUrl } from "../lib/utils";
-import { Database, Github } from "lucide-react";
+import { Database } from "lucide-react";
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
 	({ className, title, children, ...props }, ref) => {
@@ -40,7 +40,7 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
 
 export function Header() {
 	return (
-		<NavigationMenu className="left-0 right-0 top-0 z-10 flex h-16 w-full max-w-full justify-between bg-primary px-10">
+		<NavigationMenu className="left-0 right-0 top-0 z-10 flex h-16 w-full max-w-full justify-center bg-primary px-10 sm:justify-between">
 			<NavigationMenuList>
 				<NavigationMenuItem>
 					<NavigationMenuLink href="/">
@@ -54,7 +54,8 @@ export function Header() {
 				</NavigationMenuItem>
 				<NavigationMenuItem>
 					<NavigationMenuLink href="/database">
-						<NavigationMenuTrigger>Database</NavigationMenuTrigger>
+						<NavigationMenuTrigger className="hidden p-0 px-0 sm:inline-flex">Database</NavigationMenuTrigger>
+						<span className={cn(navigationMenuTriggerStyle(), "inline sm:hidden")}>Database</span>
 					</NavigationMenuLink>
 					<NavigationMenuContent>
 						<ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -88,7 +89,7 @@ export function Header() {
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 			</NavigationMenuList>
-			<NavigationMenuList>
+			<NavigationMenuList className="hidden sm:flex">
 				<NavigationMenuItem>
 					<NavigationMenuLink className={navigationMenuTriggerStyle()} href={discordUrl} target="_blank">
 						<img src={discord.src} alt="Discord" />

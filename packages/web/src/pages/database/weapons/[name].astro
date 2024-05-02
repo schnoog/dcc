@@ -60,7 +60,7 @@ const { weapon, usedBy } = Astro.props;
 	keywords={`Weapon, ${weapon.name}`}
 >
 	<h1 class="mb-10 text-4xl">{weapon.displayName}</h1>
-	<dl class="grid grid-cols-4 gap-10">
+	<dl class="grid grid-cols-2 gap-10 sm:grid-cols-4">
 		<LabelValue label="Type" value={weapon.type} />
 		<LabelValue label="Year" value={weapon.year} defaultValue="-" />
 		{

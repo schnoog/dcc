@@ -42,7 +42,7 @@ const { pylon, weapon, usedBy } = Astro.props;
 
 <Layout description={`${pylon.name} Pylon Definition for Digital Crew Chief(DCC)`} keywords={`Pylon, ${pylon.name}`}>
 	<h1 class="mb-10 text-4xl">{pylon.displayName}</h1>
-	<dl class="grid grid-cols-4 gap-10">
+	<dl class="grid grid-cols-2 gap-10 sm:grid-cols-4">
 		<LabelValue label="Type" value={pylon.type} />
 		{pylon.total > 1 ? <LabelValue label="Quantity" value={pylon.total} /> : null}
 	</dl>

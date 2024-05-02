@@ -70,7 +70,10 @@ export const AircraftTable = React.memo(function AircraftTable({
 			table={table}
 			cell={(cell, i) => {
 				return (
-					<td key={cell.id} className={cn({ "text-primary-light underline": i === 0 })}>
+					<td
+						key={cell.id}
+						className={cn({ "text-primary-light underline": i === 0, "hidden sm:block": (i ?? 0) > 1 })}
+					>
 						<a href={`/database/aircrafts/${cell.row.original.name}`} className="block h-full w-full p-2">
 							{flexRender(cell.column.columnDef.cell, cell.getContext())}
 						</a>

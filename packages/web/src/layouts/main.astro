@@ -16,7 +16,10 @@ const { canonical = true, description, keywords } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta
+			name="viewport"
+			content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
 		<meta name="description" content={description} />
 		<meta name="keywords" content={"DCC, DCS, Digital Crew Chief, " + keywords} />
 		<link rel="icon" type="image/png" href="/favicon.png" />
@@ -25,9 +28,9 @@ const { canonical = true, description, keywords } = Astro.props;
 
 		<title>DCC - Digital Crew Chief for DCS</title>
 	</head>
-	<body class="dark bg-background font-sans text-white">
+	<body class="dark w-full bg-background font-sans text-white">
 		<Header client:visible />
-		<article class="flex flex-col items-center pt-16">
+		<article class="flex w-full flex-col items-center pt-16">
 			<div class="w-full max-w-[1100px]">
 				<slot />
 			</div>

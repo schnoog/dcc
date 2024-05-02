@@ -123,9 +123,9 @@ export function Table<DataType>({ cell, table }: TableProps<DataType>) {
 			<thead>
 				{table.getHeaderGroups().map((headerGroup) => (
 					<tr key={headerGroup.id}>
-						{headerGroup.headers.map((header) => {
+						{headerGroup.headers.map((header, i) => {
 							return (
-								<th key={header.id} className="p-2 text-start">
+								<th key={header.id} className={cn("p-2 text-start", { "hidden sm:table-cell": (i ?? 0) > 1 })}>
 									<div className="flex justify-between">
 										<button onClick={() => header.column.toggleSorting()}>
 											{flexRender(header.column.columnDef.header, header.getContext())}

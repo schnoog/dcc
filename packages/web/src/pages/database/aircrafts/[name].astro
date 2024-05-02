@@ -51,7 +51,7 @@ const { aircraft, loadouts } = Astro.props;
 	keywords={`Aircraft, ${aircraft.name}`}
 >
 	<h1 class="mb-10 text-4xl">{aircraft.display_name}</h1>
-	<dl class="grid grid-cols-4 gap-10">
+	<dl class="grid grid-cols-2 gap-10 sm:grid-cols-4">
 		<LabelValue label="Chaff" value={aircraft.chaff} />
 		<LabelValue label="Flare" value={aircraft.flare} />
 		<LabelValue label="Max Fuel" value={aircraft.max_fuel} unit="gal" />
@@ -87,7 +87,7 @@ const { aircraft, loadouts } = Astro.props;
 	</div>
 	<div class="mt-10">
 		<h2 class="text-2xl">Loadouts</h2>
-		<div class="grid grid-cols-2 gap-10">
+		<div class="grid grid-cols-1 gap-10 sm:grid-cols-2">
 			{
 				loadouts.map((loadout) => {
 					return (
