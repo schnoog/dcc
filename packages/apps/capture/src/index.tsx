@@ -11,11 +11,9 @@ const App = () => {
 	const [document, setDocument] = createSignal<Types.Capture.Document>();
 
 	IPC.onRequestRender((doc) => {
-		console.log("RequestRender", doc);
 		setDocument(doc);
 	});
 
-	console.log("App");
 	return (
 		<Show when={document()} fallback={<div>Nothing to render</div>}>
 			{(doc) => <Document document={doc()} />}
