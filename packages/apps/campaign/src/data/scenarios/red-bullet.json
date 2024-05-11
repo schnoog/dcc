@@ -10,14 +10,30 @@
 		"type": "objective",
 		"value": "Enguri Dam"
 	},
-	"blue-start-objective-range": [1, 3],
+	"blue-start-objective-range": [
+		1,
+		3
+	],
 	"blue": {
-		"airdromeNames": ["Kobuleti"],
+		"airdromeNames": [
+			"Kobuleti"
+		],
 		"carrierObjective": "Alpha",
-		"objectives": []
+		"objectives": [
+			"Maharadze",
+			"Hidmagala"
+		]
 	},
 	"red": {
-		"airdromeNames": ["Sukhumi-Babushara", "Nalchik"],
-		"objectives": []
+		"airdromeNames": [
+			"Sukhumi-Babushara",
+			"Nalchik"
+		],
+		"objectives": [
+			"Sukhumi-Babushara",
+			"Enguri Dam",
+			"Sarakoni",
+			"Bataria"
+		]
 	}
 }
