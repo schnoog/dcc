@@ -22,6 +22,7 @@ export interface FlightGroupUnit {
 	onboardNumber: number;
 	isClient: boolean;
 	pylons: Data.Pylon[];
+	heading?: number;
 }
 
 type TimeTableWaypoint = Data.InputTypes.Waypoint & {
@@ -482,6 +483,7 @@ export class FlightGroup extends UnitGroup {
 
 	public override toGenerated(mission: Mission): Data.GeneratedTypes.FlightGroup {
 		const units: Data.GeneratedTypes.FlightGroupUnit[] = [];
+		const startType = this.#calcStartType(mission);
 
 		const firstUnitPositionAndParking = this.#calcPositionAndParking(mission, 0);
 
@@ -513,12 +515,13 @@ export class FlightGroup extends UnitGroup {
 				},
 				psi: 0,
 				skill: unit.isClient ? "Client" : mission.aiSkill,
-				speed: 0,
+				speed: startType === "air" ? this.cruiseSpeed : 0,
 				type: unit.type,
 				AddPropAircraft: structuredClone(addPropAircraft(unit, groupIndex, mission)),
 				Radio: addRadio(unit),
 				datalinks: addDatalinks(unit.type, groupIndex, teamMembers),
 				unitId: unit.unitId,
+				heading: unit.heading,
 				...(groupIndex === 0 ? firstUnitPositionAndParking : this.#calcPositionAndParking(mission, groupIndex)),
 			};
 

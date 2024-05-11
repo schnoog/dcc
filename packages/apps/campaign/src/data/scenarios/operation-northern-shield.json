@@ -10,32 +10,14 @@
 		"type": "objective",
 		"value": "Hama Center"
 	},
-	"blue-start-objective-range": [
-		5,
-		12
-	],
+	"blue-start-objective-range": [5, 12],
 	"blue": {
-		"airdromeNames": [
-			"Ramat David"
-		],
+		"airdromeNames": ["Ramat David"],
 		"carrierObjective": "Alpha",
-		"objectives": [
-			"Migdal HaEmek",
-			"Haifa"
-		]
+		"objectives": ["Migdal HaEmek", "Haifa"]
 	},
 	"red": {
-		"airdromeNames": [
-			"Beirut-Rafic Hariri",
-			"Damascus",
-			"King Hussein Air College",
-			"Al Qusayr",
-			"Hama"
-		],
-		"objectives": [
-			"El Taebah",
-			"Al Harah",
-			"Aadloun"
-		]
+		"airdromeNames": ["Beirut-Rafic Hariri", "Damascus", "King Hussein Air College", "Al Qusayr", "Hama"],
+		"objectives": ["El Taebah", "Al Harah", "Aadloun"]
 	}
 }

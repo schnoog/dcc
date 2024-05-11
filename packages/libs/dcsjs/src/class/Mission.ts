@@ -43,6 +43,16 @@ export class Mission {
 		return this.#hotStart;
 	}
 
+	public getCoalitionCountry(coalition: Data.Coalition) {
+		const countryName = this.#factionCountries[coalition];
+
+		if (countryName == null) {
+			throw new Error(`Faction country missing for ${coalition}`);
+		}
+
+		return this.#countries.get(countryName);
+	}
+
 	constructor(args: Data.InputTypes.Mission) {
 		this.theatre = args.theatre;
 		this.time = args.time;
@@ -124,9 +134,14 @@ export class Mission {
 		this.#countries.get(args.countryName)?.createSamGroup(args, this);
 	}
 
+	/**
+	 * Generates AWACS (Airborne Warning and Control System) for each faction country.
+	 * @param props - The aircraft type for each faction.
+	 */
 	public generateAWACS(props: Data.InputTypes.GenerateAWACS) {
 		for (const entry of Object.entries(this.#factionCountries)) {
 			const coalition = entry[0] as Data.Coalition;
+			const countryName = entry[1];
 			if (coalition === "neutrals") {
 				continue;
 			}
@@ -137,7 +152,7 @@ export class Mission {
 				throw new Error(`Aircraft type missing for ${coalition}`);
 			}
 
-			this.#countries.get(entry[1])?.generateAWACS(coalition, aircraftType, this);
+			this.#countries.get(countryName)?.generateAWACS(coalition, aircraftType, this);
 		}
 	}
 
@@ -179,7 +194,10 @@ export class Mission {
 		this.#trigger.addLoadFile("ResKey_Action_6", "Load Mist");
 		this.#trigger.addLoadFile("ResKey_Action_7", "Load Json");
 		this.#trigger.addLoadFile("ResKey_Action_8", "Load Config");
-		this.#trigger.addLoadFile("ResKey_Action_9", "Load State");
+		this.#trigger.addLoadFile("ResKey_Action_9", "Load Utils");
+		this.#trigger.addLoadFile("ResKey_Action_10", "Load State");
+		this.#trigger.addLoadFile("ResKey_Action_11", "Load EWR");
+		this.#trigger.addLoadFile("ResKey_Action_20", "Load Mission");
 	}
 
 	public toGenerated(): Data.GeneratedTypes.Mission {
@@ -336,8 +354,29 @@ export class Mission {
 	}
 
 	public toMissionConfig() {
+		const country = this.getCoalitionCountry("blue");
+
+		if (country == null) {
+			throw new Error("Blue country not found");
+		}
+
+		const clientFlightGroups: { groupId: number; name: string; task: Data.Task }[] = [];
+
+		for (const flightGroup of country.flightGroups) {
+			if (!flightGroup.hasClients) {
+				continue;
+			}
+
+			clientFlightGroups.push({
+				groupId: flightGroup.groupId,
+				name: flightGroup.name,
+				task: flightGroup.task,
+			});
+		}
+
 		const config = {
 			missionId: this.#id,
+			clientFlightGroups,
 		};
 
 		return luaTable.stringify(config, { mixedKeyTypes: true });

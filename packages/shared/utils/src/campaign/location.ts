@@ -1,7 +1,7 @@
 import type * as DcsJs from "@foxdelta2/dcsjs";
 
 export const headingToPosition = (position1: DcsJs.Position, position2: DcsJs.Position) => {
-	return (Math.atan2(position2.y - position1.y, position2.x - position1.x) * 180) / Math.PI;
+	return Math.round((Math.atan2(position2.y - position1.y, position2.x - position1.x) * 180) / Math.PI);
 };
 
 export const distanceToPosition = (position1: DcsJs.Position, position2: DcsJs.Position) => {

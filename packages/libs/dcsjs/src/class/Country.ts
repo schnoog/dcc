@@ -1,4 +1,5 @@
 import * as Data from "../data";
+import { oppositionCoalition } from "../utils";
 import { Airdrome } from "./Airdrome";
 import { FlightGroup, FlightGroupUnit } from "./FlightGroup";
 import { GroundGroup, GroundGroupUnit } from "./GroundGroup";
@@ -10,6 +11,57 @@ interface CountryProps {
 	id: number;
 	name: Data.CountryName;
 }
+
+const headingToPosition = (position1: Data.Position, position2: Data.Position) => {
+	return Math.round((Math.atan2(position2.y - position1.y, position2.x - position1.x) * 180) / Math.PI);
+};
+
+const isPosition = (value: Data.Position | { position: Data.Position }): value is Data.Position => {
+	return (value as Data.Position).x != null;
+};
+
+const objectToPosition = <T extends Data.Position | { position: Data.Position }>(value: T): Data.Position => {
+	if (isPosition(value)) {
+		return {
+			x: value.x,
+			y: value.y,
+		};
+	} else {
+		return value.position;
+	}
+};
+
+const addHeading = (heading: number, value: number) => {
+	let sum = heading + value;
+
+	while (sum < 0) {
+		sum += 360;
+	}
+
+	return sum % 360;
+};
+
+const degreesToRadians = (degrees: number) => {
+	// return parseFloat(((degrees * Math.PI) / 180).toFixed(2));
+	return (degrees / 360) * 2 * Math.PI;
+};
+
+const positionFromHeading = (pos: Data.Position, heading: number, distance: number): Data.Position => {
+	let positiveHeading = heading;
+	while (positiveHeading < 0) {
+		positiveHeading += 360;
+	}
+
+	positiveHeading %= 360;
+
+	const radHeading = degreesToRadians(positiveHeading);
+
+	return {
+		x: pos.x + Math.cos(radHeading) * distance,
+		y: pos.y + Math.sin(radHeading) * distance,
+	};
+};
+
 export class Country {
 	readonly id: number;
 	readonly name: Data.CountryName;
@@ -21,6 +73,10 @@ export class Country {
 
 	get staticGroups() {
 		return this.#staticGroups;
+	}
+
+	get flightGroups() {
+		return [...this.#plane, ...this.#helicopter];
 	}
 
 	constructor(args: CountryProps) {
@@ -137,6 +193,29 @@ export class Country {
 			throw new Error("No airdrome found");
 		}
 
+		const oppCoalition = oppositionCoalition(coalition);
+
+		let oppAirdrome: Airdrome | undefined = undefined;
+		for (const ad of mission.airdromes[oppCoalition]?.values() ?? []) {
+			oppAirdrome = ad;
+			break;
+		}
+
+		if (oppAirdrome === undefined) {
+			throw new Error("No opp airdrome found");
+		}
+
+		const headingToOppAirdrome = headingToPosition(
+			objectToPosition(airdrome.airdromeDefinition),
+			objectToPosition(oppAirdrome.airdromeDefinition),
+		);
+
+		const awacsHeading = addHeading(headingToOppAirdrome, 180);
+
+		const startPosition = positionFromHeading(objectToPosition(airdrome.airdromeDefinition), awacsHeading, 20000);
+
+		const endPosition = positionFromHeading(objectToPosition(airdrome.airdromeDefinition), awacsHeading, 40000);
+
 		const fg = new FlightGroup({
 			coalition,
 			frequency: 251,
@@ -153,8 +232,9 @@ export class Country {
 						"3": 1,
 					},
 					isClient: false,
-					onboardNumber: 1,
+					onboardNumber: 111,
 					pylons: [],
+					heading: awacsHeading,
 				},
 			],
 			isHelicopter: false,
@@ -162,14 +242,11 @@ export class Country {
 			cruiseSpeed: 389,
 			hasClients: false,
 			name: `AWACS-${coalition}`,
-			position: {
-				x: airdrome.airdromeDefinition.x,
-				y: airdrome.airdromeDefinition.y,
-			},
+			position: startPosition,
 			task: "AWACS",
 			homeBaseName: airdrome.airdromeDefinition.name,
 			homeBaseType: "Airdrome",
-			startTime: 0,
+			startTime: mission.time - 10000,
 			waypoints: [
 				{
 					arrivalTime: mission.time - 10000,
@@ -184,14 +261,18 @@ export class Country {
 				},
 				{
 					arrivalTime: mission.time - 1000,
-					name: `AWACS-${coalition}-1`,
+					name: "Race-Track Start",
 					onGround: false,
-					position: {
-						x: airdrome.airdromeDefinition.x,
-						y: airdrome.airdromeDefinition.y,
-					},
+					position: startPosition,
 					type: "Task",
-					duration: 3600000,
+					duration: 3700000,
+				},
+				{
+					arrivalTime: mission.time - 1000,
+					name: "Race-Track End",
+					onGround: false,
+					position: endPosition,
+					type: "RaceTrack End",
 				},
 			],
 		});

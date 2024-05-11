@@ -175,7 +175,6 @@ function startFlightGroupTasks(flightGroup: FlightGroup, training: boolean) {
 			tasks.push(Data.TaskAction.Immortal);
 			tasks.push(Data.TaskAction.AWACS);
 			tasks.push(Data.TaskAction.EPLRS);
-			tasks.push(Data.TaskAction.Hold(3600000, 6096, 220));
 
 			break;
 		}
@@ -207,10 +206,6 @@ export function getStartWaypointTasks(
 	training: boolean,
 ): Array<Types.RoutePointTaskTemplate> {
 	const tasks = startFlightGroupTasks(flightGroup, training);
-
-	if (flightGroup.task === "AWACS") {
-		tasks.push(Data.TaskAction.AWACS);
-	}
 
 	return tasks;
 }

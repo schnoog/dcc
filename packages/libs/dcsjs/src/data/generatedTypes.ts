@@ -97,6 +97,7 @@ export namespace Schema {
 	export const flightGroupUnit = unit.extend({
 		alt: z.number(),
 		alt_type: Enums.altitudeType,
+		heading: z.number().optional(),
 		callsign: Types.Schema.callsign,
 		onboard_num: z.string(),
 		parking: z.string().optional(),

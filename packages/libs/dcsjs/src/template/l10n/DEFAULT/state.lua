@@ -101,7 +101,7 @@ local function getGroupPositions(coalition)
                 local category = Group.getCategory(group)
 
                 if category == Group.Category.AIRPLANE or category == Group.Category.HELICOPTER then
-                    debugLog(groupName .. " is a aircraft")
+                    --debugLog(groupName .. " is a aircraft")
                     local unit = group:getUnit(1)
 
                     if unit ~= nil and unit:inAir() then
@@ -129,7 +129,7 @@ local function getGroupPositions(coalition)
                                 groups[#groups + 1] = groupOut
                             end
                         else
-                            debugLog(groupName .. " is not in the air")
+                            --debugLog(groupName .. " is not in the air")
                         end
                     end
                 end
