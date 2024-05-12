@@ -242,7 +242,7 @@ export class Package extends Entity<keyof Events.EventMap.Package> {
 						aircraftIds: Array.from(escortBundle.aircrafts).map((a) => a.id),
 						homeBase: escortBundle.homeBase,
 						targetFlightGroup: strikeFg,
-						holdWaypoint: holdWaypoint,
+						holdWaypoint: holdWaypoint.createOffsetWaypoint({ offset: Utils.DateTime.Seconds(-30) }),
 					});
 
 					if (escortFg == null) {
@@ -330,7 +330,7 @@ export class Package extends Entity<keyof Events.EventMap.Package> {
 						package: pkg,
 						aircraftIds: Array.from(escortBundle.aircrafts).map((a) => a.id),
 						homeBase: escortBundle.homeBase,
-						holdWaypoint: holdWaypoint,
+						holdWaypoint: holdWaypoint.createOffsetWaypoint({ offset: Utils.DateTime.Seconds(-30) }),
 						targetFlightGroup: deadFg,
 					});
 
@@ -353,7 +353,7 @@ export class Package extends Entity<keyof Events.EventMap.Package> {
 						aircraftIds: Array.from(seadBundle.aircrafts).map((a) => a.id),
 						homeBase: seadBundle.homeBase,
 						targetFlightGroup: deadFg,
-						holdWaypoint: holdWaypoint,
+						holdWaypoint: holdWaypoint.createOffsetWaypoint({ offset: Utils.DateTime.Seconds(-60) }),
 					});
 
 					if (seadFg == null) {
