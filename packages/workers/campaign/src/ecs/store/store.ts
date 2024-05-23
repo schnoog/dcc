@@ -63,6 +63,11 @@ function initializeStore(): Store {
 				red: new Set(),
 				neutrals: new Set(),
 			},
+			downedPilots: {
+				blue: new Set(),
+				red: new Set(),
+				neutrals: new Set(),
+			},
 			structures: {
 				blue: new SuperSet(structureSubQueries),
 				red: new SuperSet(structureSubQueries),
@@ -126,6 +131,7 @@ interface Queries {
 	groundGroups: Record<DcsJs.Coalition, SuperSet<Entities.GroundGroup, (typeof groundGroupSubQueries)[number]>>;
 	aircrafts: Record<DcsJs.Coalition, SuperSet<Entities.Aircraft, (typeof aircraftSubQueries)[number]>>;
 	groundUnits: Record<DcsJs.Coalition, Set<Entities.GroundUnit>>;
+	downedPilots: Record<DcsJs.Coalition, Set<Entities.DownedPilot>>;
 	structures: Record<DcsJs.Coalition, SuperSet<Entities.Structure, (typeof structureSubQueries)[number]>>;
 	unitCamps: Record<DcsJs.Coalition, Set<Entities.UnitCamp>>;
 	SAMs: Record<DcsJs.Coalition, SuperSet<Entities.SAM, (typeof samSubQueries)[number]>>;

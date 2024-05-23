@@ -197,6 +197,7 @@ export class Mission {
 		this.#trigger.addLoadFile("ResKey_Action_9", "Load Utils");
 		this.#trigger.addLoadFile("ResKey_Action_10", "Load State");
 		this.#trigger.addLoadFile("ResKey_Action_11", "Load EWR");
+		this.#trigger.addLoadFile("ResKey_Action_12", "Load CSAR");
 		this.#trigger.addLoadFile("ResKey_Action_20", "Load Mission");
 	}
 

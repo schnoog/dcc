@@ -6,6 +6,7 @@ mapResource =
     ["ResKey_Action_9"] = "utils.lua",
     ["ResKey_Action_10"] = "state.lua",
     ["ResKey_Action_11"] = "ewr.lua",
+    ["ResKey_Action_12"] = "csar.lua",
     ["ResKey_Action_20"] = "mission.lua",
     ["ResKey_ImageBriefing_6"] = "DCC_Logo_1024.png",
     ["ResKey_ImageBriefing_7"] = "DCC_Logo_1024.png",

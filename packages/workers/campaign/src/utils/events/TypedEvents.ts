@@ -8,6 +8,8 @@ export interface CapFlightGroup {}
 
 export interface CasFlightGroup {}
 
+export interface DownedPilot {}
+
 export interface Entity {
 	destructed: void;
 }
@@ -45,6 +47,8 @@ export interface SeadFlightGroup {}
 
 export interface StrikeFlightGroup {}
 
+export interface CsarFlightGroup {}
+
 export interface Structure {}
 
 export interface Unit {
@@ -55,6 +59,7 @@ export type All = Aircraft &
 	Airdrome &
 	CapFlightGroup &
 	CasFlightGroup &
+	CsarFlightGroup &
 	Entity &
 	EscortFlightGroup &
 	EscortedFlightGroup &

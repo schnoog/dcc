@@ -282,15 +282,15 @@ export class World {
 			}
 		}
 
-		for (const name of state.crashedAircrafts) {
+		for (const crashReport of state.crashedAircrafts) {
 			for (const aircraft of store.queries.aircrafts.blue) {
-				if (aircraft.name === name) {
-					aircraft.destroy();
+				if (aircraft.name === crashReport.name) {
+					aircraft.crash({ position: crashReport });
 				}
 			}
-			for (const aircraft of store.queries.aircrafts.blue) {
-				if (aircraft.name === name) {
-					aircraft.destroy();
+			for (const aircraft of store.queries.aircrafts.red) {
+				if (aircraft.name === crashReport.name) {
+					aircraft.crash({ position: crashReport });
 				}
 			}
 		}

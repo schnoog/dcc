@@ -167,8 +167,8 @@ export function Debrief(props: { missionState: Types.Campaign.MissionState; onCl
 			neutrals: 0,
 		};
 
-		for (const aircraftName of props.missionState.crashedAircrafts) {
-			const aircraft = getEntityByName(aircraftName);
+		for (const crashReport of props.missionState.crashedAircrafts) {
+			const aircraft = getEntityByName(crashReport.name);
 
 			if (aircraft == null) {
 				continue;

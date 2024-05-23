@@ -118,7 +118,13 @@ export namespace Schema {
 	export const missionState = z.object({
 		missionId: z.string(),
 		missionEnded: z.boolean(),
-		crashedAircrafts: z.array(z.string()),
+		crashedAircrafts: z.array(
+			z.object({
+				name: z.string(),
+				x: z.number(),
+				y: z.number(),
+			}),
+		),
 		destroyedGroundUnits: z.array(z.string().or(z.number())),
 		groupPositions: z.record(DcsJs.coalition, z.array(z.object({ name: z.string(), x: z.number(), y: z.number() }))),
 	});
@@ -183,13 +189,23 @@ export interface GroundGroupMapItem extends MapItemBase {
 	groundGroupType: CampaignGroundGroupUnitType;
 }
 
+export interface DownedPilotMapItem extends MapItemBase {
+	type: "downedPilot";
+}
+
 export interface SAMMapItem extends MapItemBase {
 	type: "sam";
 	range: number;
 	active: boolean;
 }
 
-export type MapItem = StructureMapItem | AirdromeMapItem | FlightGroupMapItem | GroundGroupMapItem | SAMMapItem;
+export type MapItem =
+	| StructureMapItem
+	| AirdromeMapItem
+	| FlightGroupMapItem
+	| GroundGroupMapItem
+	| SAMMapItem
+	| DownedPilotMapItem;
 
 export type ObjectiveItem = {
 	id: string;
@@ -242,6 +258,12 @@ export type GroundGroupItem = EntityItem & {
 	units: Array<GroundUnitItem>;
 	shoradUnits: Array<GroundUnitItem>;
 	type: CampaignGroundGroupUnitType;
+};
+
+export type DownedPilotItem = EntityItem & {
+	name: string;
+	position: DcsJs.Position;
+	created: number;
 };
 
 export type BuildingItem = {

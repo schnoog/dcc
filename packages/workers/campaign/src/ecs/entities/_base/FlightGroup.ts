@@ -345,7 +345,7 @@ export abstract class FlightGroup<EventNames extends keyof Events.EventMap.All =
 			throw new Error("aircraft is null");
 		}
 
-		aircraft.destroy();
+		aircraft.crash({ position: this.position });
 	}
 
 	stopCombat() {

@@ -3,10 +3,11 @@ import * as Types from "@kilcekru/dcc-shared-types";
 import * as Utils from "@kilcekru/dcc-shared-utils";
 
 import { Events, Serialization } from "../../utils";
-import { getEntity, QueryKey } from "../store";
+import { getEntity, QueryKey, store } from "../store";
 import type { FlightGroup } from "./_base/FlightGroup";
 import type { HomeBase } from "./_base/HomeBase";
 import { Unit, UnitProps } from "./_base/Unit";
+import { DownedPilot } from "./DownedPilot";
 export interface AircraftProps extends Omit<UnitProps, "entityType" | "queries"> {
 	aircraftType: DcsJs.AircraftType;
 	homeBaseId: Types.Campaign.Id;
@@ -91,6 +92,47 @@ export class Aircraft extends Unit<keyof Events.EventMap.Aircraft> {
 
 	public static create(args: AircraftProps) {
 		return new Aircraft(args);
+	}
+
+	public crash({ position }: { position: DcsJs.Position }): void {
+		super.destroy();
+
+		let nearestObjective = undefined;
+		let nearestObjectiveDistance = Infinity;
+		let nearestCoalitionObjective = undefined;
+		let nearestCoalitionObjectiveDistance = Infinity;
+
+		for (const objective of store.queries.objectives) {
+			const distance = Utils.Location.distanceToPosition(position, objective.position);
+
+			if (distance < nearestObjectiveDistance) {
+				nearestObjective = objective;
+				nearestObjectiveDistance = distance;
+			}
+
+			if (objective.coalition === this.coalition) {
+				if (distance < nearestCoalitionObjectiveDistance) {
+					nearestCoalitionObjective = objective;
+					nearestCoalitionObjectiveDistance = distance;
+				}
+			}
+		}
+
+		if (nearestObjective == null || nearestCoalitionObjective == null) {
+			// eslint-disable-next-line no-console
+			console.error("aircraft crash: No objectives found");
+			return;
+		}
+
+		if (nearestObjective.id !== nearestCoalitionObjective.id) {
+			if (nearestCoalitionObjectiveDistance <= Utils.Config.defaults.helicopterMaxDistanceToTarget) {
+				DownedPilot.create({
+					coalition: this.coalition,
+					name: this.name ?? "Pilot",
+					position,
+				});
+			}
+		}
 	}
 
 	override destructor() {

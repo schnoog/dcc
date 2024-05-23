@@ -44,6 +44,8 @@ const parsedMission = luaTable.parse(luaString.slice(9), {
 });
 
 fs.writeFileSync(path.join(targetPath, missionName + ".json"), JSON.stringify(parsedMission));
+// eslint-disable-next-line no-console
+console.log(`😊 mission saved to ${path.join(targetPath, missionName + ".json")}`);
 
 if (withSchema) {
 	const parsedSchema = GeneratedTypes.Schema.mission.safeParse(parsedMission);

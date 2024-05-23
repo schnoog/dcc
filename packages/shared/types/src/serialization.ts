@@ -254,6 +254,7 @@ export const queryNameSchema = z.enum([
 	"groundGroups",
 	"aircrafts",
 	"groundUnits",
+	"downedPilots",
 	"structures",
 	"unitCamps",
 	"SAMs",
@@ -280,6 +281,8 @@ export const entityTypeSchema = z.enum([
 	"Airdrome",
 	"CapFlightGroup",
 	"CasFlightGroup",
+	"CsarFlightGroup",
+	"DownedPilot",
 	"DeadFlightGroup",
 	"SeadFlightGroup",
 	"EscortFlightGroup",
@@ -329,6 +332,12 @@ const groundGroupSchema = groupSchema.extend({
 	embarkedOntoFlightGroupId: z.string().optional(),
 });
 export type GroundGroupSerialized = z.TypeOf<typeof groundGroupSchema>;
+
+const downedPilotSchema = groupSchema.extend({
+	entityType: z.literal("DownedPilot"),
+	created: z.number(),
+});
+export type DownedPilotSerialized = z.TypeOf<typeof downedPilotSchema>;
 
 const samSchema = groupSchema.extend({
 	entityType: z.literal("SAM"),
@@ -422,6 +431,13 @@ const casFlightGroupSchema = escortedFlightGroupSchema.extend({
 	jtacFrequency: z.number(),
 });
 export type CasFlightGroupSerialized = z.TypeOf<typeof casFlightGroupSchema>;
+
+const csarFlightGroupSchema = flightGroupSchema.extend({
+	entityType: z.literal("CasFlightGroup"),
+	targetDownedPilotId: z.string(),
+	pilotOnBoard: z.boolean(),
+});
+export type CsarFlightGroupSerialized = z.TypeOf<typeof csarFlightGroupSchema>;
 
 const deadFlightGroupSchema = escortedFlightGroupSchema.extend({
 	entityType: z.literal("DeadFlightGroup"),
@@ -553,25 +569,27 @@ const farpSchema = homeBaseSchema.extend({
 export type FarpSerialized = z.TypeOf<typeof farpSchema>;
 
 export const stateEntitySchema = z.discriminatedUnion("entityType", [
-	genericStructureSchema,
-	unitCampSchema,
-	buildingSchema,
-	packageSchema,
-	objectiveSchema,
 	aircraftSchema,
 	airAssaultFlightGroupSchema,
-	deadFlightGroupSchema,
-	farpSchema,
-	escortFlightGroupSchema,
-	strikeFlightGroupSchema,
-	casFlightGroupSchema,
-	capFlightGroupSchema,
-	seadFlightGroupSchema,
 	airdromeSchema,
+	buildingSchema,
+	capFlightGroupSchema,
+	casFlightGroupSchema,
+	csarFlightGroupSchema,
+	deadFlightGroupSchema,
+	downedPilotSchema,
+	escortFlightGroupSchema,
+	farpSchema,
+	flightplanSchema,
+	genericStructureSchema,
 	groundGroupSchema,
 	groundUnitSchema,
-	flightplanSchema,
+	objectiveSchema,
+	packageSchema,
 	samSchema,
+	seadFlightGroupSchema,
+	strikeFlightGroupSchema,
+	unitCampSchema,
 ]);
 export type StateEntitySerialized = z.TypeOf<typeof stateEntitySchema>;
 

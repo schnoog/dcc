@@ -83,6 +83,8 @@ function getUnitCode(item: Types.Campaign.MapItem): SidcUnitCodeKey {
 					return "armor";
 			}
 		}
+		case "downedPilot":
+			return "downedPilot";
 		case "sam":
 			return "airDefenceMissle";
 		default:
@@ -96,6 +98,7 @@ function getDomain(item: Types.Campaign.MapItem): "air" | "ground" | "sea" {
 		case "airdrome":
 		case "groundGroup":
 		case "sam":
+		case "downedPilot":
 			return "ground";
 		case "flightGroup":
 			return "air";
