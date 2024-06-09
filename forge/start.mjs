@@ -6,6 +6,7 @@ import chokidar from "chokidar";
 
 const child = spawn("node_modules\\.bin\\electron-forge.CMD", ["start"], {
 	stdio: ["pipe", "inherit", "inherit"],
+	shell: true,
 });
 
 child.on("error", (err) => {
