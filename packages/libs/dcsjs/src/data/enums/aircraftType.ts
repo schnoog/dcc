@@ -86,6 +86,7 @@ export const aircraftType = z.enum([
 	// "Christen Eagle II",
 	"F-16C_50",
 	// "F-5E",
+	"F-4E-45MC",
 	"F-5E-3",
 	"F-86F Sabre",
 	"F-14B",

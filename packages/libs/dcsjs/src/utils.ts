@@ -40,7 +40,7 @@ export function addPropAircraft(
 	unit: FlightGroupUnit,
 	groupIndex: number,
 	mission: Mission,
-): Record<string, string | number> | undefined {
+): Record<string, string | number | boolean> | undefined {
 	const aircraftDefinition = Data.aircraftDefinitions[unit.type];
 
 	const prop = structuredClone(aircraftDefinition.AddPropAircraft);

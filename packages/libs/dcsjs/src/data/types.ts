@@ -94,7 +94,7 @@ export namespace Schema {
 		carrierCapable: z.boolean(),
 		allowedFrequency: z.tuple([z.number(), z.number()]).optional(),
 		customCallsigns: z.array(z.string()).optional(),
-		AddPropAircraft: z.record(z.string(), z.string().or(z.number())).optional(),
+		AddPropAircraft: z.record(z.string(), z.string().or(z.number()).or(z.boolean())).optional(),
 		datalinks: z
 			.object({
 				Link16: z.object({

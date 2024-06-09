@@ -49,6 +49,14 @@ export const weapons: Record<string, Weapon> = {
 		year: 1965,
 		targets: ["Radar"],
 	},
+	"AGM-65A": {
+		name: "AGM-65A",
+		displayName: "AGM-65A - Maverick A (TV Guided)",
+		range: 15_000,
+		type: "Missile",
+		year: 1972,
+		targets: ["Anti-Armor"],
+	},
 	"AGM-65D": {
 		name: "AGM-65D",
 		displayName: "AGM-65D - Maverick D (IIR ASM)",
@@ -168,6 +176,14 @@ export const weapons: Record<string, Weapon> = {
 		rangeType: "short",
 		type: "infrared",
 		year: 1980,
+	},
+	"AIM-9J": {
+		name: "AIM-9J",
+		displayName: "AIM-9J Sidewinder IR AAM",
+		range: 18_500,
+		rangeType: "short",
+		type: "infrared",
+		year: 1972,
 	},
 	"AIM-9L": {
 		name: "AIM-9L",
@@ -289,6 +305,13 @@ export const weapons: Record<string, Weapon> = {
 		displayName: "BRM-1_90MM",
 		type: "Laser Guided Rocket",
 		target: "Soft Target",
+	},
+	"CBU-52B": {
+		name: "CBU-52B",
+		displayName: "CBU-52B - 220 x HE/Frag Bomblets",
+		type: "Cluster",
+		target: "Soft Target",
+		year: 0,
 	},
 	"CBU-87": {
 		name: "CBU-87",
@@ -647,6 +670,13 @@ export const weapons: Record<string, Weapon> = {
 		target: "Light Structure",
 		year: 0,
 		highDrag: true,
+	},
+	"MK-83": {
+		name: "MK-83",
+		displayName: "Mk-83 - 1000lb GP Bombs LD",
+		type: "Bomb",
+		target: "Medium Target",
+		year: 0,
 	},
 	"MK-84": {
 		name: "MK-84",

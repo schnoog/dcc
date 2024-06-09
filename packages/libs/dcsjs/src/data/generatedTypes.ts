@@ -111,7 +111,7 @@ export namespace Schema {
 		Radio: z.array(radio).optional(),
 		linkUnit: z.number().optional(),
 		helipadId: z.number().optional(),
-		AddPropAircraft: z.record(z.string(), z.string().or(z.number())).optional(),
+		AddPropAircraft: z.record(z.string(), z.string().or(z.number()).or(z.boolean())).optional(),
 		datalinks: z.object({}).optional(), // TODO
 	});
 	export const flightGroup = unitGroup.extend({
