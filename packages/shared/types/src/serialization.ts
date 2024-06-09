@@ -433,7 +433,7 @@ const casFlightGroupSchema = escortedFlightGroupSchema.extend({
 export type CasFlightGroupSerialized = z.TypeOf<typeof casFlightGroupSchema>;
 
 const csarFlightGroupSchema = flightGroupSchema.extend({
-	entityType: z.literal("CasFlightGroup"),
+	entityType: z.literal("CsarFlightGroup"),
 	targetDownedPilotId: z.string(),
 	pilotOnBoard: z.boolean(),
 });

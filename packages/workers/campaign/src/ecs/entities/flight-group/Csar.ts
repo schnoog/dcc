@@ -114,7 +114,7 @@ export class CsarFlightGroup extends FlightGroup<keyof Events.EventMap.CsarFligh
 
 		if (targetDownedPilot == null) {
 			// eslint-disable-next-line no-console
-			console.warn("no ground group target found for cas package", this);
+			console.warn("no ground group target found for csar package", this);
 
 			return;
 		}
@@ -144,7 +144,7 @@ export class CsarFlightGroup extends FlightGroup<keyof Events.EventMap.CsarFligh
 	public override serialize(): Types.Serialization.CsarFlightGroupSerialized {
 		return {
 			...super.serialize(),
-			entityType: "CasFlightGroup",
+			entityType: "CsarFlightGroup",
 			targetDownedPilotId: this.#targetDownedPilotId,
 			pilotOnBoard: this.#pilotOnBoard,
 		};
