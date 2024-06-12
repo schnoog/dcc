@@ -21,7 +21,7 @@ type CampaignStore = [
 		stateUpdate?: (next: Types.Serialization.UIState) => void;
 		timeUpdate?: (next: number) => void;
 		deactivate?: () => void;
-		activate?: () => void;
+		activate?: (theatre: DcsJs.Theatre) => void;
 		selectEntity?: (id: Types.Campaign.Id) => void;
 		clearSelectedEntity?: () => void;
 		setMultiplier?: (multiplier: number) => void;
@@ -100,7 +100,8 @@ export function CampaignProvider(props: { children?: JSX.Element }) {
 			timeUpdate(next) {
 				setState("time", next);
 			},
-			activate() {
+			activate(theatre) {
+				setState("theatre", theatre);
 				setState("active", true);
 				setState("paused", false);
 				setState("selectedEntityId", undefined);

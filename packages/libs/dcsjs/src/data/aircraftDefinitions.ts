@@ -79,23 +79,23 @@ export const aircraftDefinitions: Record<AircraftType, AircraftDefinition> = {
 				displayName: "CAS",
 				pylons: [
 					{
-						CLSID: "{LAU3_FFAR_MK5HEAT}",
+						CLSID: "{LAU3_FFAR_MK1HE}",
 						num: 1,
 					},
 					{
-						CLSID: "{LAU3_FFAR_MK5HEAT}",
+						CLSID: "{LAU-3 FFAR Mk5 HEAT_TER_2_L}",
 						num: 2,
 					},
 					{
-						CLSID: "<CLEAN>",
+						CLSID: "{DFT-300gal}",
 						num: 3,
 					},
 					{
-						CLSID: "{LAU3_FFAR_MK5HEAT}",
+						CLSID: "{LAU-3 FFAR Mk5 HEAT_TER_2_R}",
 						num: 4,
 					},
 					{
-						CLSID: "{LAU3_FFAR_MK5HEAT}",
+						CLSID: "{LAU3_FFAR_MK1HE}",
 						num: 5,
 					},
 				],

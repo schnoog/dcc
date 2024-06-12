@@ -33,7 +33,7 @@ const Campaign = (props: { synopsis: Types.Campaign.CampaignSynopsis; onRemove: 
 
 				await loadCampaignIntoStore(loadedState);
 
-				activate?.();
+				activate?.(loadedState.theatre);
 			})
 			.catch((e) => {
 				console.error("RPC Load", e instanceof Error ? e.message : "unknown error"); // eslint-disable-line no-console

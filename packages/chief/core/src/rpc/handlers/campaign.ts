@@ -113,7 +113,7 @@ const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = a
 
 				units.push({
 					type: groundUnit.type,
-					name: groundUnit.name,
+					name: `${groundUnit.name}/${groundUnit.id}`,
 				});
 			}
 
@@ -127,7 +127,7 @@ const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = a
 
 			mission.createGroundGroup({
 				countryName: getCountryForCoalition(entity.coalition, campaign),
-				name: entity.name,
+				name: `${entity.name}/${entity.id}`,
 				position: entity.position,
 				units,
 				objectiveName: target?.name ?? undefined,
@@ -187,7 +187,7 @@ const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = a
 
 				units.push({
 					type: building.buildingType,
-					name: building.name,
+					name: `${building.buildingType}/${building.id}`,
 					position: {
 						x: entity.position.x + building.offset.x,
 						y: entity.position.y + building.offset.y,

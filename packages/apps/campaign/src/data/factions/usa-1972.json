@@ -1,0 +1,15 @@
+{
+	"countryName": "USA",
+	"name": "USA",
+	"year": 1972,
+	"playable": true,
+	"aircraftTypes": {
+		"CAP": ["F-4E-45MC"],
+		"CAS": ["F-4E-45MC"],
+		"AWACS": ["E-3A"],
+		"DEAD": ["F-4E-45MC"],
+		"Pinpoint Strike": ["F-4E-45MC"],
+		"CSAR": ["UH-1H"]
+	},
+	"templateName": "USA - Cold War"
+}

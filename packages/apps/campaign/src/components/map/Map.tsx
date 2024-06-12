@@ -109,6 +109,7 @@ function getDomain(item: Types.Campaign.MapItem): "air" | "ground" | "sea" {
 
 export function usePositionToMapPosition() {
 	const [state] = useContext(CampaignContext);
+
 	return positionToMapPosition(state.theatre);
 }
 

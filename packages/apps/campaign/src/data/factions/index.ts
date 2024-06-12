@@ -10,6 +10,7 @@ import * as sweden70 from "./sweden-1970.json";
 import * as usnavy64 from "./us-navy-1964.json";
 import * as usnavy87 from "./us-navy-1987.json";
 import * as usa52 from "./usa-1952.json";
+import * as usa72 from "./usa-1972.json";
 import * as usa77 from "./usa-1977.json";
 import * as usa04 from "./usa-2004.json";
 
@@ -20,6 +21,7 @@ export const factionList: Array<Types.Campaign.Faction> = [
 	Types.Campaign.Schema.faction.parse(israel67),
 	Types.Campaign.Schema.faction.parse(sweden70),
 	Types.Campaign.Schema.faction.parse(russia71),
+	Types.Campaign.Schema.faction.parse(usa72),
 	Types.Campaign.Schema.faction.parse(usa77),
 	Types.Campaign.Schema.faction.parse(france82),
 	Types.Campaign.Schema.faction.parse(russia84),

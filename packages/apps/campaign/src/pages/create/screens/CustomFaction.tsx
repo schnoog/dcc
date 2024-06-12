@@ -212,6 +212,12 @@ export const CustomFaction = () => {
 
 		setStore(
 			produce((draft) => {
+				if (draft.prevScreen === "Faction") {
+					draft.faction = f;
+				} else {
+					draft.enemyFaction = f;
+				}
+
 				const next = draft.prevScreen === "Faction" ? "Enemy Faction" : "Settings";
 				draft.prevScreen = draft.currentScreen;
 				draft.currentScreen = next;

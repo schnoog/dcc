@@ -11,10 +11,10 @@ interface CapFlightGroupProps extends Omit<FlightGroupProps, "entityType" | "tas
 }
 
 export class CapFlightGroup extends FlightGroup<keyof Events.EventMap.CapFlightGroup> {
-	readonly #targetHomeBaseId: Types.Campaign.Id;
+	readonly targetHomeBaseId: Types.Campaign.Id;
 
 	get target() {
-		return getEntity<HomeBase>(this.#targetHomeBaseId);
+		return getEntity<HomeBase>(this.targetHomeBaseId);
 	}
 
 	private constructor(args: CapFlightGroupProps | Types.Serialization.CapFlightGroupSerialized) {
@@ -23,7 +23,7 @@ export class CapFlightGroup extends FlightGroup<keyof Events.EventMap.CapFlightG
 			: ({ ...args, task: "CAP" as const, entityType: "CapFlightGroup" as const } as FlightGroupProps);
 
 		super(superArgs);
-		this.#targetHomeBaseId = args.targetHomeBaseId;
+		this.targetHomeBaseId = args.targetHomeBaseId;
 	}
 
 	static #getOppAirdrome(args: Pick<CapFlightGroupProps, "coalition"> & { target: HomeBase }) {
@@ -90,7 +90,7 @@ export class CapFlightGroup extends FlightGroup<keyof Events.EventMap.CapFlightG
 		return {
 			...super.serialize(),
 			entityType: "CapFlightGroup",
-			targetHomeBaseId: this.#targetHomeBaseId,
+			targetHomeBaseId: this.targetHomeBaseId,
 		};
 	}
 }

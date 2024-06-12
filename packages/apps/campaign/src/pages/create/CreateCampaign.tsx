@@ -11,45 +11,6 @@ export const optionalClass = (className: string, optionalClass?: string) => {
 
 const CreateCampaign = () => {
 	const store = useCreateCampaignStore();
-	/* const createToast = useCreateErrorToast();
-
-	const onActivate = async (campaignParams: Types.Campaign.CampaignParams) => {
-		const blue = blueFaction();
-		const red = redFaction();
-		if (blue == null || red == null) {
-			return;
-		}
-
-		try {
-			const scenarioDefinition = scenarioList.find((s) => s.name === scenario());
-
-			if (scenarioDefinition == null) {
-				throw new Error("Scenario not found");
-			}
-
-			sendWorkerMessage({
-				name: "generate",
-				payload: {
-					blueFactionDefinition: blue,
-					redFactionDefinition: red,
-					scenario: scenarioDefinition,
-					campaignParams,
-				},
-			});
-
-			sendWorkerMessage({
-				name: "resume",
-				payload: { multiplier: 1 },
-			});
-		} catch (e) {
-			// eslint-disable-next-line no-console
-			console.error(e);
-			createToast({
-				title: "Campaign not created",
-				description: e instanceof Error ? e.message : "Unknown Error",
-			});
-		}
-	}; */
 
 	return (
 		<ErrorBoundary fallback={<div>Something went wrong during campaign creation</div>}>
