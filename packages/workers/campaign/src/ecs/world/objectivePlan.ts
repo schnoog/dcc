@@ -144,70 +144,56 @@ function fillObjectives(
 	return [blue, red];
 }
 
-function addAirdromeSamObjectives(
-	airdromes: DcsJs.Objective[],
-	oppAirdromes: DcsJs.Objective[],
-	targets: Record<string, DcsJs.Target[]>,
-	objectives: Array<DcsJs.Objective>,
-	objectivePlans: Array<Types.Campaign.DynamicObjectivePlan>,
-) {
-	airdromes.forEach((airdrome) => {
-		const oppAirdrome = Utils.Location.findNearest(oppAirdromes, airdrome.position, (ad) =>
-			Utils.Location.objectToPosition(ad),
-		);
+function shuffleArray<T>(array: T[]): T[] {
+	return [...array].sort(() => Math.random() - 0.5);
+}
 
-		if (oppAirdrome == null) {
-			return;
+function addAirdromeSamObjectives(args: {
+	oppAirdromes: DcsJs.Objective[];
+	targets: Record<string, DcsJs.Target[]>;
+	objectives: Array<DcsJs.Objective>;
+	objectivePlans: Array<Types.Campaign.DynamicObjectivePlan>;
+}) {
+	const validObjectives = args.objectives.filter((obj) => {
+		const objTargets = args.targets[obj.name];
+
+		if (objTargets == null) {
+			return [];
 		}
 
-		const validObjectives = objectives.filter((obj) => {
-			const objTargets = targets[obj.name];
-
-			if (objTargets == null) {
-				return [];
-			}
-
-			return objTargets.some((target) => target.type === "SAM");
-		});
-
-		const nearbyObjectives = Utils.Location.findInside(
-			validObjectives,
-			airdrome.position,
-			(obj) => obj.position,
-			20_000,
-		);
-		const sourceDistance = Utils.Location.distanceToPosition(airdrome.position, oppAirdrome.position);
-
-		const forwardObjectives = nearbyObjectives.filter((obj) => {
-			const objDistance = Utils.Location.distanceToPosition(obj.position, oppAirdrome.position);
-
-			return objDistance < sourceDistance && objDistance > 30_000;
-		});
-
-		const selectedObjective = Utils.Random.item(forwardObjectives);
-
-		if (selectedObjective == null) {
-			const farEnoughFromOppAirdrome = nearbyObjectives.filter((obj) => {
-				const objDistance = Utils.Location.distanceToPosition(obj.position, oppAirdrome.position);
-
-				return objDistance > 30_000;
-			});
-
-			const fallbackObjective = Utils.Random.item(farEnoughFromOppAirdrome);
-
-			if (fallbackObjective == null) {
-				return;
-			}
-
-			objectivePlans = addObjectivePlan(objectivePlans, fallbackObjective, "sam");
-
-			return;
-		}
-
-		objectivePlans = addObjectivePlan(objectivePlans, selectedObjective, "sam");
+		return objTargets.some((target) => target.type === "SAM");
 	});
 
-	return objectivePlans;
+	const shuffledObjectives = shuffleArray(validObjectives);
+
+	const selectedObjectives: DcsJs.Objective[] = [];
+
+	for (const objective of shuffledObjectives) {
+		if (selectedObjectives.length >= 1) {
+			const insideSAMs = Utils.Location.findInside(
+				selectedObjectives,
+				objective.position,
+				(obj) => obj.position,
+				35_000,
+			);
+
+			const insideOppAirdromes = Utils.Location.findInside(
+				args.oppAirdromes,
+				objective.position,
+				(obj) => obj.position,
+				50_000,
+			);
+
+			if (insideSAMs.length > 0 || insideOppAirdromes.length > 0) {
+				continue;
+			}
+		}
+
+		selectedObjectives.push(objective);
+		args.objectivePlans = addObjectivePlan(args.objectivePlans, objective, "sam");
+	}
+
+	return args.objectivePlans;
 }
 
 function validStructureObjective({
@@ -499,10 +485,20 @@ export function generateObjectivePlans({
 
 	[blueObjs, redObjs] = fillObjectives(blueObjs, redObjs, objectives);
 
-	const samObjectives = objectives.filter((obj) => targets[obj.name]?.some((st) => st.type === "SAM"));
+	// const samObjectives = objectives.filter((obj) => targets[obj.name]?.some((st) => st.type === "SAM"));
 
-	blueObjs = addAirdromeSamObjectives(blueObjectives, redObjectives, targets, samObjectives, blueObjs);
-	redObjs = addAirdromeSamObjectives(redObjectives, blueObjectives, targets, samObjectives, redObjs);
+	blueObjs = addAirdromeSamObjectives({
+		oppAirdromes: redObjectives,
+		targets,
+		objectives: blueObjs.map((op) => op.objective),
+		objectivePlans: blueObjs,
+	});
+	redObjs = addAirdromeSamObjectives({
+		oppAirdromes: blueObjectives,
+		targets,
+		objectives: redObjs.map((op) => op.objective),
+		objectivePlans: redObjs,
+	});
 
 	blueObjs = generateFactionStructures({
 		coalition: "blue",
