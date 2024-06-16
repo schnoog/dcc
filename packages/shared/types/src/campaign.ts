@@ -127,6 +127,7 @@ export namespace Schema {
 		),
 		destroyedGroundUnits: z.array(z.string().or(z.number())),
 		groupPositions: z.record(DcsJs.coalition, z.array(z.object({ name: z.string(), x: z.number(), y: z.number() }))),
+		time: z.number(),
 	});
 }
 

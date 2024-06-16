@@ -3,7 +3,7 @@ import * as Components from "@kilcekru/dcc-lib-components";
 import * as Types from "@kilcekru/dcc-shared-types";
 import { createMemo, For, useContext } from "solid-js";
 
-import { CampaignContext } from "../../../../components";
+import { CampaignContext, useGetEntity } from "../../../../components";
 import Styles from "./Debrief.module.less";
 
 /* function useFlightGroupMissionState() {
@@ -135,6 +135,7 @@ function FlightGroup(props: {
 
 export function Debrief(props: { missionState: Types.Campaign.MissionState; onClose: () => void }) {
 	const [state] = useContext(CampaignContext);
+	const getEntity = useGetEntity();
 
 	function getEntityByName(name: string) {
 		for (const entity of state.entities.values()) {
@@ -180,18 +181,27 @@ export function Debrief(props: { missionState: Types.Campaign.MissionState; onCl
 			}
 		}
 
-		for (const aircraftName of props.missionState.destroyedGroundUnits) {
-			const aircraft = getEntityByName(aircraftName.toString());
+		for (const unitName of props.missionState.destroyedGroundUnits) {
+			const id = unitName.toString().split("/")[1];
 
-			if (aircraft == null) {
+			if (id == null) {
+				// eslint-disable-next-line no-console
+				console.warn("unknown id for destroyedGroundUnits", unitName);
+
 				continue;
 			}
-			switch (aircraft?.entityType) {
+
+			const unit = getEntity(id);
+
+			if (unit == null) {
+				continue;
+			}
+			switch (unit?.entityType) {
 				case "GroundUnit":
-					groundUnits[aircraft?.coalition]++;
+					groundUnits[unit?.coalition]++;
 					break;
 				case "Building":
-					buildings[aircraft?.coalition]++;
+					buildings[unit?.coalition]++;
 					break;
 			}
 		}

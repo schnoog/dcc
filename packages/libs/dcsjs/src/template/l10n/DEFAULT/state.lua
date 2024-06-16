@@ -153,6 +153,7 @@ end
 local function writeState()
     missionState.groupPositions.blue = getGroupPositions("blue")
     missionState.groupPositions.red = getGroupPositions("red")
+    missionState.time = timer.getAbsTime()
     export()
 end
 

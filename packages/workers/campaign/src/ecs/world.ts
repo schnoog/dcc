@@ -257,26 +257,34 @@ export class World {
 	}
 
 	public submitMissionState(state: Types.Campaign.MissionState) {
+		// eslint-disable-next-line no-console
+		console.log("submitting mission...");
 		for (const name of state.destroyedGroundUnits) {
+			const id = name.toString().split("/")[1];
+
+			if (id == null) {
+				// eslint-disable-next-line no-console
+				console.warn("unknown id for destroyedGroundUnits", name);
+			}
 			for (const unit of store.queries.groundUnits.blue.values()) {
-				if (unit.name === name) {
+				if (unit.id === id) {
 					unit.destroy();
 				}
 			}
 			for (const unit of store.queries.groundUnits.red.values()) {
-				if (unit.name === name) {
+				if (unit.id === id) {
 					unit.destroy();
 				}
 			}
 
 			for (const building of store.queries.buildings.blue.values()) {
-				if (building.name === name) {
+				if (building.id === id) {
 					building.destroy();
 				}
 			}
 
 			for (const building of store.queries.buildings.red.values()) {
-				if (building.name === name) {
+				if (building.id === id) {
 					building.destroy();
 				}
 			}
@@ -304,6 +312,14 @@ export class World {
 				}
 			}
 		}
+
+		for (const flightGroup of store.queries.flightGroups.blue) {
+			if (flightGroup.hasClients) {
+				flightGroup.setClient(0);
+			}
+		}
+
+		store.time = state.time * 1000;
 	}
 }
 
