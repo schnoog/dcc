@@ -107,6 +107,17 @@ export abstract class HomeBase<EventNames extends keyof Events.EventMap.All = ne
 
 	public removeAircraft(aircraft: Aircraft) {
 		this.#aircraftIds = this.#aircraftIds.filter((id) => id !== aircraft.id);
+		this.regenerateAircrafts(aircraft);
+	}
+
+	public regenerateAircrafts(aircraft: Aircraft) {
+		const ac = Aircraft.create({
+			aircraftType: aircraft.aircraftType,
+			coalition: this.coalition,
+			homeBaseId: this.id,
+		});
+
+		this.#aircraftIds.push(ac.id);
 	}
 
 	override toJSON() {

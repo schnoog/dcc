@@ -71,6 +71,10 @@ export class Aircraft extends Unit<keyof Events.EventMap.Aircraft> {
 		return this.#name;
 	}
 
+	get aircraftType() {
+		return this.#aircraftType;
+	}
+
 	private constructor(args: AircraftProps | Types.Serialization.AircraftSerialized) {
 		const superArgs = Serialization.isSerialized(args)
 			? args
@@ -96,6 +100,8 @@ export class Aircraft extends Unit<keyof Events.EventMap.Aircraft> {
 
 	public crash({ position }: { position: DcsJs.Position }): void {
 		super.destroy();
+		// eslint-disable-next-line no-console
+		console.log("Aircraft crashed", this.callsign);
 
 		let nearestObjective = undefined;
 		let nearestObjectiveDistance = Infinity;

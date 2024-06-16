@@ -52,7 +52,7 @@ export function OverlaySidebar() {
 			<Show when={entity()?.entityType === "GroundGroup"}>
 				<GroundGroup groundGroup={entity() as Types.Serialization.GroundGroupSerialized} />
 			</Show>
-			<Show when={entity()?.entityType === "Airdrome"}>
+			<Show when={entity()?.entityType === "Airdrome" || entity()?.entityType === "Farp"}>
 				<Airdrome airdrome={entity() as Types.Serialization.AirdromeSerialized} />
 			</Show>
 			<Show when={entity()?.entityType === "SAM"}>

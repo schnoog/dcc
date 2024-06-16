@@ -1,7 +1,7 @@
 import * as DcsJs from "@foxdelta2/dcsjs";
 import * as Types from "@kilcekru/dcc-shared-types";
 import { createContext, JSX } from "solid-js";
-import { createStore } from "solid-js/store";
+import { createStore, produce } from "solid-js/store";
 
 import { sendWorkerMessage } from "../worker";
 
@@ -95,16 +95,20 @@ export function CampaignProvider(props: { children?: JSX.Element }) {
 		state,
 		{
 			stateUpdate(next) {
-				setState({ ...next, active: true });
+				setState({ ...next, active: true, paused: true });
 			},
 			timeUpdate(next) {
 				setState("time", next);
 			},
 			activate(theatre) {
-				setState("theatre", theatre);
-				setState("active", true);
-				setState("paused", false);
-				setState("selectedEntityId", undefined);
+				setState(
+					produce((draft) => {
+						draft.theatre = theatre;
+						draft.active = true;
+						draft.paused = true;
+						draft.selectedEntityId = undefined;
+					}),
+				);
 			},
 			setMultiplier(multiplier: number) {
 				setState("timeMultiplier", multiplier);

@@ -132,7 +132,13 @@ export abstract class FlightGroup<EventNames extends keyof Events.EventMap.All =
 			return undefined;
 		}
 
-		return getEntity<FlightGroup>(this.combat.targetId);
+		try {
+			return getEntity<FlightGroup>(this.combat.targetId);
+		} catch (e) {
+			// eslint-disable-next-line no-console
+			console.warn("a2a target not found", this.name, this.id, this.combat);
+			return undefined;
+		}
 	}
 
 	get homeBase(): HomeBase {
@@ -275,6 +281,10 @@ export abstract class FlightGroup<EventNames extends keyof Events.EventMap.All =
 			targetId: enemy.id,
 			cooldownTime: store.time,
 		};
+
+		enemy.on("destroyed", () => {
+			this.stopCombat();
+		});
 	}
 
 	fireA2A(distance: number) {
@@ -312,9 +322,9 @@ export abstract class FlightGroup<EventNames extends keyof Events.EventMap.All =
 
 							target.destroyAircraft();
 
-							if (!target.active) {
+							/* if (!target.active) {
 								this.#combat = undefined;
-							}
+							} */
 
 							break aircraftLoop;
 						} else {
@@ -360,16 +370,26 @@ export abstract class FlightGroup<EventNames extends keyof Events.EventMap.All =
 		this.addToQuery("flightGroups-destroyed");
 		this.hidden = true;
 
-		if (this.a2aTarget != null) {
+		/* if (this.a2aTarget != null) {
 			this.a2aTarget.stopCombat();
-		}
+		} */
 
 		this.emit("destroyed");
 	}
 
 	override destructor(): void {
 		// eslint-disable-next-line no-console
-		console.log("destructor flight group", this.name, this.id);
+		console.log("destructor flight group", this.name, this.id, this.#combat);
+
+		// Stop combat if the flight group is in combat
+		if (this.#combat != null) {
+			const target = getEntity<FlightGroup>(this.#combat.targetId);
+
+			target.stopCombat();
+		}
+		this.aircrafts.forEach((aircraft) => {
+			aircraft.destructor();
+		});
 		this.flightplan.destructor();
 		super.destructor();
 	}
