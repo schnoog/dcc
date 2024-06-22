@@ -1,0 +1,71 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - v0.5.0  # or the branch you want to trigger the workflow on
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Set Snapshot Date  # New step to set the snapshot date
+      id: set_snapshot_date  # Added ID to reference the output
+      run: |
+        $date = Get-Date -Format 'yyyy-MM-dd--HH-mm'
+        echo "SNAPSHOT_DATE=snapshot-$date" | Out-File -FilePath $env:GITHUB_ENV -Append # no need for -Encoding utf8
+        
+    - name: Test environment var  # New step to test the environment variable
+      run: echo "${{ env.SNAPSHOT_DATE }}"
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js 18
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install pnpm
+      run: npm install -g pnpm@9
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Build project
+#      run: npm run build
+      run: npm run make
+
+
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-artifacts
+        path: ./forge/out  # Adjust this to your actual build directory
+
+    - name: Zip build directory
+      run: |
+        powershell Compress-Archive -Path ./forge/out/make/squirrel.windows/x64/*.exe -DestinationPath ./${{ env.SNAPSHOT_DATE }}.zip
+
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.SNAPSHOT_DATE }}
+        release_name: ${{ env.SNAPSHOT_DATE }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./${{ env.SNAPSHOT_DATE }}.zip
+        asset_name: ${{ env.SNAPSHOT_DATE }}.zip
+        asset_content_type: application/zip
