@@ -422,6 +422,7 @@ export type AirAssaultFlightGroupSerialized = z.TypeOf<typeof airAssaultFlightGr
 const capFlightGroupSchema = flightGroupSchema.extend({
 	entityType: z.literal("CapFlightGroup"),
 	targetHomeBaseId: z.string(),
+	targetPosition: DcsJs.Schema.position,
 });
 export type CapFlightGroupSerialized = z.TypeOf<typeof capFlightGroupSchema>;
 
@@ -431,6 +432,10 @@ const casFlightGroupSchema = escortedFlightGroupSchema.extend({
 	jtacFrequency: z.number(),
 });
 export type CasFlightGroupSerialized = z.TypeOf<typeof casFlightGroupSchema>;
+
+export function isCasFlightGroup(fg: EntitySerialized): fg is CasFlightGroupSerialized {
+	return fg.entityType === "CasFlightGroup";
+}
 
 const csarFlightGroupSchema = flightGroupSchema.extend({
 	entityType: z.literal("CsarFlightGroup"),
@@ -460,6 +465,10 @@ const strikeFlightGroupSchema = escortedFlightGroupSchema.extend({
 	targetStructureId: z.string(),
 });
 export type StrikeFlightGroupSerialized = z.TypeOf<typeof strikeFlightGroupSchema>;
+
+export function isStrikeFlightGroup(fg: EntitySerialized): fg is StrikeFlightGroupSerialized {
+	return fg.entityType === "StrikeFlightGroup";
+}
 
 const unitSchema = entitySchema.extend({
 	alive: z.boolean(),

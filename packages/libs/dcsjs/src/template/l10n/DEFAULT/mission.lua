@@ -36,6 +36,11 @@ for i in pairs(config.clientFlightGroups) do
     
     local ewr = DEWR:New(flightGroup.groupId, flightGroup.name)
     ewr.Start()
+
+    if flightGroup.task == "CAS" then
+        local cas = DCAS:New(flightGroup.groupId, flightGroup.name, flightGroup.jtacName, flightGroup.targetGroupName)
+        cas:Start()
+    end
 end
 
 debugLog("----------------------")

@@ -39,6 +39,97 @@ const loadCampaignList: Types.Rpc.Campaign["loadCampaignList"] = async () => {
 	return Domain.Persistance.CampaignPersistance.list();
 };
 
+function mapGroundGroup(
+	groundGroup: Types.Serialization.GroundGroupSerialized,
+	campaign: Types.Serialization.UIStateEntitiesArray,
+): DcsJs.InputTypes.GroundGroup | undefined {
+	if (groundGroup.queries.includes("groundGroups-embarked")) {
+		return;
+	}
+
+	const entityMap = new Map(campaign.entities.map((entity) => [entity.id, entity]));
+	const getEntity = Utils.ECS.EntitySelector(entityMap);
+	const units = [];
+	let target: Types.Serialization.ObjectiveSerialized | undefined = undefined;
+
+	for (const id of groundGroup.unitIds) {
+		const groundUnit = getEntity<Types.Serialization.GroundUnitSerialized>(id);
+
+		if (groundUnit == null) {
+			continue;
+		}
+
+		if (groundUnit.alive === false) {
+			continue;
+		}
+
+		units.push({
+			type: groundUnit.type,
+			name: `${groundUnit.name}/${groundUnit.id}`,
+		});
+	}
+
+	if (units.length === 0) {
+		return;
+	}
+
+	if (groundGroup.queries.includes("groundGroups-on target")) {
+		target = getEntity<Types.Serialization.ObjectiveSerialized>(groundGroup.targetId);
+	}
+
+	return {
+		countryName: getCountryForCoalition(groundGroup.coalition, campaign),
+		name: groundGroupName(groundGroup),
+		position: groundGroup.position,
+		units,
+		objectiveName: target?.name ?? undefined,
+	};
+}
+
+function mapStructure(
+	structure:
+		| Types.Serialization.FarpSerialized
+		| Types.Serialization.UnitCampSerialized
+		| Types.Serialization.GenericStructureSerialized,
+	campaign: Types.Serialization.UIStateEntitiesArray,
+): DcsJs.InputTypes.StaticGroup | undefined {
+	const entityMap = new Map(campaign.entities.map((entity) => [entity.id, entity]));
+	const getEntity = Utils.ECS.EntitySelector(entityMap);
+	const units = [];
+
+	for (const id of structure.buildingIds) {
+		const building = getEntity<Types.Serialization.BuildingSerialized>(id);
+
+		if (building == null) {
+			continue;
+		}
+
+		if (building.alive === false) {
+			continue;
+		}
+
+		units.push({
+			type: building.buildingType,
+			name: `${building.buildingType}/${building.id}`,
+			position: {
+				x: structure.position.x + building.offset.x,
+				y: structure.position.y + building.offset.y,
+			},
+		});
+	}
+
+	if (units.length === 0) {
+		return undefined;
+	}
+
+	return {
+		countryName: getCountryForCoalition(structure.coalition, campaign),
+		name: structure.name,
+		position: structure.position,
+		units,
+	};
+}
+
 const getCountryForCoalition = (
 	coalition: DcsJs.Coalition,
 	campaign: Types.Serialization.UIStateEntitiesArray,
@@ -51,6 +142,10 @@ const getCountryForCoalition = (
 		default:
 			return "USA";
 	}
+};
+
+const groundGroupName = (entity: Types.Serialization.GroundGroupSerialized) => {
+	return `${entity.name}/${entity.id}`;
 };
 
 const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = async (campaign) => {
@@ -93,45 +188,13 @@ const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = a
 
 	for (const entity of campaign.entities.values()) {
 		if (entity.entityType === "GroundGroup") {
-			if (entity.queries.includes("groundGroups-embarked")) {
+			const props = mapGroundGroup(entity, campaign);
+
+			if (props == null) {
 				continue;
 			}
 
-			const units = [];
-			let target: Types.Serialization.ObjectiveSerialized | undefined = undefined;
-
-			for (const id of entity.unitIds) {
-				const groundUnit = getEntity<Types.Serialization.GroundUnitSerialized>(id);
-
-				if (groundUnit == null) {
-					continue;
-				}
-
-				if (groundUnit.alive === false) {
-					continue;
-				}
-
-				units.push({
-					type: groundUnit.type,
-					name: `${groundUnit.name}/${groundUnit.id}`,
-				});
-			}
-
-			if (units.length === 0) {
-				continue;
-			}
-
-			if (entity.queries.includes("groundGroups-on target")) {
-				target = getEntity<Types.Serialization.ObjectiveSerialized>(entity.targetId);
-			}
-
-			mission.createGroundGroup({
-				countryName: getCountryForCoalition(entity.coalition, campaign),
-				name: `${entity.name}/${entity.id}`,
-				position: entity.position,
-				units,
-				objectiveName: target?.name ?? undefined,
-			});
+			mission.createGroundGroup(props);
 		}
 
 		if (entity.entityType === "SAM") {
@@ -172,39 +235,13 @@ const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = a
 
 		// Structures
 		if (entity.entityType === "GenericStructure" || entity.entityType === "UnitCamp" || entity.entityType === "Farp") {
-			const units = [];
+			const staticProps = mapStructure(entity, campaign);
 
-			for (const id of entity.buildingIds) {
-				const building = getEntity<Types.Serialization.BuildingSerialized>(id);
-
-				if (building == null) {
-					continue;
-				}
-
-				if (building.alive === false) {
-					continue;
-				}
-
-				units.push({
-					type: building.buildingType,
-					name: `${building.buildingType}/${building.id}`,
-					position: {
-						x: entity.position.x + building.offset.x,
-						y: entity.position.y + building.offset.y,
-					},
-				});
-			}
-
-			if (units.length === 0) {
+			if (staticProps == null) {
 				continue;
 			}
 
-			mission.createStaticGroup({
-				countryName: getCountryForCoalition(entity.coalition, campaign),
-				name: entity.name,
-				position: entity.position,
-				units,
-			});
+			mission.createStaticGroup(staticProps);
 		}
 
 		// Flight Group
@@ -271,7 +308,7 @@ const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = a
 				continue;
 			}
 
-			mission.createFlightGroup({
+			const fgProps: DcsJs.InputTypes.FlightGroup = {
 				countryName: getCountryForCoalition(entity.coalition, campaign),
 				coalition: entity.coalition,
 				name: fg.name,
@@ -285,7 +322,44 @@ const generateCampaignMission: Types.Rpc.Campaign["generateCampaignMission"] = a
 				homeBaseName: homeBase.name,
 				homeBaseType: homeBase.type,
 				hasClients: fg.hasClients,
-			});
+			};
+
+			if (Types.Serialization.isCasFlightGroup(fg)) {
+				const target = getEntity<Types.Serialization.GroundGroupSerialized>(fg.targetGroundGroupId);
+				const targetProps = mapGroundGroup(target, campaign);
+
+				if (targetProps == null) {
+					continue;
+				}
+
+				const props: DcsJs.InputTypes.CasFlightGroup = {
+					...fgProps,
+					task: "CAS",
+					target: targetProps,
+					jtacFrequency: fg.jtacFrequency,
+				};
+
+				mission.createFlightGroup(props);
+			} else if (Types.Serialization.isStrikeFlightGroup(fg)) {
+				const target = getEntity<Types.Serialization.GenericStructureSerialized>(fg.targetStructureId);
+
+				const structure = mapStructure(target, campaign);
+
+				if (structure == null) {
+					continue;
+				}
+
+				const props: DcsJs.InputTypes.StrikeFlightGroup = {
+					...fgProps,
+					task: "Pinpoint Strike",
+					target: structure,
+				};
+
+				mission.createFlightGroup(props);
+			} else {
+				console.log("create default flight group", fgProps.task);
+				mission.createFlightGroup(fgProps);
+			}
 		}
 	}
 

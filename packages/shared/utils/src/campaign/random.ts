@@ -1,5 +1,3 @@
-import * as DcsJs from "@foxdelta2/dcsjs";
-
 export const number = (min: number, max: number): number => {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 };
@@ -24,29 +22,4 @@ export const list = <T>(arr: Array<T>, length: number): Array<T> => {
 	});
 
 	return selected;
-};
-
-export const callSign = (aircraftType: DcsJs.AircraftType, type: "aircraft" | "awacs") => {
-	const callSigns = type === "aircraft" ? DcsJs.callsigns : DcsJs.AWACSCallsigns;
-
-	const aircraftCallsigns = DcsJs.aircraftDefinitions[aircraftType].customCallsigns;
-
-	if (aircraftCallsigns != null) {
-		for (const cs of aircraftCallsigns) {
-			callSigns.push(cs);
-		}
-	}
-
-	if (callSigns == null) {
-		return {
-			name: "Enfield",
-			index: 1,
-		};
-	}
-	const selected = item(callSigns) ?? "Enfield";
-
-	return {
-		name: selected,
-		index: (callSigns.indexOf(selected) ?? 1) + 1,
-	};
 };

@@ -3,6 +3,7 @@ import {
 	addDatalinks,
 	addPropAircraft,
 	addRadio,
+	flightGroupTasks,
 	getStartWaypointTasks,
 	mapTaskActionsNumber,
 	Minutes,
@@ -49,7 +50,7 @@ type StartPosition = Data.Position & {
 
 } */
 
-type FlightGroupProps = GroupProps &
+export type FlightGroupProps = GroupProps &
 	Data.InputTypes.FlightGroup & {
 		units: FlightGroupUnit[];
 		isHelicopter: boolean;
@@ -157,9 +158,9 @@ export class FlightGroup extends UnitGroup {
 		  } {
 		switch (this.homeBaseType) {
 			case "Farp": {
-				const country = mission.getCountry(this.coalition);
+				const country = mission.getCoalitionCountry(this.coalition);
 
-				for (const staticGroup of country.staticGroups) {
+				for (const staticGroup of country?.staticGroups ?? []) {
 					if (staticGroup.name === this.homeBaseName) {
 						return {
 							linkUnit: staticGroup.unitId,
@@ -365,7 +366,7 @@ export class FlightGroup extends UnitGroup {
 		}
 	}
 
-	#generateWaypoint(waypoint: Data.InputTypes.Waypoint): Data.GeneratedTypes.RoutePoint {
+	#generateWaypoint(waypoint: Data.InputTypes.Waypoint, mission: Mission): Data.GeneratedTypes.RoutePoint {
 		return {
 			...waypoint.position,
 			action: "Turning Point",
@@ -376,6 +377,7 @@ export class FlightGroup extends UnitGroup {
 			speed_locked: true,
 			type: "Turning Point",
 			...this.#calcAltParams(waypoint.onGround),
+			task: waypoint.type === "Task" ? routePointTask(flightGroupTasks({ flightGroup: this, mission })) : undefined,
 		};
 	}
 
@@ -454,7 +456,7 @@ export class FlightGroup extends UnitGroup {
 		const routePoint = this.#generateFirstWaypoint(firstWaypoint, mission, startPosition);
 
 		for (const wp of restWaypoints) {
-			routePoint.push(this.#generateWaypoint(wp));
+			routePoint.push(this.#generateWaypoint(wp, mission));
 		}
 
 		return routePoint;

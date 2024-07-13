@@ -47,7 +47,7 @@ export const generateCallsign = (
 	aircraftType: DcsJs.AircraftType,
 	type: "aircraft" | "awacs",
 ) => {
-	const { name, index } = Utils.Random.callSign(aircraftType, type);
+	const { name, index } = DcsJs.callSign(aircraftType, type);
 
 	const number = calcCallSignNumber(coalition, name, index, 1);
 

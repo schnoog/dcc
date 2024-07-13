@@ -8,6 +8,7 @@ import { Trigger } from "./Trigger";
 export class Mission {
 	#nextGroupId = 1;
 	#nextUnitId = 1;
+	#nextJTACId = 1;
 	#nextSTN_L16 = 201;
 	#nextVoiceCallsignNumber = 11;
 	#nextDatalinkUnitId = 1;
@@ -31,6 +32,10 @@ export class Mission {
 		return this.#nextUnitId++;
 	}
 
+	public get nextJTACId() {
+		return this.#nextJTACId++;
+	}
+
 	public get nextSTN_L16() {
 		return this.#nextSTN_L16++;
 	}
@@ -41,6 +46,10 @@ export class Mission {
 
 	public get hotStart() {
 		return this.#hotStart;
+	}
+
+	public getCountry(countryName: Data.CountryName) {
+		return this.#countries.get(countryName);
 	}
 
 	public getCoalitionCountry(coalition: Data.Coalition) {
@@ -123,9 +132,9 @@ export class Mission {
 	}
 
 	public createFlightGroup(props: Data.InputTypes.FlightGroup) {
-		const args = Data.InputTypes.Schema.flightGroup.parse(props);
+		// const args = Data.InputTypes.Schema.flightGroup.parse(props);
 
-		this.#countries.get(args.countryName)?.createFlightGroup(args, this);
+		this.#countries.get(props.countryName)?.createFlightGroup(props, this);
 	}
 
 	public createSamGroup(props: Data.InputTypes.SamGroup) {
@@ -156,7 +165,7 @@ export class Mission {
 		}
 	}
 
-	public getCountry(coalition: Data.Coalition) {
+	/* public getCountry(coalition: Data.Coalition) {
 		const factionCountryName = this.#factionCountries[coalition];
 
 		if (factionCountryName == null) {
@@ -170,7 +179,7 @@ export class Mission {
 		}
 
 		return country;
-	}
+	} */
 
 	#coalitionCountriesToGenerated(coalition: Data.Coalition) {
 		const generatedCountries: Data.GeneratedTypes.Country[] = [];

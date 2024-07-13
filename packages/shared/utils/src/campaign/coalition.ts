@@ -1,4 +1,4 @@
-import * as DcsJs from "@foxdelta2/dcsjs";
+import type * as DcsJs from "@foxdelta2/dcsjs";
 
 export const opposite = (coalition: DcsJs.Coalition | undefined): DcsJs.Coalition => {
 	if (coalition === "blue") {

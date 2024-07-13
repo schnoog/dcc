@@ -21,6 +21,27 @@ export const TaskAction = {
 			priority: 0,
 		},
 	} as Types.RoutePointTaskTemplate,
+	AFAC: {
+		enabled: true,
+		auto: true,
+		id: "FAC",
+		params: {},
+	} as Types.RoutePointTaskTemplate,
+	FAC_AttackGroup: (groupId: number, frequency: number): Types.RoutePointTaskTemplate => ({
+		enabled: true,
+		auto: false,
+		id: "FAC_AttackGroup",
+		params: {
+			number: 1,
+			designation: "Auto",
+			modulation: 0,
+			groupId,
+			callname: 1,
+			datalink: true,
+			weaponType: 9663676414,
+			frequency,
+		},
+	}),
 	AWACS: {
 		auto: true,
 		enabled: true,

@@ -1,3 +1,4 @@
+import type * as DcsJs from "@foxdelta2/dcsjs";
 import type * as Types from "@kilcekru/dcc-shared-types";
 import * as Utils from "@kilcekru/dcc-shared-utils";
 
@@ -8,10 +9,12 @@ import { FlightGroup, FlightGroupProps, HomeBase } from "../_base";
 
 interface CapFlightGroupProps extends Omit<FlightGroupProps, "entityType" | "task" | "name"> {
 	targetHomeBaseId: Types.Campaign.Id;
+	targetPosition: DcsJs.Position;
 }
 
 export class CapFlightGroup extends FlightGroup<keyof Events.EventMap.CapFlightGroup> {
 	readonly targetHomeBaseId: Types.Campaign.Id;
+	readonly targetPosition: DcsJs.Position;
 
 	get target() {
 		return getEntity<HomeBase>(this.targetHomeBaseId);
@@ -24,6 +27,7 @@ export class CapFlightGroup extends FlightGroup<keyof Events.EventMap.CapFlightG
 
 		super(superArgs);
 		this.targetHomeBaseId = args.targetHomeBaseId;
+		this.targetPosition = args.targetPosition;
 	}
 
 	static #getOppAirdrome(args: Pick<CapFlightGroupProps, "coalition"> & { target: HomeBase }) {
@@ -79,6 +83,7 @@ export class CapFlightGroup extends FlightGroup<keyof Events.EventMap.CapFlightG
 			...args,
 			taskWaypoints: waypoints,
 			targetHomeBaseId: args.target.id,
+			targetPosition: centerPosition,
 		});
 	}
 
@@ -91,6 +96,7 @@ export class CapFlightGroup extends FlightGroup<keyof Events.EventMap.CapFlightG
 			...super.serialize(),
 			entityType: "CapFlightGroup",
 			targetHomeBaseId: this.targetHomeBaseId,
+			targetPosition: this.targetPosition,
 		};
 	}
 }
