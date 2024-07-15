@@ -214,6 +214,7 @@ export class FlightGroup extends UnitGroup {
 		startPosition: StartPosition,
 	): Data.GeneratedTypes.RoutePoint[] {
 		const startType = this.#calcStartType(mission);
+		const tasks = waypoint.type === "Task" ? flightGroupTasks({ flightGroup: this, mission }) : [];
 
 		switch (startType) {
 			case "air": {
@@ -300,12 +301,13 @@ export class FlightGroup extends UnitGroup {
 						task: {
 							id: "ComboTask",
 							params: {
-								tasks: mapTaskActionsNumber(
-									getStartWaypointTasks(
+								tasks: mapTaskActionsNumber([
+									...getStartWaypointTasks(
 										this,
 										false, // TODO
 									),
-								),
+									...tasks,
+								]),
 							},
 						},
 					},
@@ -326,12 +328,13 @@ export class FlightGroup extends UnitGroup {
 						task: {
 							id: "ComboTask",
 							params: {
-								tasks: mapTaskActionsNumber(
-									getStartWaypointTasks(
+								tasks: mapTaskActionsNumber([
+									...getStartWaypointTasks(
 										this,
 										false, // TODO
 									),
-								),
+									...tasks,
+								]),
 							},
 						},
 					},
@@ -367,6 +370,9 @@ export class FlightGroup extends UnitGroup {
 	}
 
 	#generateWaypoint(waypoint: Data.InputTypes.Waypoint, mission: Mission): Data.GeneratedTypes.RoutePoint {
+		const tasks = flightGroupTasks({ flightGroup: this, mission });
+		const task = waypoint.type === "Task" ? routePointTask(tasks) : undefined;
+
 		return {
 			...waypoint.position,
 			action: "Turning Point",
@@ -377,7 +383,7 @@ export class FlightGroup extends UnitGroup {
 			speed_locked: true,
 			type: "Turning Point",
 			...this.#calcAltParams(waypoint.onGround),
-			task: waypoint.type === "Task" ? routePointTask(flightGroupTasks({ flightGroup: this, mission })) : undefined,
+			task: task,
 		};
 	}
 

@@ -1,6 +1,7 @@
 import { Mission } from "./class";
 import { CapFlightGroup } from "./class/CapFlightGroup";
 import { CasFlightGroup } from "./class/CasFlightGroup";
+import { DeadFlightGroup } from "./class/DeadFlightGroup";
 import { EscortFlightGroup } from "./class/EscortFlightGroup";
 import { FlightGroup } from "./class/FlightGroup";
 import { JtacFlightGroup } from "./class/JtacFlightGroup";
@@ -212,24 +213,15 @@ export const flightGroupTasks = ({ flightGroup, mission }: { flightGroup: Flight
 	switch (flightGroup.task) {
 		case "AFAC": {
 			if (flightGroup instanceof JtacFlightGroup) {
-				const country = mission.getCountry(flightGroup.target.countryName);
+				const targetGG = getTargetGroundGroup(flightGroup.target, mission);
 
-				if (country == null) {
-					// eslint-disable-next-line no-console
-					console.error("Country not found", flightGroup.coalition);
-					break;
-				}
-
-				const target = country.groundGroups.find((gg) => gg.name === flightGroup.target.name);
-
-				if (target == null) {
-					// eslint-disable-next-line no-console
-					console.error("AFAC Target GG not found", flightGroup.target);
-
-					break;
-				}
 				tasks.push(Data.TaskAction.AFAC);
-				tasks.push(Data.TaskAction.FAC_AttackGroup(target.groupId, flightGroup.frequency));
+
+				if (targetGG == null) {
+					break;
+				}
+
+				tasks.push(Data.TaskAction.FAC_AttackGroup(targetGG.groupId, flightGroup.frequency));
 			} else {
 				// eslint-disable-next-line no-console
 				console.warn("Invalid Flight Group Class for AFAC Task");
@@ -265,7 +257,17 @@ export const flightGroupTasks = ({ flightGroup, mission }: { flightGroup: Flight
 			break;
 		}
 		case "DEAD": {
-			tasks.push(Data.TaskAction.SEAD);
+			if (flightGroup instanceof DeadFlightGroup) {
+				// const target = flightGroup.target;
+				/* target.units.forEach((unit) => {
+					tasks.push(Data.TaskAction.Bombing(unit.));
+				});
+
+				tasks.push(Data.TaskAction.SwitchWaypoint(3, 5)); */
+			} else {
+				// eslint-disable-next-line no-console
+				console.warn("Invalid Flight Group Class for Pinpoint Strike Task");
+			}
 
 			break;
 		}
@@ -350,3 +352,24 @@ export const callSign = (aircraftType: Types.AircraftType, type: "aircraft" | "a
 		index: (callSigns.indexOf(selected) ?? 1) + 1,
 	};
 };
+
+export function getTargetGroundGroup(target: Data.InputTypes.GroundGroup, mission: Mission) {
+	const country = mission.getCountry(target.countryName);
+
+	if (country == null) {
+		// eslint-disable-next-line no-console
+		console.error("Country not found", target);
+		return;
+	}
+
+	const group = country.groundGroups.find((gg) => gg.name === target.name);
+
+	if (group == null) {
+		// eslint-disable-next-line no-console
+		console.error("Ground group not found", target);
+
+		return;
+	}
+
+	return group;
+}

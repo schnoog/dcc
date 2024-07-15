@@ -20,11 +20,33 @@ export class MultiJson<ItemSchema extends BaseItemSchema, SynopsisSchema extends
 		if (fileContent == undefined) {
 			return {};
 		}
+
+		const versionSchema = z.object({
+			version: z.number(),
+		});
+
 		const schema = z.object({
 			version: z.number(),
 			items: z.record(this.#options.schema.synopsis),
+			// items: z.record(z.object({ version: z.number() })),
 		});
-		return schema.parse(JSON.parse(fileContent)).items;
+
+		const fileContentJson = JSON.parse(fileContent) as unknown;
+		const versionResult = versionSchema.safeParse(fileContentJson);
+
+		if (!versionResult.success) {
+			// eslint-disable-next-line no-console
+			console.error("Invalid Meta File");
+			throw versionResult.error;
+		}
+
+		if (versionResult.data.version !== this.#options.version) {
+			// eslint-disable-next-line no-console
+			console.warn("Meta File Version Mismatch");
+			return {};
+		}
+
+		return schema.parse(fileContentJson).items;
 	}
 
 	public async get(id: string) {
@@ -39,16 +61,32 @@ export class MultiJson<ItemSchema extends BaseItemSchema, SynopsisSchema extends
 	}
 
 	public async put(item: z.infer<ItemSchema>) {
-		const parsedId = idSchema.parse(item.id);
+		const parsedIdResult = idSchema.safeParse(item.id);
 		// const parsedItem = this.#options.schema.item.parse(item);
+
+		if (!parsedIdResult.success) {
+			// eslint-disable-next-line no-console
+			console.error("Invalid Item Id", item.id);
+			throw parsedIdResult.error;
+		}
+
+		const parsedId = parsedIdResult.data;
 
 		await write({
 			namespace: "multi",
 			fileName: `${this.#options.name}/${parsedId}.json`,
 			data: stringify(item), // TODO use parsedItem
 		});
-		const synopsis = this.#options.schema.synopsis.parse(this.#options.getSynopsis(item));
-		await this.#updateList(parsedId, synopsis);
+		const synopsisResult = this.#options.schema.synopsis.safeParse(this.#options.getSynopsis(item));
+
+		if (synopsisResult.success) {
+			await this.#updateList(parsedId, synopsisResult.data);
+		} else {
+			// eslint-disable-next-line no-console
+			console.error("Invalid Synopsis", this.#options.getSynopsis(item));
+			// eslint-disable-next-line no-console
+			console.error(synopsisResult.error.errors);
+		}
 	}
 
 	public async remove(id: string) {

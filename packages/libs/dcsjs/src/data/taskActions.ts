@@ -39,7 +39,7 @@ export const TaskAction = {
 			callname: 1,
 			datalink: true,
 			weaponType: 9663676414,
-			frequency,
+			frequency: frequency * 1000000,
 		},
 	}),
 	AWACS: {
@@ -161,7 +161,7 @@ export const TaskAction = {
 			priority: 0,
 		},
 	} as Types.RoutePointTaskTemplate,
-	SEADEscort: (groupId: number, lastWaypointIndex: number): Types.RoutePointTaskTemplate => ({
+	SEADEscort: (groupId: number): Types.RoutePointTaskTemplate => ({
 		auto: false,
 		id: "Escort",
 		enabled: true,
@@ -171,9 +171,9 @@ export const TaskAction = {
 			engagementDistMax: 74000,
 			targetTypes: ["MR SAM", "LR SAM"],
 			value: "MR SAM;LR SAM;",
-			lastWptIndexFlag: true,
+			lastWptIndexFlag: false,
 			lastWptIndexFlagChangedManually: true,
-			lastWptIndex: lastWaypointIndex,
+			lastWptIndex: 0,
 			pos: {
 				y: 0,
 				x: -1000,

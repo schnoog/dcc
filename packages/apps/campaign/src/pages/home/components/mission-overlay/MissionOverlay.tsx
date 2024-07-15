@@ -40,6 +40,7 @@ export function MissionOverlay(props: { show: boolean; onClose: () => void }) {
 		try {
 			const id = `${state.id}-${Date.now()}`;
 
+			save();
 			await rpc.campaign.generateCampaignMission(
 				Types.Serialization.uiStateEntitiesArray.parse({
 					...state,
@@ -111,9 +112,6 @@ export function MissionOverlay(props: { show: boolean; onClose: () => void }) {
 				});
 				return;
 			} */
-
-			// TODO
-			// submitMissionState?.(loadedMissionState, dataStore);
 
 			sendWorkerMessage({
 				name: "submitMissionState",

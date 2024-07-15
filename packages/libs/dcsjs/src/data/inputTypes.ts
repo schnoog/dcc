@@ -93,6 +93,21 @@ export namespace Schema {
 		target: Types.Schema.position,
 	});
 
+	export const EscortFlightGroup = flightGroup.extend({
+		task: z.literal("Escort"),
+		target: flightGroup,
+	});
+
+	export const DeadFlightGroup = flightGroup.extend({
+		task: z.literal("DEAD"),
+		target: samGroup,
+	});
+
+	export const SeadFlightGroup = flightGroup.extend({
+		task: z.literal("SEAD"),
+		target: flightGroup,
+	});
+
 	export const generateAWACS = z.record(Enums.coalition, Enums.aircraftType);
 }
 
@@ -108,5 +123,8 @@ export type FlightGroup = z.infer<typeof Schema.flightGroup>;
 export type StrikeFlightGroup = z.infer<typeof Schema.StrikeFlightGroup>;
 export type CasFlightGroup = z.infer<typeof Schema.CasFlightGroup>;
 export type CapFlightGroup = z.infer<typeof Schema.CapFlightGroup>;
+export type EscortFlightGroup = z.infer<typeof Schema.EscortFlightGroup>;
+export type DeadFlightGroup = z.infer<typeof Schema.DeadFlightGroup>;
+export type SeadFlightGroup = z.infer<typeof Schema.SeadFlightGroup>;
 export type Waypoint = z.infer<typeof Schema.waypoint>;
 export type GenerateAWACS = z.infer<typeof Schema.generateAWACS>;

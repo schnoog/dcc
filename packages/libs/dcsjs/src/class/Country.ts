@@ -3,6 +3,7 @@ import { oppositionCoalition } from "../utils";
 import { Airdrome } from "./Airdrome";
 import { CapFlightGroup } from "./CapFlightGroup";
 import { CasFlightGroup } from "./CasFlightGroup";
+import { EscortFlightGroup } from "./EscortFlightGroup";
 import { FlightGroup, FlightGroupUnit } from "./FlightGroup";
 import { GroundGroup, GroundGroupUnit } from "./GroundGroup";
 import { JtacFlightGroup } from "./JtacFlightGroup";
@@ -76,6 +77,10 @@ const isCasFlightGroup = (args: Data.InputTypes.FlightGroup): args is Data.Input
 
 const isCapFlightGroup = (args: Data.InputTypes.FlightGroup): args is Data.InputTypes.CapFlightGroup => {
 	return (args as Data.InputTypes.CapFlightGroup).target != null && args.task === "CAP";
+};
+
+const isEscortFlightGroup = (args: Data.InputTypes.FlightGroup): args is Data.InputTypes.EscortFlightGroup => {
+	return (args as Data.InputTypes.EscortFlightGroup).target != null && args.task === "Escort";
 };
 
 export class Country {
@@ -198,9 +203,10 @@ export class Country {
 				isHelicopter,
 			});
 		} else if (isCasFlightGroup(args)) {
-			const jtac = new JtacFlightGroup(args, mission);
-
-			this.#plane.push(jtac);
+			if (args.hasClients) {
+				const jtac = new JtacFlightGroup(args, mission);
+				this.#plane.push(jtac);
+			}
 
 			fg = new CasFlightGroup({
 				...args,
@@ -215,9 +221,16 @@ export class Country {
 				units,
 				isHelicopter,
 			});
+		} else if (isEscortFlightGroup(args)) {
+			fg = new EscortFlightGroup({
+				...args,
+				groupId: id,
+				units,
+				isHelicopter,
+			});
 		} else {
+			// eslint-disable-next-line no-console
 			console.log("Country: No special flight group", args.task);
-			console.log(args?.target);
 			fg = new FlightGroup({
 				...args,
 				groupId: id,
@@ -231,14 +244,6 @@ export class Country {
 		} else {
 			this.#plane.push(fg);
 		}
-	}
-
-	public createFlightGroupWithJtac(args: Data.InputTypes.FlightGroupWithJtac, mission: Mission) {
-		this.createFlightGroup(args, mission);
-
-		const jtac = new JtacFlightGroup(args, mission);
-
-		this.#plane.push(jtac);
 	}
 
 	public generateAWACS(coalition: Data.Coalition, aircraftType: Data.AircraftType, mission: Mission) {

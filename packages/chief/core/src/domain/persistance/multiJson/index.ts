@@ -5,7 +5,7 @@ import { MultiJson } from "./multiJson";
 
 export const CampaignPersistance = new MultiJson({
 	name: "campaign/campaign",
-	version: 0,
+	version: 1,
 	schema: {
 		item: z.object({
 			id: z.string(),

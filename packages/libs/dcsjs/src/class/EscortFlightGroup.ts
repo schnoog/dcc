@@ -1,7 +1,7 @@
 import * as Data from "../data";
 import { FlightGroup, FlightGroupProps } from "./FlightGroup";
 
-export type StrikeFlightGroupProps = FlightGroupProps & {
+export type EscortFlightGroupProps = FlightGroupProps & {
 	target: Data.InputTypes.FlightGroup;
 };
 
@@ -12,7 +12,7 @@ export class EscortFlightGroup extends FlightGroup {
 		return this.#target;
 	}
 
-	constructor(args: StrikeFlightGroupProps) {
+	constructor(args: EscortFlightGroupProps) {
 		super(args);
 
 		this.#target = args.target;

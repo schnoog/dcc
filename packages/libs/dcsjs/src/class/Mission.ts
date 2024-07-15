@@ -3,8 +3,12 @@ import * as luaTable from "@kilcekru/lua-table";
 import * as Data from "../data";
 import { msTimeToDcsTime, oppositionCoalition } from "../utils";
 import { Airdrome } from "./Airdrome";
+import { CasFlightGroup } from "./CasFlightGroup";
 import { Country } from "./Country";
 import { Trigger } from "./Trigger";
+
+type MissionConfigFlightGroup = { groupId: number; name: string; task: Data.Task };
+type MissionConfigCasFlightGroup = MissionConfigFlightGroup & { task: "CAS"; targetGroupName: string };
 export class Mission {
 	#nextGroupId = 1;
 	#nextUnitId = 1;
@@ -207,6 +211,7 @@ export class Mission {
 		this.#trigger.addLoadFile("ResKey_Action_10", "Load State");
 		this.#trigger.addLoadFile("ResKey_Action_11", "Load EWR");
 		this.#trigger.addLoadFile("ResKey_Action_12", "Load CSAR");
+		this.#trigger.addLoadFile("ResKey_Action_13", "Load CAS");
 		this.#trigger.addLoadFile("ResKey_Action_20", "Load Mission");
 	}
 
@@ -370,18 +375,27 @@ export class Mission {
 			throw new Error("Blue country not found");
 		}
 
-		const clientFlightGroups: { groupId: number; name: string; task: Data.Task }[] = [];
+		const clientFlightGroups: Array<MissionConfigFlightGroup | MissionConfigCasFlightGroup> = [];
 
 		for (const flightGroup of country.flightGroups) {
 			if (!flightGroup.hasClients) {
 				continue;
 			}
 
-			clientFlightGroups.push({
-				groupId: flightGroup.groupId,
-				name: flightGroup.name,
-				task: flightGroup.task,
-			});
+			if (flightGroup instanceof CasFlightGroup) {
+				clientFlightGroups.push({
+					groupId: flightGroup.groupId,
+					name: flightGroup.name,
+					task: "CAS",
+					targetGroupName: flightGroup.target.name,
+				});
+			} else {
+				clientFlightGroups.push({
+					groupId: flightGroup.groupId,
+					name: flightGroup.name,
+					task: flightGroup.task,
+				});
+			}
 		}
 
 		const config = {
