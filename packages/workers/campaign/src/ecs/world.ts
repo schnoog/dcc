@@ -260,6 +260,11 @@ export class World {
 		// eslint-disable-next-line no-console
 		console.log("submitting mission...");
 		for (const name of state.destroyedGroundUnits) {
+			if (!isNaN(Number(name))) {
+				// eslint-disable-next-line no-console
+				console.warn("unknown id for destroyedGroundUnits", name);
+				continue;
+			}
 			const id = name.toString().split("/")[1];
 
 			if (id == null) {

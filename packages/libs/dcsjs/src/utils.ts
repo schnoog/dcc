@@ -1,5 +1,11 @@
 import { Mission } from "./class";
+import { CapFlightGroup } from "./class/CapFlightGroup";
+import { CasFlightGroup } from "./class/CasFlightGroup";
+import { DeadFlightGroup } from "./class/DeadFlightGroup";
+import { EscortFlightGroup } from "./class/EscortFlightGroup";
 import { FlightGroup } from "./class/FlightGroup";
+import { JtacFlightGroup } from "./class/JtacFlightGroup";
+import { StrikeFlightGroup } from "./class/StrikeFlightGroup";
 import * as Types from "./data";
 import * as Data from "./data";
 import { FlightGroupUnit } from "./data/inputTypes";
@@ -201,6 +207,118 @@ function startFlightGroupTasks(flightGroup: FlightGroup, training: boolean) {
 	return tasks;
 }
 
+export const flightGroupTasks = ({ flightGroup, mission }: { flightGroup: FlightGroup; mission: Mission }) => {
+	const tasks: Array<Types.RoutePointTaskTemplate> = [];
+
+	switch (flightGroup.task) {
+		case "AFAC": {
+			if (flightGroup instanceof JtacFlightGroup) {
+				const targetGG = getTargetGroundGroup(flightGroup.target, mission);
+
+				tasks.push(Data.TaskAction.AFAC);
+
+				if (targetGG == null) {
+					break;
+				}
+
+				tasks.push(Data.TaskAction.FAC_AttackGroup(targetGG.groupId, flightGroup.frequency));
+			} else {
+				// eslint-disable-next-line no-console
+				console.warn("Invalid Flight Group Class for AFAC Task");
+			}
+
+			break;
+		}
+		case "CAS": {
+			if (flightGroup instanceof CasFlightGroup) {
+				tasks.push(Data.TaskAction.CAS_EngageTargetsInZone(flightGroup.target.position));
+			} else {
+				// eslint-disable-next-line no-console
+				console.warn("Invalid Flight Group Class for CAS Task");
+			}
+
+			break;
+		}
+		case "CAP": {
+			tasks.push(Data.TaskAction.WeaponDesignate);
+
+			if (flightGroup instanceof CapFlightGroup) {
+				tasks.push(Data.TaskAction.CAP_EngageTargetsInZone(flightGroup.position));
+			} else {
+				// eslint-disable-next-line no-console
+				console.warn("Invalid Flight Group Class for CAP Task");
+			}
+
+			break;
+		}
+		case "AWACS": {
+			tasks.push(Data.TaskAction.AWACS);
+
+			break;
+		}
+		case "DEAD": {
+			if (flightGroup instanceof DeadFlightGroup) {
+				// const target = flightGroup.target;
+				/* target.units.forEach((unit) => {
+					tasks.push(Data.TaskAction.Bombing(unit.));
+				});
+
+				tasks.push(Data.TaskAction.SwitchWaypoint(3, 5)); */
+			} else {
+				// eslint-disable-next-line no-console
+				console.warn("Invalid Flight Group Class for Pinpoint Strike Task");
+			}
+
+			break;
+		}
+		case "Pinpoint Strike": {
+			if (flightGroup instanceof StrikeFlightGroup) {
+				const target = flightGroup.target;
+
+				target.units.forEach((building) => {
+					tasks.push(Data.TaskAction.Bombing(building.position));
+				});
+
+				tasks.push(Data.TaskAction.SwitchWaypoint(3, 5));
+			} else {
+				// eslint-disable-next-line no-console
+				console.warn("Invalid Flight Group Class for Pinpoint Strike Task");
+			}
+
+			break;
+		}
+		case "Escort": {
+			if (flightGroup instanceof EscortFlightGroup) {
+				const country = mission.getCoalitionCountry(flightGroup.coalition);
+
+				if (country == null) {
+					// eslint-disable-next-line no-console
+					console.error("Country not found", flightGroup.coalition);
+					break;
+				}
+
+				const target = country.flightGroups.find((fg) => fg.name === flightGroup.target.name);
+
+				if (target == null) {
+					// eslint-disable-next-line no-console
+					console.error("Escort Target FG not fround", flightGroup.target);
+
+					break;
+				}
+
+				tasks.push(Data.TaskAction.Escort(target.groupId));
+			} else {
+				// eslint-disable-next-line no-console
+				console.warn("Invalid Flight Group Class for Escort Task");
+			}
+
+			break;
+		}
+	}
+
+	return tasks;
+};
+
 export function getStartWaypointTasks(
 	flightGroup: FlightGroup,
 	training: boolean,
@@ -208,4 +326,50 @@ export function getStartWaypointTasks(
 	const tasks = startFlightGroupTasks(flightGroup, training);
 
 	return tasks;
+}
+
+export const callSign = (aircraftType: Types.AircraftType, type: "aircraft" | "awacs") => {
+	const callSigns = type === "aircraft" ? Data.callsigns : Data.AWACSCallsigns;
+
+	const aircraftCallsigns = Data.aircraftDefinitions[aircraftType].customCallsigns;
+
+	if (aircraftCallsigns != null) {
+		for (const cs of aircraftCallsigns) {
+			callSigns.push(cs);
+		}
+	}
+
+	if (callSigns == null) {
+		return {
+			name: "Enfield",
+			index: 1,
+		};
+	}
+	const selected = randomItem(callSigns) ?? "Enfield";
+
+	return {
+		name: selected,
+		index: (callSigns.indexOf(selected) ?? 1) + 1,
+	};
+};
+
+export function getTargetGroundGroup(target: Data.InputTypes.GroundGroup, mission: Mission) {
+	const country = mission.getCountry(target.countryName);
+
+	if (country == null) {
+		// eslint-disable-next-line no-console
+		console.error("Country not found", target);
+		return;
+	}
+
+	const group = country.groundGroups.find((gg) => gg.name === target.name);
+
+	if (group == null) {
+		// eslint-disable-next-line no-console
+		console.error("Ground group not found", target);
+
+		return;
+	}
+
+	return group;
 }

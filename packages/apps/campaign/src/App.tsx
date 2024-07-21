@@ -24,23 +24,23 @@ const App = () => {
 	const createErrorToast = Components.useCreateErrorToast();
 
 	onMount(async () => {
-		rpc.campaign
-			.resumeCampaign(Config.campaignVersion)
-			.then(async (state) => {
-				console.log("load", state); // eslint-disable-line no-console
+		try {
+			const campaign = await rpc.campaign.resumeCampaign(Config.campaignVersion);
 
-				if (state == null) {
-					setResumeState("empty");
-					return;
-				}
+			// eslint-disable-next-line no-console
+			console.log("campaign loaded", campaign);
 
-				setLoadedState(state);
-				await loadCampaignIntoStore(state);
-			})
-			.catch((e) => {
-				console.error("RPC Load", e instanceof Error ? e.message : "unknown error"); // eslint-disable-line no-console
-				setResumeState("error");
-			});
+			if (campaign == null) {
+				setResumeState("empty");
+				return;
+			}
+
+			setLoadedState(campaign);
+			await loadCampaignIntoStore(campaign);
+		} catch (e) {
+			console.error("Resume Campaign", e instanceof Error ? e.message : "unknown error"); // eslint-disable-line no-console
+			setResumeState("error");
+		}
 	});
 
 	onEvent("menu.dev.logState", () => {

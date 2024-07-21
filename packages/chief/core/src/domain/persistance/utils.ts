@@ -30,7 +30,13 @@ export type WriteArgs = FileArgs & { data: string };
  */
 export async function write(args: WriteArgs): Promise<boolean> {
 	try {
-		const fileName = fileNameSchema.parse(args.fileName);
+		const fileNameResult = fileNameSchema.safeParse(args.fileName);
+		if (!fileNameResult.success) {
+			// eslint-disable-next-line no-console
+			console.error("Invalid File Name", args.fileName);
+			throw fileNameResult.error;
+		}
+		const fileName = fileNameResult.data;
 		const filePath = Path.join(app.getPath("userData"), "persistance", args.namespace, fileName);
 		const tmpPath = `${filePath}.tmp`;
 		await FS.outputFile(tmpPath, args.data);

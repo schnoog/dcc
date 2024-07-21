@@ -1,4 +1,4 @@
-import * as DcsJs from "@foxdelta2/dcsjs";
+import type * as DcsJs from "@foxdelta2/dcsjs";
 
 export const AiSkillLabel: Record<DcsJs.AiSkill, string> = {
 	Average: "Rookie",

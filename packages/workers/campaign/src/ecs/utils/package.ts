@@ -570,6 +570,18 @@ export function calcHoldWaypoint(aircraftBundles: Map<DcsJs.Task, AircraftBundle
 		throw new Error("Bundle is null");
 	}
 
+	let hasHelicopter = false;
+
+	bundle.aircrafts.forEach((aircraft) => {
+		if (aircraft.isHelicopter) {
+			hasHelicopter = true;
+		}
+	});
+
+	if (hasHelicopter) {
+		return undefined;
+	}
+
 	let holdPosition: DcsJs.Position | undefined = undefined;
 
 	// If there are multiple home bases, we use the midpoint of all home bases as the hold position

@@ -422,8 +422,13 @@ export type AirAssaultFlightGroupSerialized = z.TypeOf<typeof airAssaultFlightGr
 const capFlightGroupSchema = flightGroupSchema.extend({
 	entityType: z.literal("CapFlightGroup"),
 	targetHomeBaseId: z.string(),
+	targetPosition: DcsJs.Schema.position,
 });
 export type CapFlightGroupSerialized = z.TypeOf<typeof capFlightGroupSchema>;
+
+export function isCapFlightGroup(fg: EntitySerialized): fg is CapFlightGroupSerialized {
+	return fg.entityType === "CapFlightGroup";
+}
 
 const casFlightGroupSchema = escortedFlightGroupSchema.extend({
 	entityType: z.literal("CasFlightGroup"),
@@ -431,6 +436,10 @@ const casFlightGroupSchema = escortedFlightGroupSchema.extend({
 	jtacFrequency: z.number(),
 });
 export type CasFlightGroupSerialized = z.TypeOf<typeof casFlightGroupSchema>;
+
+export function isCasFlightGroup(fg: EntitySerialized): fg is CasFlightGroupSerialized {
+	return fg.entityType === "CasFlightGroup";
+}
 
 const csarFlightGroupSchema = flightGroupSchema.extend({
 	entityType: z.literal("CsarFlightGroup"),
@@ -445,21 +454,37 @@ const deadFlightGroupSchema = escortedFlightGroupSchema.extend({
 });
 export type DeadFlightGroupSerialized = z.TypeOf<typeof deadFlightGroupSchema>;
 
+export function isDeadFlightGroup(fg: EntitySerialized): fg is DeadFlightGroupSerialized {
+	return fg.entityType === "DeadFlightGroup";
+}
+
 const seadFlightGroupSchema = escortingFlightGroupSchema.extend({
 	entityType: z.literal("SeadFlightGroup"),
 });
 export type SeadFlightGroupSerialized = z.TypeOf<typeof seadFlightGroupSchema>;
+
+export function isSeadFlightGroup(fg: EntitySerialized): fg is SeadFlightGroupSerialized {
+	return fg.entityType === "SeadFlightGroup";
+}
 
 const escortFlightGroupSchema = escortingFlightGroupSchema.extend({
 	entityType: z.literal("EscortFlightGroup"),
 });
 export type EscortFlightGroupSerialized = z.TypeOf<typeof escortFlightGroupSchema>;
 
+export function isEscortFlightGroup(fg: EntitySerialized): fg is EscortFlightGroupSerialized {
+	return fg.entityType === "EscortFlightGroup";
+}
+
 const strikeFlightGroupSchema = escortedFlightGroupSchema.extend({
 	entityType: z.literal("StrikeFlightGroup"),
 	targetStructureId: z.string(),
 });
 export type StrikeFlightGroupSerialized = z.TypeOf<typeof strikeFlightGroupSchema>;
+
+export function isStrikeFlightGroup(fg: EntitySerialized): fg is StrikeFlightGroupSerialized {
+	return fg.entityType === "StrikeFlightGroup";
+}
 
 const unitSchema = entitySchema.extend({
 	alive: z.boolean(),

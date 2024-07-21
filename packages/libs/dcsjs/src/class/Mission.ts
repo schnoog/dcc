@@ -3,11 +3,16 @@ import * as luaTable from "@kilcekru/lua-table";
 import * as Data from "../data";
 import { msTimeToDcsTime, oppositionCoalition } from "../utils";
 import { Airdrome } from "./Airdrome";
+import { CasFlightGroup } from "./CasFlightGroup";
 import { Country } from "./Country";
 import { Trigger } from "./Trigger";
+
+type MissionConfigFlightGroup = { groupId: number; name: string; task: Data.Task };
+type MissionConfigCasFlightGroup = MissionConfigFlightGroup & { task: "CAS"; targetGroupName: string };
 export class Mission {
 	#nextGroupId = 1;
 	#nextUnitId = 1;
+	#nextJTACId = 1;
 	#nextSTN_L16 = 201;
 	#nextVoiceCallsignNumber = 11;
 	#nextDatalinkUnitId = 1;
@@ -31,6 +36,10 @@ export class Mission {
 		return this.#nextUnitId++;
 	}
 
+	public get nextJTACId() {
+		return this.#nextJTACId++;
+	}
+
 	public get nextSTN_L16() {
 		return this.#nextSTN_L16++;
 	}
@@ -41,6 +50,10 @@ export class Mission {
 
 	public get hotStart() {
 		return this.#hotStart;
+	}
+
+	public getCountry(countryName: Data.CountryName) {
+		return this.#countries.get(countryName);
 	}
 
 	public getCoalitionCountry(coalition: Data.Coalition) {
@@ -123,9 +136,9 @@ export class Mission {
 	}
 
 	public createFlightGroup(props: Data.InputTypes.FlightGroup) {
-		const args = Data.InputTypes.Schema.flightGroup.parse(props);
+		// const args = Data.InputTypes.Schema.flightGroup.parse(props);
 
-		this.#countries.get(args.countryName)?.createFlightGroup(args, this);
+		this.#countries.get(props.countryName)?.createFlightGroup(props, this);
 	}
 
 	public createSamGroup(props: Data.InputTypes.SamGroup) {
@@ -156,7 +169,7 @@ export class Mission {
 		}
 	}
 
-	public getCountry(coalition: Data.Coalition) {
+	/* public getCountry(coalition: Data.Coalition) {
 		const factionCountryName = this.#factionCountries[coalition];
 
 		if (factionCountryName == null) {
@@ -170,7 +183,7 @@ export class Mission {
 		}
 
 		return country;
-	}
+	} */
 
 	#coalitionCountriesToGenerated(coalition: Data.Coalition) {
 		const generatedCountries: Data.GeneratedTypes.Country[] = [];
@@ -198,6 +211,7 @@ export class Mission {
 		this.#trigger.addLoadFile("ResKey_Action_10", "Load State");
 		this.#trigger.addLoadFile("ResKey_Action_11", "Load EWR");
 		this.#trigger.addLoadFile("ResKey_Action_12", "Load CSAR");
+		this.#trigger.addLoadFile("ResKey_Action_13", "Load CAS");
 		this.#trigger.addLoadFile("ResKey_Action_20", "Load Mission");
 	}
 
@@ -361,18 +375,27 @@ export class Mission {
 			throw new Error("Blue country not found");
 		}
 
-		const clientFlightGroups: { groupId: number; name: string; task: Data.Task }[] = [];
+		const clientFlightGroups: Array<MissionConfigFlightGroup | MissionConfigCasFlightGroup> = [];
 
 		for (const flightGroup of country.flightGroups) {
 			if (!flightGroup.hasClients) {
 				continue;
 			}
 
-			clientFlightGroups.push({
-				groupId: flightGroup.groupId,
-				name: flightGroup.name,
-				task: flightGroup.task,
-			});
+			if (flightGroup instanceof CasFlightGroup) {
+				clientFlightGroups.push({
+					groupId: flightGroup.groupId,
+					name: flightGroup.name,
+					task: "CAS",
+					targetGroupName: flightGroup.target.name,
+				});
+			} else {
+				clientFlightGroups.push({
+					groupId: flightGroup.groupId,
+					name: flightGroup.name,
+					task: flightGroup.task,
+				});
+			}
 		}
 
 		const config = {

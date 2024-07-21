@@ -29,11 +29,15 @@ export const About = () => {
 			<div class={Styles.wrapper}>
 				<h1 class={Styles.title}>Digital Crew Chief</h1>
 				<div class={Styles.text}>
-					<p>Copyright (c) 2023 Kilcekru</p>
+					<p>Copyright (c) 2024 Kilcekru</p>
 					<p>
 						Version: {versions()?.app}
 						<br />
 						OS: {versions()?.os}
+						<br />
+						Electron: {versions()?.electron}
+						<br />
+						Node: {versions()?.node}
 					</p>
 					<p>
 						DCC is available as open-source software and is being developed by SkyFury members Kilcekru and FoxDelta2.

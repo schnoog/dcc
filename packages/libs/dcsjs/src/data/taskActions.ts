@@ -21,6 +21,27 @@ export const TaskAction = {
 			priority: 0,
 		},
 	} as Types.RoutePointTaskTemplate,
+	AFAC: {
+		enabled: true,
+		auto: true,
+		id: "FAC",
+		params: {},
+	} as Types.RoutePointTaskTemplate,
+	FAC_AttackGroup: (groupId: number, frequency: number): Types.RoutePointTaskTemplate => ({
+		enabled: true,
+		auto: false,
+		id: "FAC_AttackGroup",
+		params: {
+			number: 1,
+			designation: "Auto",
+			modulation: 0,
+			groupId,
+			callname: 1,
+			datalink: true,
+			weaponType: 9663676414,
+			frequency: frequency * 1000000,
+		},
+	}),
 	AWACS: {
 		auto: true,
 		enabled: true,
@@ -140,7 +161,7 @@ export const TaskAction = {
 			priority: 0,
 		},
 	} as Types.RoutePointTaskTemplate,
-	SEADEscort: (groupId: number, lastWaypointIndex: number): Types.RoutePointTaskTemplate => ({
+	SEADEscort: (groupId: number): Types.RoutePointTaskTemplate => ({
 		auto: false,
 		id: "Escort",
 		enabled: true,
@@ -150,9 +171,9 @@ export const TaskAction = {
 			engagementDistMax: 74000,
 			targetTypes: ["MR SAM", "LR SAM"],
 			value: "MR SAM;LR SAM;",
-			lastWptIndexFlag: true,
+			lastWptIndexFlag: false,
 			lastWptIndexFlagChangedManually: true,
-			lastWptIndex: lastWaypointIndex,
+			lastWptIndex: 0,
 			pos: {
 				y: 0,
 				x: -1000,

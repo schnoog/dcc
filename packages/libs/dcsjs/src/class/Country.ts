@@ -1,11 +1,16 @@
 import * as Data from "../data";
 import { oppositionCoalition } from "../utils";
 import { Airdrome } from "./Airdrome";
+import { CapFlightGroup } from "./CapFlightGroup";
+import { CasFlightGroup } from "./CasFlightGroup";
+import { EscortFlightGroup } from "./EscortFlightGroup";
 import { FlightGroup, FlightGroupUnit } from "./FlightGroup";
 import { GroundGroup, GroundGroupUnit } from "./GroundGroup";
+import { JtacFlightGroup } from "./JtacFlightGroup";
 import type { Mission } from "./Mission";
 import { SamGroup } from "./SamGroup";
 import { StaticGroup } from "./StaticGroup";
+import { StrikeFlightGroup } from "./StrikeFlightGroup";
 
 interface CountryProps {
 	id: number;
@@ -62,6 +67,22 @@ const positionFromHeading = (pos: Data.Position, heading: number, distance: numb
 	};
 };
 
+const isStrikeFlightGroup = (args: Data.InputTypes.FlightGroup): args is Data.InputTypes.StrikeFlightGroup => {
+	return (args as Data.InputTypes.StrikeFlightGroup).target != null && args.task === "Pinpoint Strike";
+};
+
+const isCasFlightGroup = (args: Data.InputTypes.FlightGroup): args is Data.InputTypes.CasFlightGroup => {
+	return (args as Data.InputTypes.CasFlightGroup).target != null && args.task === "CAS";
+};
+
+const isCapFlightGroup = (args: Data.InputTypes.FlightGroup): args is Data.InputTypes.CapFlightGroup => {
+	return (args as Data.InputTypes.CapFlightGroup).target != null && args.task === "CAP";
+};
+
+const isEscortFlightGroup = (args: Data.InputTypes.FlightGroup): args is Data.InputTypes.EscortFlightGroup => {
+	return (args as Data.InputTypes.EscortFlightGroup).target != null && args.task === "Escort";
+};
+
 export class Country {
 	readonly id: number;
 	readonly name: Data.CountryName;
@@ -77,6 +98,10 @@ export class Country {
 
 	get flightGroups() {
 		return [...this.#plane, ...this.#helicopter];
+	}
+
+	get groundGroups() {
+		return [...this.#groundGroups, ...this.#samGroups];
 	}
 
 	constructor(args: CountryProps) {
@@ -168,12 +193,51 @@ export class Country {
 			});
 		}
 
-		const fg = new FlightGroup({
-			...args,
-			groupId: id,
-			units,
-			isHelicopter,
-		});
+		let fg: FlightGroup;
+
+		if (isStrikeFlightGroup(args)) {
+			fg = new StrikeFlightGroup({
+				...args,
+				groupId: id,
+				units,
+				isHelicopter,
+			});
+		} else if (isCasFlightGroup(args)) {
+			if (args.hasClients) {
+				const jtac = new JtacFlightGroup(args, mission);
+				this.#plane.push(jtac);
+			}
+
+			fg = new CasFlightGroup({
+				...args,
+				groupId: id,
+				units,
+				isHelicopter,
+			});
+		} else if (isCapFlightGroup(args)) {
+			fg = new CapFlightGroup({
+				...args,
+				groupId: id,
+				units,
+				isHelicopter,
+			});
+		} else if (isEscortFlightGroup(args)) {
+			fg = new EscortFlightGroup({
+				...args,
+				groupId: id,
+				units,
+				isHelicopter,
+			});
+		} else {
+			// eslint-disable-next-line no-console
+			console.log("Country: No special flight group", args.task);
+			fg = new FlightGroup({
+				...args,
+				groupId: id,
+				units,
+				isHelicopter,
+			});
+		}
 
 		if (isHelicopter === true) {
 			this.#helicopter.push(fg);

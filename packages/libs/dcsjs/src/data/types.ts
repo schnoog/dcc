@@ -301,6 +301,7 @@ export namespace Schema {
 			"EWR",
 			"FAC",
 			"ControlledTask",
+			"FAC_AttackGroup",
 		]),
 		name: z.string().optional(),
 		params: z.object({}),

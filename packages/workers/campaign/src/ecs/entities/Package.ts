@@ -148,6 +148,7 @@ export class Package extends Entity<keyof Events.EventMap.Package> {
 					homeBase: capBundle.homeBase,
 					oppAirdromeId: capBundle.oppAirdromeId,
 					target: args.target,
+					targetPosition: args.target.position,
 				});
 
 				if (fg == null) {
@@ -183,26 +184,28 @@ export class Package extends Entity<keyof Events.EventMap.Package> {
 
 				pkg.#flightGroupIds.add(casFg.id);
 
-				const escortBundle = aircraftBundles.get("Escort");
+				if (holdWaypoint != null) {
+					const escortBundle = aircraftBundles.get("Escort");
 
-				if (escortBundle != null && holdWaypoint != null) {
-					const escortFg = EscortFlightGroup.create({
-						coalition: args.coalition,
-						position: escortBundle.homeBase.position,
-						package: pkg,
-						aircraftIds: Array.from(escortBundle.aircrafts).map((a) => a.id),
-						homeBase: escortBundle.homeBase,
-						targetFlightGroup: casFg,
-						holdWaypoint: holdWaypoint,
-					});
+					if (escortBundle != null && holdWaypoint != null) {
+						const escortFg = EscortFlightGroup.create({
+							coalition: args.coalition,
+							position: escortBundle.homeBase.position,
+							package: pkg,
+							aircraftIds: Array.from(escortBundle.aircrafts).map((a) => a.id),
+							homeBase: escortBundle.homeBase,
+							targetFlightGroup: casFg,
+							holdWaypoint: holdWaypoint,
+						});
 
-					if (escortFg == null) {
-						throw new Error("Flight group could not be created");
+						if (escortFg == null) {
+							throw new Error("Flight group could not be created");
+						}
+
+						pkg.#flightGroupIds.add(escortFg.id);
+
+						casFg.addEscortFlightGroupId("Escort", escortFg.id);
 					}
-
-					pkg.#flightGroupIds.add(escortFg.id);
-
-					casFg.addEscortFlightGroupId("Escort", escortFg.id);
 				}
 
 				break;

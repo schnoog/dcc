@@ -4,6 +4,7 @@ import AdmZip from "adm-zip";
 
 import Logo from "./assets/DCC_Logo_1024.png";
 import { Mission } from "./class";
+import CAS from "./template/l10n/DEFAULT/cas.lua";
 import CSAR from "./template/l10n/DEFAULT/csar.lua";
 import Dictionary from "./template/l10n/DEFAULT/dictionary.template";
 import EWR from "./template/l10n/DEFAULT/ewr.lua";
@@ -32,6 +33,7 @@ export async function save(args: { mission: Mission; path?: string; kneeboards?:
 	zip.addFile("l10n/DEFAULT/mission-config.lua", Buffer.from("config = " + args.mission.toMissionConfig(), "utf-8"));
 	zip.addFile("l10n/DEFAULT/state.lua", Buffer.from(State));
 	zip.addFile("l10n/DEFAULT/ewr.lua", Buffer.from(EWR));
+	zip.addFile("l10n/DEFAULT/cas.lua", Buffer.from(CAS));
 	zip.addFile("l10n/DEFAULT/csar.lua", Buffer.from(CSAR));
 	zip.addFile("l10n/DEFAULT/utils.lua", Buffer.from(Utils));
 	zip.addFile("l10n/DEFAULT/mission.lua", Buffer.from(MissionLua));
