@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # or the branch you want to trigger the workflow on
+      - v0.5.0  # or the branch you want to trigger the workflow on
 
 jobs:
   build:
