@@ -70,7 +70,7 @@ export function mapSamGroup(
 
 		units.push({
 			type: groundUnit.type,
-			name: groundUnit.name,
+			name: `${groundUnit.name}/${groundUnit.id}`,
 		});
 	}
 
