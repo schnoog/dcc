@@ -2,8 +2,9 @@ name: Build and Deploy
 
 on:
   push:
-    branches: v0.5.0  # or the branch you want to trigger the workflow on
-
+    branches: 
+     - v0.5.0  # or the branch you want to trigger the workflow on
+     - main
 jobs:
   build:
     runs-on: windows-latest
