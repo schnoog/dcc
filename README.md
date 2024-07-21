@@ -203,4 +203,3 @@ Please adhere to this project's [code of conduct](CODE_OF_CONDUCT.md).
 ## Contributors
 - [@Kilcekru](https://github.com/kilcekru)
 - [@rhyver](https://github.com/rhyver)
-
